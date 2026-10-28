@@ -1,7 +1,9 @@
 # Quickstart
 
 Run a CPU example with bilinear interpolation. The input is synthetic; use an
-observed Sentinel-2 crop for your own imagery.
+observed Sentinel-2 crop for your own imagery. The maintained
+[`examples/predict_patch.py`](https://github.com/ESAOpenSR/opensr-model-zoo/blob/main/examples/predict_patch.py)
+contains the same runnable smoke test.
 
 ## CPU inference
 
@@ -77,4 +79,5 @@ model = load_model(
 ```
 
 Read [Usage](usage.md) for masks, direct tensor calls, provenance, and the
-optional raster integration.
+optional raster integration. For copyable Python workflows, including reading
+and writing a georeferenced patch, see [Python examples](python-examples.md).

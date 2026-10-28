@@ -129,6 +129,7 @@ function initSite() {
     };
     input?.addEventListener("input", filterPreviews);
     filterPreviews();
+    let modelPages = {};
     const render = (rows) => {
       const query = (input?.value || "").trim().toLowerCase();
       const matching = rows.filter((row) => JSON.stringify(row).toLowerCase().includes(query));
@@ -140,25 +141,10 @@ function initSite() {
         return;
       }
       if (mount.dataset.columns === "summary") {
-        const modelPages = {
-          "opensr/bicubic": ["Bicubic interpolation", "models/bicubic.md"],
-          "opensr/bilinear": ["Bilinear interpolation", "models/bilinear.md"],
-          "evoland/s2v2x2-rgbn-x2": ["Evoland S2V2×2", "models/evoland-s2v2.md"],
-          "evoland/wsx2-rgbn-x2": ["Evoland WorldStrat 2×", "models/evoland-x2.md"],
-          "evoland/wsx4-rgbn-x4": ["Evoland WorldStrat 4×", "models/evoland-x4.md"],
-          "opensr/sen2sr-lite-rgbn-x4": ["SEN2SR Lite", "models/sen2sr-lite.md"],
-          "opensr/sen2sr-rgbn-x4": ["SEN2SR Mamba", "models/sen2sr.md"],
-          "opensr/ldsrs2-rgbn-x4": ["LDSR-S2", "models/ldsr-s2.md"],
-          "opensr/ldsrs2-rgbn-x4-ddim100-histogram": ["LDSR-S2 DDIM", "models/ldsr-s2.md"],
-          "opensr/srgan-rgbn-x4": ["SRGAN", "models/srgan.md"],
-          "remicres/sr4rs-rgbn-x4": ["SR4RS", "models/sr4rs.md"],
-          "satlas/esrgan-rgb-tci-x4": ["Satlas", "models/satlas.md"],
-          "implab/swin2-mose-sen2venus-rgbn-x2": ["Swin2-MoSE", "models/swin2-mose.md"]
-        };
         const titleFor = (recipe) => {
           const key = recipe.replace(/@[^@]+$/, "");
-          const known = modelPages[key] || modelPages[key.replace(/-x[24]$/, "")];
-          if (known) return known;
+          const known = modelPages[recipe];
+          if (known) return [known.name, known.page];
           return [key.split("/").pop().replace(/-x\d+$/, "").replace(/-/g, " "), null];
         };
         const groups = new Map();
@@ -233,12 +219,17 @@ function initSite() {
       });
       mount.replaceChildren(table);
     };
-    fetch(new URL("benchmarks/index.json", assetBase))
-      .then((response) => {
+    Promise.all([
+      fetch(new URL("benchmarks/index.json", assetBase)).then((response) => {
         if (!response.ok) throw new Error("benchmark data unavailable");
         return response.json();
-      })
-      .then((data) => {
+      }),
+      fetch(new URL("model-pages.json", assetBase))
+        .then((response) => response.ok ? response.json() : {})
+        .catch(() => ({}))
+    ])
+      .then(([data, pages]) => {
+        modelPages = pages.recipes || {};
         const rows = Array.isArray(data.records) ? data.records : [];
         render(rows);
         input?.addEventListener("input", () => render(rows));

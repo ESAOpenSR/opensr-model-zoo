@@ -1,0 +1,8 @@
+{
+  "slug": "my-model",
+  "title": "My model",
+  "recipe_ids": ["acme/my-model-x4@1"],
+  "overview": "A short explanation of the model and its intended input.",
+  "featured": false,
+  "comparisons": []
+}

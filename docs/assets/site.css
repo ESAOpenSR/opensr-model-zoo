@@ -223,6 +223,7 @@ body[data-md-color-scheme="slate"] {
   margin: 0 .15rem .55rem;
   color: var(--md-default-fg-color--light);
   font-size: .77rem;
+  overflow-wrap: anywhere;
 }
 .scene-description {
   margin: .55rem .15rem .25rem;
@@ -548,6 +549,10 @@ body[data-md-color-scheme="slate"] {
 .model-result p:last-child { margin-bottom: 0; }
 .model-result { max-width: 34rem; margin: 1.5rem auto 2.5rem; }
 .model-result .comparison { margin-top: 1rem; }
+.md-content__inner > .scene-card[data-model-result] {
+  max-width: 34rem;
+  margin: 1.5rem auto 2rem;
+}
 .md-typeset .detail-reference {
   display: block;
   width: 100%;

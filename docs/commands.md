@@ -41,12 +41,19 @@ opensr-zoo maintain convert pytorch --help
 opensr-zoo maintain hub prepare --help
 opensr-zoo maintain hub stage --help
 opensr-zoo maintain verify --help
+opensr-zoo maintain docs site --help
 opensr-zoo maintain docs catalog --help
 opensr-zoo maintain docs gallery --help
 ```
 
 Use `opensr-zoo maintain --help` to see the grouped commands. The package also
 exposes these modules for use in automation.
+
+`opensr-zoo maintain docs site --docs-dir docs` refreshes all model pages, the
+catalog, result comparisons, and benchmark-table links. New recipes get a
+standard page without images or navigation edits. See
+[Model pages and results](contributing/model-page.md) for optional presentation
+settings and the saved-results export workflow.
 
 ## Source organization
 

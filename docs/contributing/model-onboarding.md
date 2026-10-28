@@ -20,10 +20,11 @@ scope and should remain an issue for a future catalog revision.
 4. Convert weights with `opensr-zoo maintain convert pytorch`, inspect provenance, and add
    SHA-256, size, format, revision, and license. Weight redistribution needs
    explicit permission where the upstream license does not grant it.
-5. Follow the [model-page recipe and template](model-page.md) to add the overview,
-   comparison slider, usage example, and source links. Record training data,
-   limitations, and overlap in the recipe/provenance. Add contract tests and
-   frozen-input parity evidence.
+5. Run `opensr-zoo maintain docs site --docs-dir docs` to generate the catalog
+   entry, model page, Python usage example, and source links. Images and
+   featured placement are optional; follow the [model-page guide](model-page.md)
+   to add them later. Record training data, limitations, and overlap in the
+   recipe/provenance. Add contract tests and frozen-input parity evidence.
 6. Keep status `experimental` until parity, artifact, license, and runtime
    checks pass. Promote only then.
 

@@ -1,0 +1,66 @@
+{
+  "generated_by": "opensr-zoo maintain docs site",
+  "recipes": {
+    "evoland/s2v2x2-rgbn-x2@1": {
+      "name": "Evoland Sen2Venus",
+      "page": "models/evoland-s2v2.md"
+    },
+    "evoland/wsx2-rgbn-x2@1": {
+      "name": "Evoland WorldStrat 2\u00d7",
+      "page": "models/evoland-x2.md"
+    },
+    "evoland/wsx4-rgbn-x4@1": {
+      "name": "Evoland WorldStrat 4\u00d7",
+      "page": "models/evoland-x4.md"
+    },
+    "implab/swin2-mose-sen2venus-rgbn-x2@1": {
+      "name": "Swin2-MoSE",
+      "page": "models/swin2-mose.md"
+    },
+    "opensr/bicubic-x2@1": {
+      "name": "Bicubic interpolation",
+      "page": "models/bicubic.md"
+    },
+    "opensr/bicubic-x4@1": {
+      "name": "Bicubic interpolation",
+      "page": "models/bicubic.md"
+    },
+    "opensr/bilinear-x2@1": {
+      "name": "Bilinear interpolation",
+      "page": "models/bilinear.md"
+    },
+    "opensr/bilinear-x4@1": {
+      "name": "Bilinear interpolation",
+      "page": "models/bilinear.md"
+    },
+    "opensr/ldsrs2-rgbn-x4-ddim100-histogram@1": {
+      "name": "LDSR-S2",
+      "page": "models/ldsr-s2.md"
+    },
+    "opensr/ldsrs2-rgbn-x4@1": {
+      "name": "LDSR-S2",
+      "page": "models/ldsr-s2.md"
+    },
+    "opensr/sen2sr-lite-rgbn-x4@1": {
+      "name": "SEN2SR Lite",
+      "page": "models/sen2sr-lite.md"
+    },
+    "opensr/sen2sr-rgbn-x4@1": {
+      "name": "SEN2SR Mamba",
+      "page": "models/sen2sr.md"
+    },
+    "opensr/srgan-rgbn-x4@1": {
+      "name": "SRGAN",
+      "page": "models/srgan.md"
+    },
+    "remicres/sr4rs-rgbn-x4@1": {
+      "name": "SR4RS",
+      "page": "models/sr4rs.md"
+    },
+    "satlas/esrgan-rgb-tci-x4@1": {
+      "name": "Satlas",
+      "page": "models/satlas.md"
+    }
+  },
+  "schema_version": 1
+}

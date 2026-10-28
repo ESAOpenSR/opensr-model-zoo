@@ -16,14 +16,29 @@ Reflectance panels share a per-channel 1–99% stretch from valid input pixels;
 inputs are enlarged with nearest-neighbour resampling. Satlas keeps the source
 rendered RGB colours. Display clipping affects previews only.
 
+Comparisons are optional. Standard model pages need no image bundle; featured
+models can show curated comparisons on their page and Results. Existing bundles
+for other models remain in the asset index as evidence. The
+[model-page guide](../contributing/model-page.md) explains how to opt in.
+
 Rebuild a model comparison from a saved run:
 
 ```bash
 uv run --no-sync opensr-zoo maintain docs gallery \
-  --run benchmark-results/my-run --output build/my-model \
+  --run benchmark-results/my-run --output docs/assets/models/my-model \
   --recipe-id opensr/sen2sr-lite-rgbn-x4@1 \
   --sample-id 2022_HARV_7__4_3.tif --seed 0 --panels-only
 ```
+
+Use a fresh output directory, add the recipe ID to its page's `comparisons`
+setting, then run:
+
+```bash
+uv run --no-sync opensr-zoo maintain docs site --docs-dir docs
+```
+
+This refreshes the asset index, model pages, and featured result sliders from
+the saved bundles. No hand-written slider markup is required.
 
 The exporter rejects synthetic inputs and incomplete masks. Historical figures
 and numerical reports remain available in their original asset folders.

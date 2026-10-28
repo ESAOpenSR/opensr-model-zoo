@@ -51,6 +51,8 @@ The tensor is a synthetic contract smoke test. Use observed L2A Sentinel-2
 reflectance for scientific work. The [quickstart](docs/quickstart.md) expands
 this example, and the [usage guide](docs/usage.md) covers masks, provenance,
 weights, and raster integration.
+The [Python examples](docs/python-examples.md) show learned-model inference,
+a baseline on the same input, and reading and writing a georeferenced patch.
 
 Learned inference uses the same API after its artifact and runtime are
 available, for example `load_model("opensr/sen2sr-lite-rgbn-x4@1", device="cuda")`.

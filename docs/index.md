@@ -39,7 +39,7 @@ hide:
 <div class="start-card" markdown>
 ### Models
 
-A short introduction and an image comparison for every model.
+Usage examples for every model, with image comparisons for featured models.
 
 [Find a model →](models/catalog.md)
 </div>
@@ -55,9 +55,9 @@ Compare predictions and explore the measured results.
 <div class="start-card" markdown>
 ### Get started
 
-Install with `uv` and run your first prediction.
+Install with `uv` and run super-resolution from Python.
 
-[Quickstart →](quickstart.md)
+[Quickstart →](quickstart.md) · [Python examples](python-examples.md)
 </div>
 
 </div>

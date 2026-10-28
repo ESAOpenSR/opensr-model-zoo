@@ -25,20 +25,28 @@ documented benchmark or report locations.
 
 Follow [Installation](../installation.md) for a fresh checkout. In a prepared
 environment, run `uv run --no-sync mkdocs serve` and open the local address
-printed in the terminal. Edit pages under `docs/`, then check the finished site
-with `uv run --no-sync mkdocs build --strict`.
+printed in the terminal. Edit guides under `docs/`. Model pages, the catalog,
+and Results are generated from recipes and optional presentation settings:
+
+```bash
+uv run --no-sync opensr-zoo maintain docs site --docs-dir docs
+uv run --no-sync mkdocs build --strict
+```
+
+Generated pages carry an edit-source comment. Commit those outputs so the
+documentation deployment can build without installing the model runtime.
 
 Use headings that name the API, operation, requirement, or result described in
 the section. Describe behavior and limitations directly; avoid slogans and
 promotional claims. Use short, runnable examples and link to validation records.
-Image contributions need observed inputs, saved predictions, a reference, and
+Image contributions are optional. They need observed inputs, saved predictions, a reference, and
 provenance; the [asset guide](../assets/README.md) shows how
 to export them.
 
 ## Integration and release requirements
 
-- [Model-page recipe and template](model-page.md) defines the required sections,
-  comparison slider, and catalog/results integration for a new model.
+- [Model pages and results](model-page.md) covers automatic pages and Python
+  examples, optional featured placement, and publishing saved result bundles.
 - [Model onboarding](model-onboarding.md) covers recipe scaffolding, native
   builders, artifact metadata, licenses, and parity evidence.
 - [Native integration](native-integration.md) describes the builder contract

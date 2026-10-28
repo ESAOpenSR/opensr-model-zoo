@@ -36,19 +36,11 @@ extra_javascript:
 nav:
   - Home: index.md
   - Models:
-      - Catalog: models/catalog.md
-      - SEN2SR Lite: models/sen2sr-lite.md
-      - SEN2SR Mamba: models/sen2sr.md
-      - LDSR-S2: models/ldsr-s2.md
-      - SRGAN: models/srgan.md
-      - SR4RS: models/sr4rs.md
-      - Satlas: models/satlas.md
-      - Evoland WS x4: models/evoland-x4.md
-      - Evoland WS x2: models/evoland-x2.md
-      - Evoland S2V2 x2: models/evoland-s2v2.md
-      - Swin2-MoSE: models/swin2-mose.md
-      - Bilinear: models/bilinear.md
-      - Bicubic: models/bicubic.md
+      - All models: models/catalog.md
+      - Featured:
+          - SEN2SR Lite: models/sen2sr-lite.md
+          - SEN2SR Mamba: models/sen2sr.md
+          - LDSR-S2: models/ldsr-s2.md
   - Results:
       - Comparisons: performance.md
       - Scene gallery: examples.md
@@ -62,6 +54,7 @@ nav:
   - Get started:
       - Installation: installation.md
       - Quickstart: quickstart.md
+      - Python examples: python-examples.md
       - Python API: usage.md
   - Reference:
       - Command-line reference: commands.md
@@ -73,7 +66,7 @@ nav:
   - Contributing:
       - Overview: contributing/index.md
       - Model onboarding: contributing/model-onboarding.md
-      - Model page template: contributing/model-page.md
+      - Model pages and results: contributing/model-page.md
       - Native integrations: contributing/native-integration.md
       - Release gates: contributing/release.md
       - Hugging Face artifacts: huggingface.md

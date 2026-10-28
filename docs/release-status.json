@@ -42,8 +42,8 @@
     "benchmark_independent_tiles": 3,
     "docs_strict_build": true,
     "browser_checked": true,
-    "test_suite_passed": 101,
-    "test_suite_report": "docs/reports/model-pages-refresh.json",
+    "test_suite_passed": 117,
+    "test_suite_report": "docs/reports/documentation-automation.json",
     "sen2sr_upstream_parity": {
       "lite": true,
       "mamba_cuda": true,
@@ -64,9 +64,9 @@
       "representative_full_dataset": false
     },
     "installed_wheel_opensr_test_passed": 3,
-    "test_suite_environment": "Prepared Linux/Python 3.12 runtime; optional artifact/upstream-reference checks skipped unless configured; warnings preserved in the documentation refresh report.",
-    "test_suite_executed_at_utc": "2026-10-28T16:24:27.288664+00:00",
-    "browser_report": "docs/reports/model-pages-refresh.json"
+    "test_suite_environment": "Prepared Linux/Python 3.12 runtime; 18 optional artifact/upstream-reference checks skipped. Six upstream deprecation warnings retained in the documentation automation report.",
+    "test_suite_executed_at_utc": "2026-10-28T16:54:56.627119+00:00",
+    "browser_report": "docs/reports/documentation-automation.json"
   },
   "automation": {
     "periodic": false,
@@ -90,22 +90,30 @@
     "getting_started": [
       "docs/installation.md",
       "docs/quickstart.md",
-      "docs/usage.md"
+      "docs/usage.md",
+      "docs/python-examples.md"
     ],
     "contributor_guide": "docs/contributing/index.md",
     "model_page_guide": "docs/contributing/model-page.md",
-    "model_page_template": "docs/contributing/templates/model-page.md.in",
+    "model_page_template": "docs/contributing/templates/model-page.json.in",
     "measured_gallery": "docs/assets/gallery/index.json",
-    "local_browser_review": "Chromium at 1440, 900, 390, and 320 CSS pixels: 64 page/viewport checks, keyboard/pointer/touch sliders, reference toggles, profile disclosures, filtering, no-JavaScript fallback, light/dark presentation. Full accessibility audit pending.",
-    "validation_report": "docs/reports/model-pages-refresh.json",
+    "local_browser_review": "Chromium at 1440 and 390 CSS pixels: 34 page/viewport checks; featured/standard pages, result-table model links and filtering, optional comparisons, keyboard/reference controls, and JavaScript-disabled fallback. Full accessibility audit pending.",
+    "validation_report": "docs/reports/documentation-automation.json",
     "image_selection_report": "docs/reports/image-selection.json",
     "favicon": "docs/assets/opensr-globe.png",
     "model_catalog": "docs/models/catalog.md",
     "model_pages": 12,
-    "recipes_with_sliders": 15,
+    "recipes_with_sliders": 4,
     "model_comparisons": "docs/assets/models/index.json",
     "duplicate_static_comparisons_removed": true,
-    "palette": "navy, white, gray"
+    "palette": "navy, white, gray",
+    "featured_model_pages": 3,
+    "retained_observed_asset_bundles": 15,
+    "model_pages_generated": true,
+    "comparisons_optional": true,
+    "generator_command": "opensr-zoo maintain docs site --docs-dir docs",
+    "presentation_metadata": "src/opensr_model_zoo/maintenance/model_pages.json",
+    "python_examples": "docs/python-examples.md"
   },
   "closed_benchmark": {
     "implemented": true,

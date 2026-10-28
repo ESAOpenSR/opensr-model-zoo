@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "executed_at_utc": "2026-10-28T16:54:56.627119+00:00",
+  "scope": "Recipe-driven model documentation, optional featured comparisons, and Python inference examples. No new model-quality measurements.",
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": "2.6.0+cu126",
+      "pillow": "12.3.0",
+      "mkdocs": "1.6.1",
+      "mkdocs-material": "9.8.0",
+      "pytest": "8.4.2",
+      "ruff": "0.17.3"
+    }
+  },
+  "changes": {
+    "model_pages": 12,
+    "catalog_recipes": 15,
+    "featured_pages": [
+      "ldsr-s2",
+      "sen2sr-lite",
+      "sen2sr"
+    ],
+    "published_recipe_sliders": 4,
+    "retained_observed_asset_bundles": 15,
+    "standard_pages_require_images": false,
+    "new_recipes_require_navigation_or_javascript_edits": false,
+    "presentation_changes_modify_recipes": false,
+    "generated_pages_include_python_usage": true,
+    "implementation_only_pages_explain_unavailable_inference": true
+  },
+  "checks": [
+    {
+      "command": ".venv/bin/ruff check src tests examples",
+      "passed": true
+    },
+    {
+      "command": ".venv/bin/ruff format --check src tests examples",
+      "passed": true
+    },
+    {
+      "command": ".venv/bin/opensr-zoo maintain docs site --docs-dir docs",
+      "passed": true,
+      "repeated_in_same_directory": true
+    },
+    {
+      "command": ".venv/bin/mkdocs build --strict",
+      "passed": true
+    },
+    {
+      "command": "node --check docs/assets/site.js",
+      "passed": true
+    },
+    {
+      "command": ".venv/bin/python examples/predict_patch.py",
+      "passed": true,
+      "synthetic_api_smoke_only": true
+    },
+    {
+      "command": "UV_CACHE_DIR=/tmp/opensr-docs-automation-uv uv build --wheel --no-build-isolation --out-dir build/docs-automation-wheel",
+      "passed": true
+    },
+    {
+      "command": "git diff --check",
+      "passed": true
+    }
+  ],
+  "suite": {
+    "command": ".venv/bin/pytest -q -rs --junitxml=scratch/docs-automation/tests.xml",
+    "passed": 117,
+    "skipped": 18,
+    "failures": 0,
+    "errors": 0,
+    "warnings": 6,
+    "warning_scope": "Upstream scikit-image numpy.fix deprecation warnings retained. Optional artifact/upstream-reference checks remain skipped, not passed.",
+    "generator_tests": 18
+  },
+  "browser": {
+    "browser": "153.0.8010.12",
+    "executed_at_utc": "2026-10-28T16:52:50.667Z",
+    "viewports_css_px": [
+      1440,
+      390
+    ],
+    "page_viewport_checks": 34,
+    "routes": [
+      "/",
+      "/contributing/model-page/",
+      "/models/bicubic/",
+      "/models/bilinear/",
+      "/models/catalog/",
+      "/models/evoland-s2v2/",
+      "/models/evoland-x2/",
+      "/models/evoland-x4/",
+      "/models/ldsr-s2/",
+      "/models/satlas/",
+      "/models/sen2sr-lite/",
+      "/models/sen2sr/",
+      "/models/sr4rs/",
+      "/models/srgan/",
+      "/models/swin2-mose/",
+      "/performance/",
+      "/python-examples/"
+    ],
+    "broken_links": [],
+    "javascript_errors": [],
+    "verified": [
+      "Featured versus standard model pages",
+      "Optional comparison image loading and keyboard/reference controls",
+      "Generated benchmark model links and protocol groups",
+      "Result filtering",
+      "Python and contributor guides",
+      "JavaScript-disabled comparison and CSV fallback"
+    ]
+  },
+  "wheel": {
+    "wheel": "build/docs-automation-wheel/opensr_model_zoo-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "2ad4d82da0f899baf3135aaa3262bb730cd65cc3f0628b8c8b4a59c0b9fd0fc0",
+    "size_bytes": 252313,
+    "packaged_presentation": true,
+    "cli_generation_passed": true,
+    "repeat_deterministic": true,
+    "no_images_required": true,
+    "recipe_count": 15,
+    "model_page_count": 12
+  },
+  "limits": [
+    "No pretrained inference, artifact parity, or numerical benchmark rerun for this documentation change.",
+    "Synthetic CPU and GeoTIFF fixtures check API/I/O only and are not measured image evidence.",
+    "Existing 15 observed asset bundles and historical numerical reports retained; sliders are now opt-in.",
+    "Local Chromium at two viewport widths only; wider browser/accessibility checks and hosted deployment remain separate.",
+    "Explicit generation runs in the prepared local environment; hosted docs deployment still builds committed Markdown without model dependencies."
+  ]
+}

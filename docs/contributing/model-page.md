@@ -1,78 +1,107 @@
-# Add a model page
+# Model pages and results
 
-Start with the [copyable template](templates/model-page.md.in) and the
-[SEN2SR Lite page](../models/sen2sr-lite.md) as a finished example. Keep one page
-per model; put inference profiles or scale variants on that page.
-
-## Required sections
-
-| Section | Content |
-| --- | --- |
-| Overview | Two sentences explaining how the model reconstructs an image. |
-| Input summary | One line: bands, scale, supported devices, and any patch limits. |
-| Results | One input/prediction slider per recipe, with reference switching and an image-record link. |
-| Use | A short `load_model` example using the exact recipe ID and a supported device. |
-| Links | Source code, recipe JSON, and the upstream paper or project. |
-
-Keep architecture internals, preprocessing, hashes, and validation records in
-the code, recipe, and provenance files. Link to them from the page.
-
-## 1. Copy and fill the template
-
-Run from the repository root:
+A model can join the catalog without contributing images or benchmark results.
+Register its recipe, then run:
 
 ```bash
-cp docs/contributing/templates/model-page.md.in docs/models/my-model.md
+uv run --no-sync opensr-zoo maintain docs site --docs-dir docs
+uv run --no-sync mkdocs build --strict
 ```
 
-Replace every `{{...}}` marker. `ASSET_SLUG` is the recipe ID with `/` and `@`
-replaced by `_`: `opensr/my-model-x4@1` becomes `opensr_my-model-x4_1`.
-Set `IMAGE_SIZE` to the exported panel width; the current panels are square.
+The generator creates its model page, catalog card, Python prediction example,
+and links from result tables. Band names, units, grids, devices, patch limits,
+and recipe IDs come from the recipe. New pages are reachable from **Models →
+All models** without editing navigation or JavaScript. Commit the generated
+Markdown and JSON alongside the recipe changes.
 
-The template's raw HTML paths start with `../../assets/` because a model page
-is served at `/models/my-model/`. Markdown links use `../`. Keep the view buttons
-inside their `.comparison` container. For variants, wrap each viewer in a native
-`<details>` element, as on the [LDSR-S2 page](../models/ldsr-s2.md).
+## Standard and featured pages
 
-## 2. Export an observed comparison
+| Page | Required work | Optional additions |
+| --- | --- | --- |
+| Standard | Register a complete recipe and regenerate docs. | Short overview, display title, grouped variants, measured comparison. |
+| Featured | Maintainer selects `featured: true` in presentation settings. | Observed comparisons appear on the model page and Results. |
 
-For a completed SEN2NEON run with saved predictions:
+SEN2SR Lite, SEN2SR Mamba, and LDSR-S2 are featured initially. Featured placement
+is an editorial choice; experimental status, runtime validation, and measured
+metrics remain separate. A featured page can exist without images. A standard
+page can opt into a comparison without becoming featured.
+
+## Optional title, overview, and grouping
+
+Presentation settings live outside immutable recipe manifests in
+[`maintenance/model_pages.json`](https://github.com/ESAOpenSR/opensr-model-zoo/blob/main/src/opensr_model_zoo/maintenance/model_pages.json).
+For a custom title or shared page for variants, append an entry to its `pages`
+list. The [copyable settings template](templates/model-page.json.in) contains:
+
+```json
+{
+  "slug": "my-model",
+  "title": "My model",
+  "recipe_ids": ["acme/my-model-x4@1"],
+  "overview": "A short explanation of the model and its intended input.",
+  "featured": false,
+  "comparisons": []
+}
+```
+
+All fields here describe the page. Input constraints and inference settings
+belong in the recipe, rather than a second hand-maintained table. Group scales
+or inference profiles with `recipe_ids`; the generator includes each profile's
+usage and constraints. Use a unique lowercase page slug. A recipe without an
+entry still gets its own standard page.
+
+Generated pages include a comment identifying the generation command. Edit
+the recipe or presentation settings, then regenerate; direct page edits will
+be replaced. The generator refuses to overwrite a custom page. When migrating
+the previous manually authored pages, use `--replace-existing` once after
+reviewing the model-page, catalog, Results, and index files it will replace.
+
+## Optional observed comparison
+
+Start with a completed public benchmark run that saved predictions. Export a
+bundle into a fresh directory under `docs/assets/models/`:
 
 ```bash
 uv run --no-sync opensr-zoo maintain docs gallery \
   --run benchmark-results/my-run \
-  --output docs/assets/models/opensr_my-model-x4_1 \
-  --recipe-id opensr/my-model-x4@1 \
+  --output docs/assets/models/acme_my-model-x4_1 \
+  --recipe-id acme/my-model-x4@1 \
   --sample-id 2022_HARV_7__4_3.tif --seed 0 --panels-only
 ```
 
 This writes `input.webp`, `prediction.webp`, `reference.webp`, and
-`provenance.json`. Use fresh output paths. Rendered RGB models need a separate,
-declared image protocol; see the [asset guide](../assets/README.md).
+`provenance.json`. Add the exact recipe ID to that page's `comparisons` list,
+then rerun `docs site`. The generator discovers and checks the bundles and
+creates the slider HTML and asset index. There is no separate Results card,
+HTML template, JavaScript mapping, or image path to copy.
 
-## 3. Connect the page and results
+An absent bundle simply leaves the page without a comparison. A damaged bundle
+fails validation; preserve the failure and repair or replace the export.
+The [asset guide](../assets/README.md) explains observed-data requirements and
+the separate rendered RGB protocol. Synthetic smoke fixtures must never be
+published as measured comparisons.
 
-- Add the page under **Models** in `mkdocs.yml`.
-- Add its page slug, recipe IDs, name, and input summary to `CARD_DEFINITIONS` in
-  `src/opensr_model_zoo/maintenance/catalog_docs.py`, then regenerate the catalog.
-- Add a card per recipe to `docs/performance.md`, copying an existing card.
-  Use the same three panels, `data-model-result="ASSET_SLUG"`, a link to the new
-  page, and `../assets/` HTML paths. Keep a single viewer for each recipe.
-- Add its name and page to `modelPages` in `docs/assets/site.js` for results-table
-  links. Update catalog coverage checks when adding recipes.
+## Optional measured results
+
+Images and metric tables are independent. Export completed compatible runs
+with the existing benchmark exporter:
 
 ```bash
-uv run --no-sync opensr-zoo maintain docs catalog \
-  --schema build/model-schema.json --catalog docs/models/catalog.md
-uv run --no-sync opensr-zoo maintain docs gallery --index-only \
-  --asset-root docs/assets/models --output build/model-comparisons-index.json
-cp build/model-comparisons-index.json docs/assets/models/index.json
+uv run --no-sync opensr-zoo export-results docs/assets/benchmarks \
+  benchmark-results/run-x4 benchmark-results/run-x2
+uv run --no-sync opensr-zoo maintain docs site --docs-dir docs
 ```
 
-## 4. Check the finished page
+Include all public runs that should remain in the export. The exporter keeps
+different protocol hashes separate; it does not infer comparable protocols
+from a shared scale. Result rows link to generated model pages automatically,
+including standard models without images. Keep cohort descriptions, geographic
+limits, training-overlap disclosures, and protocol links with new measurements.
 
-Run `uv run --no-sync mkdocs build --strict`, then preview with
-`uv run --no-sync mkdocs serve`. Check the model and Results pages at desktop and
-mobile widths: images load, dragging and arrow keys move the split, Reference
-switches the image, and model links resolve. Keep the neutral palette and use
-the slider as the comparison image.
+## Review
+
+Run the strict build, then preview with `uv run --no-sync mkdocs serve`. Check
+the catalog and the generated Python examples. For an optional comparison,
+check dragging, arrow keys, Reference switching, image records, and mobile
+layout. Documentation generation reads saved metadata and assets; it never
+runs model inference or downloads checkpoints.
