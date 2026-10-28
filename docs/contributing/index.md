@@ -32,11 +32,13 @@ Use headings that name the API, operation, requirement, or result described in
 the section. Describe behavior and limitations directly; avoid slogans and
 promotional claims. Use short, runnable examples and link to validation records.
 Image contributions need observed inputs, saved predictions, a reference, and
-provenance; the [gallery guide](../examples.md#figure-export) shows how
+provenance; the [asset guide](../assets/README.md) shows how
 to export them.
 
 ## Integration and release requirements
 
+- [Model-page recipe and template](model-page.md) defines the required sections,
+  comparison slider, and catalog/results integration for a new model.
 - [Model onboarding](model-onboarding.md) covers recipe scaffolding, native
   builders, artifact metadata, licenses, and parity evidence.
 - [Native integration](native-integration.md) describes the builder contract

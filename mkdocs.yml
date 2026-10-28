@@ -1,5 +1,5 @@
 site_name: OpenSR Model Zoo
-site_description: Python API, model recipes, checkpoint provenance, and evaluation protocols for Sentinel-2 single-image super-resolution.
+site_description: Explore, compare, and run Sentinel-2 super-resolution models.
 site_url: https://models.opensr.eu/
 theme:
   name: material
@@ -35,39 +35,50 @@ extra_javascript:
   - assets/site.js
 nav:
   - Home: index.md
-  - Setup and usage:
-      - Installation: installation.md
-      - Quickstart: quickstart.md
-      - Python API: usage.md
-  - Image gallery: examples.md
   - Models:
       - Catalog: models/catalog.md
-      - Model cards: models/README.md
-      - Checkpoints and offline use: checkpoints.md
-      - Additional SISR ports: models/additional-models.md
-      - SRGAN parity: models/srgan-parity.md
-      - Weight licenses: models/weight-licenses.md
-  - Evaluation:
+      - SEN2SR Lite: models/sen2sr-lite.md
+      - SEN2SR Mamba: models/sen2sr.md
+      - LDSR-S2: models/ldsr-s2.md
+      - SRGAN: models/srgan.md
+      - SR4RS: models/sr4rs.md
+      - Satlas: models/satlas.md
+      - Evoland WS x4: models/evoland-x4.md
+      - Evoland WS x2: models/evoland-x2.md
+      - Evoland S2V2 x2: models/evoland-s2v2.md
+      - Swin2-MoSE: models/swin2-mose.md
+      - Bilinear: models/bilinear.md
+      - Bicubic: models/bicubic.md
+  - Results:
+      - Comparisons: performance.md
+      - Scene gallery: examples.md
       - Protocol: benchmarks.md
-      - Benchmark results: performance.md
       - Held-out benchmark: closed-benchmark.md
       - SEN2NEON data: benchmarks-sen2neon.md
       - OpenSR-Test validation: validation.md
       - Reproducibility: reproducibility.md
       - Validation reports: reports/README.md
       - OpenSR-Test pilot: reports/opensr-test/README.md
+  - Get started:
+      - Installation: installation.md
+      - Quickstart: quickstart.md
+      - Python API: usage.md
+  - Reference:
+      - Command-line reference: commands.md
+      - Runtime: runtime.md
+      - Release status: release-status.md
+      - Checkpoints and offline use: checkpoints.md
+      - SRGAN parity: models/srgan-parity.md
+      - Weight licenses: models/weight-licenses.md
   - Contributing:
       - Overview: contributing/index.md
       - Model onboarding: contributing/model-onboarding.md
+      - Model page template: contributing/model-page.md
       - Native integrations: contributing/native-integration.md
       - Release gates: contributing/release.md
       - Hugging Face artifacts: huggingface.md
       - Documentation assets: assets/README.md
       - Documentation hosting: hosting.md
-  - Reference:
-      - Command-line reference: commands.md
-      - Runtime: runtime.md
-      - Release status: release-status.md
 markdown_extensions:
   - admonition
   - attr_list

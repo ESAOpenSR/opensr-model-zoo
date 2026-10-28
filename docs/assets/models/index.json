@@ -1,0 +1,216 @@
+{
+  "schema_version": 2,
+  "status": "measured-model-sliders",
+  "items": [
+    {
+      "recipe_id": "evoland/s2v2x2-rgbn-x2@1",
+      "slug": "evoland_s2v2x2-rgbn-x2_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "evoland_s2v2x2-rgbn-x2_1/input.webp",
+        "prediction": "evoland_s2v2x2-rgbn-x2_1/prediction.webp",
+        "reference": "evoland_s2v2x2-rgbn-x2_1/reference.webp"
+      },
+      "provenance": "evoland_s2v2x2-rgbn-x2_1/provenance.json"
+    },
+    {
+      "recipe_id": "evoland/wsx2-rgbn-x2@1",
+      "slug": "evoland_wsx2-rgbn-x2_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "evoland_wsx2-rgbn-x2_1/input.webp",
+        "prediction": "evoland_wsx2-rgbn-x2_1/prediction.webp",
+        "reference": "evoland_wsx2-rgbn-x2_1/reference.webp"
+      },
+      "provenance": "evoland_wsx2-rgbn-x2_1/provenance.json"
+    },
+    {
+      "recipe_id": "evoland/wsx4-rgbn-x4@1",
+      "slug": "evoland_wsx4-rgbn-x4_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "evoland_wsx4-rgbn-x4_1/input.webp",
+        "prediction": "evoland_wsx4-rgbn-x4_1/prediction.webp",
+        "reference": "evoland_wsx4-rgbn-x4_1/reference.webp"
+      },
+      "provenance": "evoland_wsx4-rgbn-x4_1/provenance.json"
+    },
+    {
+      "recipe_id": "implab/swin2-mose-sen2venus-rgbn-x2@1",
+      "slug": "implab_swin2-mose-sen2venus-rgbn-x2_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "implab_swin2-mose-sen2venus-rgbn-x2_1/input.webp",
+        "prediction": "implab_swin2-mose-sen2venus-rgbn-x2_1/prediction.webp",
+        "reference": "implab_swin2-mose-sen2venus-rgbn-x2_1/reference.webp"
+      },
+      "provenance": "implab_swin2-mose-sen2venus-rgbn-x2_1/provenance.json"
+    },
+    {
+      "recipe_id": "opensr/bicubic-x2@1",
+      "slug": "opensr_bicubic-x2_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "opensr_bicubic-x2_1/input.webp",
+        "prediction": "opensr_bicubic-x2_1/prediction.webp",
+        "reference": "opensr_bicubic-x2_1/reference.webp"
+      },
+      "provenance": "opensr_bicubic-x2_1/provenance.json"
+    },
+    {
+      "recipe_id": "opensr/bicubic-x4@1",
+      "slug": "opensr_bicubic-x4_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "opensr_bicubic-x4_1/input.webp",
+        "prediction": "opensr_bicubic-x4_1/prediction.webp",
+        "reference": "opensr_bicubic-x4_1/reference.webp"
+      },
+      "provenance": "opensr_bicubic-x4_1/provenance.json"
+    },
+    {
+      "recipe_id": "opensr/bilinear-x2@1",
+      "slug": "opensr_bilinear-x2_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "opensr_bilinear-x2_1/input.webp",
+        "prediction": "opensr_bilinear-x2_1/prediction.webp",
+        "reference": "opensr_bilinear-x2_1/reference.webp"
+      },
+      "provenance": "opensr_bilinear-x2_1/provenance.json"
+    },
+    {
+      "recipe_id": "opensr/bilinear-x4@1",
+      "slug": "opensr_bilinear-x4_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "opensr_bilinear-x4_1/input.webp",
+        "prediction": "opensr_bilinear-x4_1/prediction.webp",
+        "reference": "opensr_bilinear-x4_1/reference.webp"
+      },
+      "provenance": "opensr_bilinear-x4_1/provenance.json"
+    },
+    {
+      "recipe_id": "opensr/ldsrs2-rgbn-x4-ddim100-histogram@1",
+      "slug": "opensr_ldsrs2-rgbn-x4-ddim100-histogram_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "opensr_ldsrs2-rgbn-x4-ddim100-histogram_1/input.webp",
+        "prediction": "opensr_ldsrs2-rgbn-x4-ddim100-histogram_1/prediction.webp",
+        "reference": "opensr_ldsrs2-rgbn-x4-ddim100-histogram_1/reference.webp"
+      },
+      "provenance": "opensr_ldsrs2-rgbn-x4-ddim100-histogram_1/provenance.json"
+    },
+    {
+      "recipe_id": "opensr/ldsrs2-rgbn-x4@1",
+      "slug": "opensr_ldsrs2-rgbn-x4_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "opensr_ldsrs2-rgbn-x4_1/input.webp",
+        "prediction": "opensr_ldsrs2-rgbn-x4_1/prediction.webp",
+        "reference": "opensr_ldsrs2-rgbn-x4_1/reference.webp"
+      },
+      "provenance": "opensr_ldsrs2-rgbn-x4_1/provenance.json"
+    },
+    {
+      "recipe_id": "opensr/sen2sr-lite-rgbn-x4@1",
+      "slug": "opensr_sen2sr-lite-rgbn-x4_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "opensr_sen2sr-lite-rgbn-x4_1/input.webp",
+        "prediction": "opensr_sen2sr-lite-rgbn-x4_1/prediction.webp",
+        "reference": "opensr_sen2sr-lite-rgbn-x4_1/reference.webp"
+      },
+      "provenance": "opensr_sen2sr-lite-rgbn-x4_1/provenance.json"
+    },
+    {
+      "recipe_id": "opensr/sen2sr-rgbn-x4@1",
+      "slug": "opensr_sen2sr-rgbn-x4_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "opensr_sen2sr-rgbn-x4_1/input.webp",
+        "prediction": "opensr_sen2sr-rgbn-x4_1/prediction.webp",
+        "reference": "opensr_sen2sr-rgbn-x4_1/reference.webp"
+      },
+      "provenance": "opensr_sen2sr-rgbn-x4_1/provenance.json"
+    },
+    {
+      "recipe_id": "opensr/srgan-rgbn-x4@1",
+      "slug": "opensr_srgan-rgbn-x4_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "opensr_srgan-rgbn-x4_1/input.webp",
+        "prediction": "opensr_srgan-rgbn-x4_1/prediction.webp",
+        "reference": "opensr_srgan-rgbn-x4_1/reference.webp"
+      },
+      "provenance": "opensr_srgan-rgbn-x4_1/provenance.json"
+    },
+    {
+      "recipe_id": "remicres/sr4rs-rgbn-x4@1",
+      "slug": "remicres_sr4rs-rgbn-x4_1",
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "seed": 0,
+      "assets": {
+        "input": "remicres_sr4rs-rgbn-x4_1/input.webp",
+        "prediction": "remicres_sr4rs-rgbn-x4_1/prediction.webp",
+        "reference": "remicres_sr4rs-rgbn-x4_1/reference.webp"
+      },
+      "provenance": "remicres_sr4rs-rgbn-x4_1/provenance.json"
+    },
+    {
+      "recipe_id": "satlas/esrgan-rgb-tci-x4@1",
+      "slug": "satlas_esrgan-rgb-tci-x4_1",
+      "sample_id": "37609_49608/frame-0",
+      "dataset_id": "satlas-super-resolution/small_val_set",
+      "dataset_revision": "9f5ec0dce5dd471fc1d85bdd37a5b4e4bc985847019d468e0ed37f8adcc22856",
+      "seed": null,
+      "assets": {
+        "input": "satlas_esrgan-rgb-tci-x4_1/input.webp",
+        "prediction": "satlas_esrgan-rgb-tci-x4_1/prediction.webp",
+        "reference": "satlas_esrgan-rgb-tci-x4_1/reference.webp"
+      },
+      "provenance": "satlas_esrgan-rgb-tci-x4_1/provenance.json"
+    }
+  ]
+}

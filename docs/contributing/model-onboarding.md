@@ -20,8 +20,10 @@ scope and should remain an issue for a future catalog revision.
 4. Convert weights with `opensr-zoo maintain convert pytorch`, inspect provenance, and add
    SHA-256, size, format, revision, and license. Weight redistribution needs
    explicit permission where the upstream license does not grant it.
-5. Add a model card with intended use, training data, limitations, citation,
-   and overlap. Add contract tests and frozen-input parity evidence.
+5. Follow the [model-page recipe and template](model-page.md) to add the overview,
+   comparison slider, usage example, and source links. Record training data,
+   limitations, and overlap in the recipe/provenance. Add contract tests and
+   frozen-input parity evidence.
 6. Keep status `experimental` until parity, artifact, license, and runtime
    checks pass. Promote only then.
 

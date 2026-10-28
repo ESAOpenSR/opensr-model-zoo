@@ -9,7 +9,6 @@ recipes through a common Python API. The current scope is RGB-NIR reflectance, w
 rendered RGB for models whose upstream architecture requires it. Temporal,
 ten-band, and fusion models are outside this release.
 
-This is an OpenSR project, not an official ESA product.
 
 ## Installation
 

@@ -1,58 +1,19 @@
-# OpenSR-Test pilot validation
+# OpenSR-Test pilot
 
-The first observed-imagery pilot completed on **27 October 2026** with
-`opensr-test==1.3.3`: **84 model/sample evaluations**, comprising nine 4× recipes
-and five 2× recipes over six validation tiles. Every evaluation returned finite
-values for all seven metrics. The 2× cohort records a registration warning for
-Evoland Sen2Venus on the SOAP tile; inspect that case before interpreting its
-harmonized correctness scores.
+Six SEN2NEON sites, seed 0: **84 evaluations** on 27 October 2026. All seven
+OpenSR-Test metrics were finite. Training overlap is unknown; this is a small
+pilot, not a model ranking.
 
-This is a bounded pilot with one seed (`0`), not a representative full-dataset
-evaluation or a model ranking. Training overlap remains unknown. The earlier
-three-tile examples on the performance page use a separate protocol.
+**Registration warning:** Evoland Sen2Venus on SOAP. Check the
+[per-sample results](reports/opensr-test/pilot-v1/x2/per_sample.csv) before using
+that model's harmonized correctness scores.
 
-## Data and metric protocol
+[Visual comparisons](performance.md) · [Full evidence](reports/opensr-test/README.md)
 
-The frozen selection is in
-[`src/opensr_model_zoo/benchmark/data/sen2neon-pilot.json`](https://github.com/ESAOpenSR/opensr-model-zoo/blob/main/src/opensr_model_zoo/benchmark/data/sen2neon-pilot.json).
-It uses the SEN2NEON revision
-`9f076b4f652aa0253127d382dcb6e611250b2e67`, with observed Sentinel-2 L2A inputs
-and canonical NEON references. The six sites are HARV, JORN, KONZ, MLBS, OSBS,
-and SOAP. All prepared input/reference pixels are valid. One initial HARV
-candidate was excluded after raster mask inspection found holes.
+## Results
 
-| Cohort | LR crop | Reference | Border excluded | Cases |
-| --- | --- | --- | --- | --- |
-| 4× | 128×128 at 10 m | 512×512 at 2.5 m | 64 output pixels | 54 |
-| 2× | 64×64 at 10 m | 128×128 at 5 m, area averaged from 2.5 m | 16 output pixels | 30 |
-
-Models run in float32 on RTX 3090 GPUs; metric computation runs on CPU. Every
-model's tensors are reordered to B04/B03/B02/B08 for evaluation. Satlas consumes
-rendered TCI and is excluded from these reflectance cohorts.
-
-The evaluator passes `Config` to `Metrics(params=...)`.
-It uses the upstream pixel aggregation, PCC registration, L1 reflectance and
-synthesis distances, SAD spectral distance, normalized-difference correctness,
-and softmin correctness normalization. Spectral and spatial harmonization are
-enabled explicitly in the recorded effective configuration. Unknown settings,
-partially invalid masks, nonfinite tensors, and missing/nonfinite metric values
-fail validation. Registration and numerical warnings remain in the CSV and
-manifest; no alternative metric or registration method is substituted.
-
-`spectral` is in degrees; the native benchmark's SAM is in radians. `spatial`
-measures displacement on the LR grid. Correctness `ha_metric`, `om_metric`, and
-`im_metric` are the upstream hallucination, omission, and improvement fractions.
-PSNR/SSIM/SAM score the raw model predictions; OpenSR-Test's synthesis and
-correctness metrics use its harmonization procedure. Their values answer
-different questions and should be interpreted together.
-
-## Six-site results
-
-The tables report means across six sites in recipe-ID order. Full values,
-population standard deviations, individual cases, timing, warning diagnostics,
-source hashes, effective settings, and runtime versions are in the
-[saved evidence](https://github.com/ESAOpenSR/opensr-model-zoo/tree/main/docs/reports/opensr-test/pilot-v1).
-Large tensors and prediction files remain in ignored local storage.
+Means across six sites. PSNR scores the raw prediction; the other columns use
+OpenSR-Test's harmonization. Hallucination and improvement are fractions.
 
 ### 4× cohort
 
@@ -79,34 +40,19 @@ Large tensors and prediction files remain in ignored local storage.
 | `opensr/bicubic-x2@1` | 31.139 | 0.00354 | 0.758 | 0.079 | 0.534 |
 | `opensr/bilinear-x2@1` | 31.480 | 0.00520 | 1.062 | 0.078 | 0.523 |
 
-## Local reproduction commands
+## Evaluation setup
 
-```bash
-uv sync --locked --group dev --extra opensr-test
-uv run opensr-zoo sen2neon pilot data/validation-raw \
-  data/validation-prepared --download
-uv run opensr-zoo download --all --cache-dir artifacts/cache
-for cohort in x4 x2; do
-  OMP_NUM_THREADS=2 MPLCONFIGDIR=/tmp/opensr-matplotlib \
-  uv run --no-sync opensr-zoo evaluate \
-    data/validation-prepared/$cohort/benchmark.json \
-    benchmark-results/opensr-test/$cohort \
-    --device cuda --cache-dir artifacts/cache --local-files-only
-done
-```
+| | 4× | 2× |
+| --- | --- | --- |
+| Sites | HARV, JORN, KONZ, MLBS, OSBS, SOAP | Same six sites |
+| Input | 128 × 128 at 10 m | 64 × 64 at 10 m |
+| Reference | 512 × 512 at 2.5 m | 128 × 128 at 5 m |
+| Excluded border | 64 output pixels | 16 output pixels |
 
-Preparation and evaluation require fresh output directories. Reuse the pinned
-raw download by omitting `--download` when preparing another output directory.
-The result directory contains OpenSR-Test CSVs and its manifest, plus
-`inference/` with the native benchmark, actual predictions, and timing records.
-The evaluation identity hashes the resolved data/recipe protocol, library
-version, effective metric settings, band order, mask policy, and evaluator
-source. Each row carries that identity.
+RGB-NIR reflectance · RTX 3090 · float32 · `opensr-test==1.3.3`.
+Satlas uses rendered RGB and is excluded. The earlier
+[three-tile benchmark](performance.md#measured-results) uses a separate protocol.
 
-## Validation triggers and runtime coverage
-
-Run this validation locally when a dataset or recipe changes, recording the
-data and recipe revisions. Hosted CI does not run GPU evaluation. The local
-Mamba run matched exactly on two supported full patches; see the
-[parity evidence](https://github.com/ESAOpenSR/opensr-model-zoo/blob/main/docs/reports/parity/sen2sr-mamba.json).
-Other model/runtime parity checks remain separate release requirements.
+[4× run record](reports/opensr-test/pilot-v1/x4/manifest.json) ·
+[2× run record](reports/opensr-test/pilot-v1/x2/manifest.json) ·
+[Run an evaluation](benchmarks-sen2neon.md)

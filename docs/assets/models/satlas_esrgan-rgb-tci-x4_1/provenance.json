@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "recipe_id": "satlas/esrgan-rgb-tci-x4@1",
+  "dataset_id": "satlas-super-resolution/small_val_set",
+  "dataset_revision": "9f5ec0dce5dd471fc1d85bdd37a5b4e4bc985847019d468e0ed37f8adcc22856",
+  "sample_id": "37609_49608/frame-0",
+  "synthetic": false,
+  "sample": {
+    "tile": "37609_49608",
+    "input_frame": 0,
+    "input_shape": [
+      32,
+      32,
+      3
+    ],
+    "output_shape": [
+      128,
+      128,
+      3
+    ]
+  },
+  "source": {
+    "dataset": "Satlas Super Resolution small_val_set",
+    "url": "https://storage.googleapis.com/satlas-satellite-super-resolution/super_resolution_small_val_set_2024-01-09.tar",
+    "archive_sha256": "9f5ec0dce5dd471fc1d85bdd37a5b4e4bc985847019d468e0ed37f8adcc22856",
+    "upstream_repository": "https://github.com/allenai/satlas-super-resolution",
+    "upstream_revision": "3e67973f6746bedbd91cc032b4888574980e1daf",
+    "attribution_source": "https://github.com/allenai/satlas-super-resolution/blob/3e67973f6746bedbd91cc032b4888574980e1daf/README.md#s2-naip-dataset-structure",
+    "license_notes": "The upstream README attributes Sentinel-2 to the ESA Copernicus Sentinel Data Legal Notice and NAIP to USGS public domain; these source attributions do not extend to the checkpoint. Dataset packaging and model code are from the Apache-2.0 upstream repository.",
+    "processing_level": "L1C-TCI",
+    "input_units": "uint8 rendered RGB TCI",
+    "reference": "NAIP RGB validation target supplied with the same frozen sample",
+    "members": {
+      "input": {
+        "path": "small_val_set/sentinel2/37609_49608/tci.png",
+        "sha256": "81f85f9ba2ef3aefffaa894d2640e230844672117db906e46dd80432effe48f7",
+        "size_bytes": 37682,
+        "crop": "rows 0:32, all 32 columns, RGB channels; frame 0 of the 1024x32 vertical time series"
+      },
+      "reference": {
+        "path": "small_val_set/naip/m_4007659_sw_18_060_20190927/37609_49608/rgb.png",
+        "sha256": "96eb3546e0a86fc807b28601e9c742d6f4f3b7449f17c4c52939e9177280777f",
+        "size_bytes": 30921
+      }
+    }
+  },
+  "weights": {
+    "path": "artifacts/satlas/esrgan_1S2.pth",
+    "size_bytes": 134060750,
+    "sha256": "b4b1bb6c7d1b926083fc01edc039f1b143c743f9c403cd09878331765c20c405",
+    "state": "params_ema",
+    "redistribution_status": "unresolved; source-only checkpoint"
+  },
+  "inference": {
+    "preprocessing": "divide_uint8_tci_by_255",
+    "weights_selection": "params_ema",
+    "device": "cpu",
+    "command": "opensr-zoo maintain docs satlas-example --archive scratch/satlas/small_val.tar --output artifacts/satlas-doc-check --artifact-dir artifacts/satlas"
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu126",
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39"
+  },
+  "display": {
+    "input_resize": "nearest to 128x128",
+    "prediction": "clipped [0,1], multiplied by 255, uint8 floor cast",
+    "reference": "NAIP RGB target; qualitative context only"
+  },
+  "artifacts": {
+    "input.webp": "ce9755cd4cab07eb42e2b5368aff18c8a175c8268110f588119529cf9c691ed6",
+    "prediction.webp": "91022c0b7dd0d3191d97caeacce835d106c1109ece1f17908f29c2fb81994d9e",
+    "reference.webp": "46beb2a46e8196ab74b9ea7dee8d29f95814c93d8c92c7cc6df48af8c24aa34c"
+  }
+}

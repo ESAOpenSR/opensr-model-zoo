@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "executed_at_utc": "2026-10-28T16:24:27.288664+00:00",
+  "scope": "Concise model pages, neutral accents, observed comparison sliders for every recipe, and visual results. No new benchmark scores or numerical parity claims.",
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": "2.6.0+cu126",
+      "pillow": "12.3.0",
+      "mkdocs": "1.6.1",
+      "mkdocs-material": "9.8.0",
+      "pytest": "8.4.2",
+      "ruff": "0.17.3"
+    }
+  },
+  "changes": {
+    "model_pages": 12,
+    "recipes_with_sliders": 15,
+    "results_sliders": 15,
+    "duplicate_static_comparisons_removed": true,
+    "reference_in_same_viewer": true,
+    "palette": "navy, white, gray",
+    "catalog_generator_matches_checked_page": true
+  },
+  "checks": [
+    {
+      "command": ".venv/bin/ruff check src tests examples",
+      "passed": true
+    },
+    {
+      "command": ".venv/bin/ruff format --check src tests examples",
+      "passed": true
+    },
+    {
+      "command": ".venv/bin/mkdocs build --strict",
+      "passed": true
+    },
+    {
+      "command": "node --check docs/assets/site.js",
+      "passed": true
+    },
+    {
+      "command": ".venv/bin/python -m build --wheel --no-isolation --outdir /tmp/opensr-docs-refresh-wheel",
+      "passed": true
+    },
+    {
+      "command": "git diff --check",
+      "passed": true
+    }
+  ],
+  "suite": {
+    "command": ".venv/bin/pytest -q -rs --junitxml=scratch/docs-model-pages/tests.xml",
+    "passed": 101,
+    "skipped": 18,
+    "failures": 0,
+    "errors": 0,
+    "warnings": 6,
+    "warning_scope": "Upstream scikit-image numpy.fix deprecation warnings. Optional artifact/upstream-reference checks remain skipped, not passed."
+  },
+  "browser": {
+    "browser": "153.0.8010.12",
+    "executed_at_utc": "2026-10-28T16:21:29.669Z",
+    "viewports_css_px": [
+      1440,
+      900,
+      390,
+      320
+    ],
+    "page_viewport_checks": 64,
+    "routes": [
+      "/",
+      "/examples/",
+      "/models/bicubic/",
+      "/models/bilinear/",
+      "/models/catalog/",
+      "/models/evoland-s2v2/",
+      "/models/evoland-x2/",
+      "/models/evoland-x4/",
+      "/models/ldsr-s2/",
+      "/models/satlas/",
+      "/models/sen2sr-lite/",
+      "/models/sen2sr/",
+      "/models/sr4rs/",
+      "/models/srgan/",
+      "/models/swin2-mose/",
+      "/performance/"
+    ],
+    "local_links_checked": 59,
+    "missing_images": [],
+    "whole_page_overflow": false,
+    "javascript_errors": [],
+    "broken_links": [],
+    "interaction_coverage": [
+      "keyboard Home/End/arrows",
+      "pointer dragging",
+      "touch split",
+      "prediction/reference toggles",
+      "profile/scale disclosure controls",
+      "model filtering",
+      "JavaScript-disabled side-by-side fallback",
+      "light and dark themes"
+    ],
+    "captures": "Local ignored scratch/docs-model-pages; no hosted deployment verified."
+  },
+  "assets": {
+    "index": "docs/assets/models/index.json",
+    "recipes": [
+      "evoland/s2v2x2-rgbn-x2@1",
+      "evoland/wsx2-rgbn-x2@1",
+      "evoland/wsx4-rgbn-x4@1",
+      "implab/swin2-mose-sen2venus-rgbn-x2@1",
+      "opensr/bicubic-x2@1",
+      "opensr/bicubic-x4@1",
+      "opensr/bilinear-x2@1",
+      "opensr/bilinear-x4@1",
+      "opensr/ldsrs2-rgbn-x4-ddim100-histogram@1",
+      "opensr/ldsrs2-rgbn-x4@1",
+      "opensr/sen2sr-lite-rgbn-x4@1",
+      "opensr/sen2sr-rgbn-x4@1",
+      "opensr/srgan-rgbn-x4@1",
+      "remicres/sr4rs-rgbn-x4@1",
+      "satlas/esrgan-rgb-tci-x4@1"
+    ],
+    "sen2neon": "14 recipes; saved seed-0 HARV predictions from the existing opensr-named-pilot; original hashes, runtime, and input-derived display stretch retained.",
+    "satlas": "One genuine frozen upstream small_val_set TCI frame and NAIP target; local cached CPU inference. Maintained exporter reproduces all three checked image hashes exactly. Separate rendered-RGB protocol, no reflectance cohort scores.",
+    "asset_hashes_verified": true
+  },
+  "wheel": {
+    "outside_checkout": true,
+    "catalog_cards": 12,
+    "new_exporter_imports": true,
+    "cli_help": true
+  },
+  "limitations": [
+    "Local Chromium coverage only; full accessibility audit and cross-browser validation remain open.",
+    "Strict MkDocs build passes with the installed Material end-of-life notice.",
+    "Historical numerical reports and image assets are retained; no model ranking or complete release certification is inferred.",
+    "DNS, hosting, HTTPS, and publication status remain unchanged."
+  ]
+}

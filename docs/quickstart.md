@@ -1,7 +1,7 @@
 # Quickstart
 
-This example runs deterministic bilinear interpolation on a synthetic tensor
-to check the input and output contracts. It provides no image-quality evidence.
+Run a CPU example with bilinear interpolation. The input is synthetic; use an
+observed Sentinel-2 crop for your own imagery.
 
 ## CPU inference
 
@@ -56,9 +56,8 @@ learned GPU example, replace the recipe and device after checking the catalog:
 model = load_model("opensr/sen2sr-lite-rgbn-x4@1", device="cuda")
 ```
 
-Use a real L2A Sentinel-2 crop with float32 reflectance for scientific work.
-The [SEN2NEON guide](benchmarks-sen2neon.md) describes observed-data preparation,
-and [Examples](examples.md) explains the provenance required for image previews.
+For observed inputs, follow the [SEN2NEON guide](benchmarks-sen2neon.md).
+Browse [model pages](models/catalog.md) for examples and input requirements.
 
 ## Checkpoint caching and offline inference
 

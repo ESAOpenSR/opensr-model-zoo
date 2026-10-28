@@ -1,0 +1,44 @@
+---
+hide:
+  - toc
+---
+
+# {{MODEL_NAME}}
+
+{{OVERVIEW_IN_TWO_SENTENCES}}
+
+{{INPUT_SUMMARY}}
+
+## Results
+
+<figure class="model-result">
+<div class="comparison" data-before-after data-prediction-src="../../assets/models/{{ASSET_SLUG}}/prediction.webp" data-reference-src="../../assets/models/{{ASSET_SLUG}}/reference.webp" data-reference-alt="{{REFERENCE_NAME}} reference for {{MODEL_NAME}}">
+  <div class="before-after">
+    <img src="../../assets/models/{{ASSET_SLUG}}/input.webp" alt="Observed input for {{MODEL_NAME}}" width="{{IMAGE_SIZE}}" height="{{IMAGE_SIZE}}" loading="lazy" decoding="async">
+    <img class="before-after-after" src="../../assets/models/{{ASSET_SLUG}}/prediction.webp" alt="{{MODEL_NAME}} prediction" width="{{IMAGE_SIZE}}" height="{{IMAGE_SIZE}}" loading="lazy" decoding="async">
+    <div class="comparison-labels"><span>Input</span><span data-comparison-label>Prediction</span></div>
+  </div>
+  <div class="comparison-views" role="group" aria-label="Comparison view">
+    <button type="button" data-comparison-view="prediction" aria-pressed="true">Prediction</button>
+    <button type="button" data-comparison-view="reference" aria-pressed="false">Reference</button>
+  </div>
+  <label class="comparison-control">Drag to compare
+    <input type="range" min="0" max="100" value="50" aria-label="{{MODEL_NAME}} comparison split">
+  </label>
+</div>
+<figcaption>{{SCENE_NAME}} · {{REFERENCE_NAME}} · <a href="../../assets/models/{{ASSET_SLUG}}/provenance.json">Image record</a></figcaption>
+</figure>
+
+## Use
+
+```python
+from opensr_model_zoo import load_model
+
+model = load_model("{{RECIPE_ID}}", device="{{DEVICE}}")
+```
+
+[Quickstart](../quickstart.md)
+
+## Links
+
+[Source](https://github.com/ESAOpenSR/opensr-model-zoo/tree/main/src/opensr_model_zoo/models/{{FAMILY}}) · [Recipe](https://github.com/ESAOpenSR/opensr-model-zoo/blob/main/src/opensr_model_zoo/catalog/{{RECIPE_FILE}}) · [Paper or upstream project]({{UPSTREAM_URL}})
