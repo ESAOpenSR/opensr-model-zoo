@@ -1,0 +1,17 @@
+{
+  "original_sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a",
+  "state_key": "state_dict",
+  "selected_weights": "regular",
+  "conversion_settings": {
+    "checkpoint": "canonical-v1"
+  },
+  "format": "safetensors",
+  "output_sha256": "5f4e8680a56c68a9eb8b6de2a3ba42f87c3792ffc2f7e39dbdb6042273cea9eb",
+  "output_size": 1130479968,
+  "recipe_id": "opensr/ldsrs2-rgbn-x4@1",
+  "tensor_count": 830,
+  "all_tensors_exactly_equal": true,
+  "strict_native_state_loading": true,
+  "includes_inference_and_ema_buffers": true,
+  "publication_state": "local-only"
+}

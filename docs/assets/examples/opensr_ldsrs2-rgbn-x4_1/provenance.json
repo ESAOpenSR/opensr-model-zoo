@@ -1,0 +1,121 @@
+{
+  "dataset_id": "isp-uv-es/SEN2NEON",
+  "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+  "sample_id": "2022_HARV_7__4_3.tif",
+  "recipe_id": "opensr/ldsrs2-rgbn-x4@1",
+  "seed": 0,
+  "input": "/work/code/opensr-model-zoo/data/opensr-test-pilot-v1/x4/000003_2022_HARV_7__4_3.tif.input.pt",
+  "reference": "/work/code/opensr-model-zoo/data/opensr-test-pilot-v1/x4/000003_2022_HARV_7__4_3.tif.reference.pt",
+  "prediction": "predictions/opensr__ldsrs2-rgbn-x4@1/b1b47eac6b2bf52b013d__seed0.pt",
+  "input_bands": [
+    "B04",
+    "B03",
+    "B02",
+    "B08"
+  ],
+  "reference_bands": [
+    "B04",
+    "B03",
+    "B02",
+    "B08"
+  ],
+  "recipe_bands": [
+    "B04",
+    "B03",
+    "B02",
+    "B08"
+  ],
+  "benchmark_hash": "7340098d082c47766ef0eeaf923fd8fc6dc67cbcb9e9c4c75c6637669d87ecf3",
+  "recipe_sha256": "d286f3ea4cecf2d6ba5825929b9b41e957bfb70435a65d7b44a7deef86231bba",
+  "artifacts": {
+    "weights": {
+      "origin": "huggingface-hub",
+      "filename": "opensr-ldsrs2_v1_0_0.ckpt",
+      "sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a",
+      "size": 1130715795,
+      "format": "pytorch",
+      "repo_id": "simon-donike/RS-SR-LTDF",
+      "revision": "511900900f6b94e0315d47f21f2a9d988d9d238d",
+      "url": null,
+      "source_sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a"
+    }
+  },
+  "effective_recipe_sha256": "8818e80f15062ddda225609fbebe0787e70f8fac5cc51ce047c938a358ebeaf3",
+  "conditioning": {
+    "mode": "RGBN",
+    "bands": [
+      "B04",
+      "B03",
+      "B02",
+      "B08"
+    ]
+  },
+  "input_resolution_m": 10.0,
+  "output_resolution_m": 2.5,
+  "runtime": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+    "package_version": "0.1.0.dev0",
+    "torch": "2.6.0+cu126",
+    "cuda_runtime": "12.6",
+    "hardware": "NVIDIA GeForce RTX 3090",
+    "packages": {
+      "opensr-model-zoo": "0.1.0.dev0",
+      "torch": "2.6.0+cu126",
+      "torchvision": "0.21.0+cu126",
+      "numpy": "2.5.4",
+      "diffusers": "0.35.2",
+      "mamba-ssm": "2.2.5",
+      "timm": "1.0.15",
+      "onnx": "1.23.2",
+      "scikit-image": "0.25.2",
+      "rasterio": "1.5.2",
+      "safetensors": "0.8.0",
+      "huggingface-hub": "0.36.2",
+      "opensr-test": "1.3.3",
+      "satalign": "0.1.17",
+      "opencv-python": "5.0.0.93",
+      "scipy": "1.18.1"
+    },
+    "runtime_lock_sha256": "55084db60f33c8ab2cd9756d2b6c07f36dc05b0a10f77a34f9856bd70a956e4e",
+    "precision": "float32",
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false,
+    "driver": [
+      "580.178.04"
+    ]
+  },
+  "synthetic": false,
+  "valid_mask": "/work/code/opensr-model-zoo/data/opensr-test-pilot-v1/x4/000003_2022_HARV_7__4_3.tif.valid_mask.pt",
+  "reference_mask": "/work/code/opensr-model-zoo/data/opensr-test-pilot-v1/x4/000003_2022_HARV_7__4_3.tif.reference_mask.pt",
+  "quality_checks": {
+    "all_tensor_values_finite": true,
+    "declared_masks_complete": true
+  },
+  "export": {
+    "channels": {
+      "rgb_bands": [
+        "B04",
+        "B03",
+        "B02"
+      ],
+      "indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    "stretch": "shared-input-valid-pixels-1-99-percentile",
+    "lo": [
+      0.014700000174343586,
+      0.032999999821186066,
+      0.0142000000923872
+    ],
+    "hi": [
+      0.1143999993801117,
+      0.11123399794101717,
+      0.08583400011062624
+    ]
+  }
+}

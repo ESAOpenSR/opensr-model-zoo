@@ -1,0 +1,15 @@
+{
+  "recipe_id": "opensr/srgan-rgbn-x4@1",
+  "upstream_repository": "https://github.com/ESAOpenSR/SRGAN",
+  "upstream_revision": "7bcb73b358d3990c0d70cbd66201afdd9dd2cdf3",
+  "artifact_repository": "simon-donike/SR-GAN",
+  "artifact_revision": "7b984f30dbba26198ebf55527a1ee7126fa68d71",
+  "artifact_filename": "RGB-NIR_4band_inference.ckpt",
+  "artifact_size": 47106784,
+  "artifact_sha256": "d55eee785ab5ff7d2d53d2c674d70461037722027020da2d2385b0fe43834281",
+  "input": {"seed": 123, "shapes": [[1, 4, 8, 8], [1, 4, 9, 11]], "units": "reflectance"},
+  "runtime": {"device": "cpu", "python": "3.12", "torch": "2.6.0"},
+  "generator_parity": {"max_abs": 0.0, "mean_abs": 0.0},
+  "official_inference_parity": {"histogram_match": true, "max_abs": 0.0, "mean_abs": 0.0},
+  "weight_license": "undocumented-upstream"
+}

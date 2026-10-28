@@ -1,0 +1,1328 @@
+{
+  "schema_version": 1,
+  "status": "measured-sen2neon-gallery",
+  "dataset_id": "isp-uv-es/SEN2NEON",
+  "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+  "recipe_id": "opensr/sen2sr-lite-rgbn-x4@1",
+  "seed": 0,
+  "scope": "Observed input, saved model prediction, and aligned NEON reference; visual comparison only.",
+  "items": [
+    {
+      "sample_id": "2021_OSBS_6__3_1.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "recipe_id": "opensr/sen2sr-lite-rgbn-x4@1",
+      "seed": 0,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "bands": [
+        "B04",
+        "B03",
+        "B02"
+      ],
+      "display_stretch": {
+        "method": "valid-input-percentiles",
+        "percentiles": [
+          1,
+          99
+        ],
+        "lo": [
+          0.0014830000023357583,
+          0.0017999999690800905,
+          0.007083000075072052
+        ],
+        "hi": [
+          0.17399999499320984,
+          0.1604680018126965,
+          0.12743399649858475
+        ]
+      },
+      "detail_crop_pixels_reference": {
+        "x0": 96,
+        "y0": 144,
+        "x1": 160,
+        "y1": 208
+      },
+      "detail_zoom": 8.0,
+      "quality_checks": {
+        "all_tensor_values_finite": true,
+        "input_and_reference_masks_complete": true
+      },
+      "source_tensors": {
+        "input": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.input.pt",
+        "reference": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.reference.pt",
+        "prediction": "inference/predictions/opensr__sen2sr-lite-rgbn-x4@1/58f0dbfcd1f4e3fb7e55__seed0.pt"
+      },
+      "masks": {
+        "valid_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.valid_mask.pt",
+          "sha256": "3b6661adfc77d0124f29a1b3eddbc8b9faafa52f24f9fa00e0dd94c2657d7579",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ]
+        },
+        "reference_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.reference_mask.pt",
+          "sha256": "b89e30fbd3a244d73031636dda27f4cb369fa27da3d8a91c29a63593304fb5cb",
+          "shape": [
+            1,
+            1,
+            512,
+            512
+          ]
+        }
+      },
+      "sample": {
+        "crop": {
+          "x": 64,
+          "y": 64,
+          "size_lr": 128,
+          "size_hr": 512
+        },
+        "input_grid": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            397220.0,
+            0.0,
+            -10.0,
+            3285680.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            397220.0,
+            3284400.0,
+            398500.0,
+            3285680.0
+          ]
+        },
+        "reference_grid": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            397220.0,
+            0.0,
+            -2.5,
+            3285680.0
+          ],
+          "width": 512,
+          "height": 512,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            397220.0,
+            3284400.0,
+            398500.0,
+            3285680.0
+          ]
+        },
+        "source_hashes": {
+          "lr": "222842dbf33e391eec289fed8b199578a207ef142b64b7f027d7376cbd8caeb6",
+          "hr": "a76540b7c896eec6acdefd9d171a69dc138f3cbcb8083f9f006671002de50994"
+        },
+        "lr_source": "s2_l2a_10m/2021_OSBS_6__3_1.tif",
+        "hr_source": "neon_2.5m_linearized/2021_OSBS_6__3_1.tif"
+      },
+      "frozen_protocol_sample": {
+        "id": "2021_OSBS_6__3_1.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 2.5,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2021_OSBS_6__3_1.tif",
+        "hr_source": "neon_2.5m_linearized/2021_OSBS_6__3_1.tif",
+        "crop": {
+          "x": 64,
+          "y": 64,
+          "size_lr": 128,
+          "size_hr": 512
+        },
+        "reference_resampling": "none",
+        "source_hashes": {
+          "lr": "222842dbf33e391eec289fed8b199578a207ef142b64b7f027d7376cbd8caeb6",
+          "hr": "a76540b7c896eec6acdefd9d171a69dc138f3cbcb8083f9f006671002de50994"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            396580.0,
+            0.0,
+            -10.0,
+            3286320.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            396580.0,
+            3283760.0,
+            399140.0,
+            3286320.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            396580.0,
+            0.0,
+            -2.5,
+            3286320.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            396580.0,
+            3283760.0,
+            399140.0,
+            3286320.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            397220.0,
+            0.0,
+            -10.0,
+            3285680.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            397220.0,
+            3284400.0,
+            398500.0,
+            3285680.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            397220.0,
+            0.0,
+            -2.5,
+            3285680.0
+          ],
+          "width": 512,
+          "height": 512,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            397220.0,
+            3284400.0,
+            398500.0,
+            3285680.0
+          ]
+        }
+      },
+      "logical_paths": {
+        "input": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.input.pt",
+        "reference": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.reference.pt",
+        "valid_mask": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.valid_mask.pt",
+        "reference_mask": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.reference_mask.pt",
+        "prediction": "inference/predictions/opensr__sen2sr-lite-rgbn-x4@1/58f0dbfcd1f4e3fb7e55__seed0.pt",
+        "samples_manifest": "data/opensr-test-pilot-v1/x4/samples.json"
+      },
+      "benchmark_hash": "7340098d082c47766ef0eeaf923fd8fc6dc67cbcb9e9c4c75c6637669d87ecf3",
+      "runtime": {
+        "python": "3.12.3",
+        "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+        "package_version": "0.1.0.dev0",
+        "torch": "2.6.0+cu126",
+        "cuda_runtime": "12.6",
+        "hardware": "NVIDIA GeForce RTX 3090",
+        "packages": {
+          "opensr-model-zoo": "0.1.0.dev0",
+          "torch": "2.6.0+cu126",
+          "torchvision": "0.21.0+cu126",
+          "numpy": "2.5.4",
+          "diffusers": "0.35.2",
+          "mamba-ssm": "2.2.5",
+          "timm": "1.0.15",
+          "onnx": "1.23.2",
+          "scikit-image": "0.25.2",
+          "rasterio": "1.5.2",
+          "safetensors": "0.8.0",
+          "huggingface-hub": "0.36.2",
+          "opensr-test": "1.3.3",
+          "satalign": "0.1.17",
+          "opencv-python": "5.0.0.93",
+          "scipy": "1.18.1"
+        },
+        "runtime_lock_sha256": "55084db60f33c8ab2cd9756d2b6c07f36dc05b0a10f77a34f9856bd70a956e4e",
+        "precision": "float32",
+        "matmul_allow_tf32": false,
+        "cudnn_allow_tf32": true,
+        "deterministic_algorithms": false,
+        "driver": [
+          "580.178.04"
+        ]
+      },
+      "artifacts": {
+        "model": {
+          "origin": "huggingface-hub",
+          "filename": "SEN2SRLite/NonReference_RGBN_x4/model.safetensor",
+          "sha256": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e",
+          "size": 2308216,
+          "format": "safetensors",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "url": null,
+          "source_sha256": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e"
+        },
+        "hard_constraint": {
+          "origin": "huggingface-hub",
+          "filename": "SEN2SRLite/NonReference_RGBN_x4/hard_constraint.safetensor",
+          "sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239",
+          "size": 1048656,
+          "format": "safetensors",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "url": null,
+          "source_sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239"
+        }
+      },
+      "recipe_sha256": "2fe30e4db1aadae05954ab71adf033d62dfd1cd90a88ce34f8ace38a00097173",
+      "effective_recipe_sha256": "a3fdd2a6463c809aaacc79de02f016ba287a07515a82a342f0bc8abeac529c74",
+      "synthetic": false,
+      "source_files": {
+        "input": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.input.pt",
+          "sha256": "579fa4d982afc1aaf482558a019e2a70d50bdf76c44999e3d00de73bb049746e",
+          "size": 1050014
+        },
+        "reference": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.reference.pt",
+          "sha256": "8bbc1ebad21fcb20a092165daca4a23f8c4197a93575b29aae7129df0d28afc0",
+          "size": 16778674
+        },
+        "valid_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.valid_mask.pt",
+          "sha256": "3b6661adfc77d0124f29a1b3eddbc8b9faafa52f24f9fa00e0dd94c2657d7579",
+          "size": 66999
+        },
+        "reference_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000002_2021_OSBS_6__3_1.tif.reference_mask.pt",
+          "sha256": "b89e30fbd3a244d73031636dda27f4cb369fa27da3d8a91c29a63593304fb5cb",
+          "size": 1050059
+        },
+        "prediction": {
+          "logical_path": "inference/predictions/opensr__sen2sr-lite-rgbn-x4@1/58f0dbfcd1f4e3fb7e55__seed0.pt",
+          "sha256": "94b898f2ad4a78640cfaa9762598273db89912c4cae665729826bd6df2639c7b",
+          "size": 4195712
+        }
+      },
+      "files": {
+        "figure_png": {
+          "path": "2021_OSBS_6__3_1.png",
+          "sha256": "638c1ad2845663361c34012be98e42c6004ded5aa4b60b887f8169781179ae61",
+          "size": 917302
+        },
+        "figure_webp": {
+          "path": "2021_OSBS_6__3_1.webp",
+          "sha256": "8265e4f45b209ffa8468f00132bff5c2459cc61b46fa3898f3e2f47a9782d683",
+          "size": 564122
+        },
+        "panels": {
+          "input": {
+            "path": "2021_OSBS_6__3_1.input.webp",
+            "sha256": "b40ed3914f21f63b0cb7aa9ed2c9861fb3e337cb88a184167c2cdfecf500b2d0",
+            "size": 39848
+          },
+          "prediction": {
+            "path": "2021_OSBS_6__3_1.prediction.webp",
+            "sha256": "ad402f26fd59d6ebb9dbbd1e09058e73b88720c89c43f55ab36eba33bdfdaba8",
+            "size": 258266
+          },
+          "reference": {
+            "path": "2021_OSBS_6__3_1.reference.webp",
+            "sha256": "1be7f75cda7fc116e4ddb900075bf3c7b279601102f0badea0f30b0e0bd0f070",
+            "size": 173078
+          }
+        },
+        "details": {
+          "input": {
+            "path": "2021_OSBS_6__3_1.input.detail.webp",
+            "sha256": "b7711d9012e0b8e1828f35e7e7ff2f936577b46a424d4436002d27ff354849db",
+            "size": 988
+          },
+          "prediction": {
+            "path": "2021_OSBS_6__3_1.prediction.detail.webp",
+            "sha256": "b023b4f647fe9fcadcf37bb2755473e989f016655096d20bc9ab686a49935d6f",
+            "size": 5974
+          },
+          "reference": {
+            "path": "2021_OSBS_6__3_1.reference.detail.webp",
+            "sha256": "d6090e38bc90c7aae94af3838ec9414cdb80e0e4fa1168b6738d9b042e39210e",
+            "size": 3980
+          }
+        }
+      },
+      "rendering": {
+        "matplotlib": "3.11.2",
+        "pillow": "12.3.0",
+        "numpy": "2.5.4",
+        "python": "3.12.3",
+        "figure_size_inches": [
+          16,
+          9
+        ],
+        "figure_dpi": 160,
+        "interpolation": "nearest",
+        "font_family": "DejaVu Sans",
+        "webp_lossless": true
+      }
+    },
+    {
+      "sample_id": "2022_HARV_7__4_3.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "recipe_id": "opensr/sen2sr-lite-rgbn-x4@1",
+      "seed": 0,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "bands": [
+        "B04",
+        "B03",
+        "B02"
+      ],
+      "display_stretch": {
+        "method": "valid-input-percentiles",
+        "percentiles": [
+          1,
+          99
+        ],
+        "lo": [
+          0.014700000174343586,
+          0.032999999821186066,
+          0.0142000000923872
+        ],
+        "hi": [
+          0.1143999993801117,
+          0.11123399794101717,
+          0.08583400011062624
+        ]
+      },
+      "detail_crop_pixels_reference": {
+        "x0": 272,
+        "y0": 288,
+        "x1": 336,
+        "y1": 352
+      },
+      "detail_zoom": 8.0,
+      "quality_checks": {
+        "all_tensor_values_finite": true,
+        "input_and_reference_masks_complete": true
+      },
+      "source_tensors": {
+        "input": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.input.pt",
+        "reference": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.reference.pt",
+        "prediction": "inference/predictions/opensr__sen2sr-lite-rgbn-x4@1/b1b47eac6b2bf52b013d__seed0.pt"
+      },
+      "masks": {
+        "valid_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.valid_mask.pt",
+          "sha256": "9ff8e948dee1e9deefe15d80a092d43a7cbe3a78226853422f733a14964cb273",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ]
+        },
+        "reference_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.reference_mask.pt",
+          "sha256": "d69b80ed004dc9200053f9655469d62b8a68ea8fbe5e0ee123357bca72565cbb",
+          "shape": [
+            1,
+            1,
+            512,
+            512
+          ]
+        }
+      },
+      "sample": {
+        "crop": {
+          "x": 64,
+          "y": 64,
+          "size_lr": 128,
+          "size_hr": 512
+        },
+        "input_grid": {
+          "crs": "EPSG:32618",
+          "transform": [
+            10.0,
+            0.0,
+            730300.0,
+            0.0,
+            -10.0,
+            4709140.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            730300.0,
+            4707860.0,
+            731580.0,
+            4709140.0
+          ]
+        },
+        "reference_grid": {
+          "crs": "EPSG:32618",
+          "transform": [
+            2.5,
+            0.0,
+            730300.0,
+            0.0,
+            -2.5,
+            4709140.0
+          ],
+          "width": 512,
+          "height": 512,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            730300.0,
+            4707860.0,
+            731580.0,
+            4709140.0
+          ]
+        },
+        "source_hashes": {
+          "lr": "d026dca6a0be6fe0f424d780b68e8cdf76f8a746fdaf6cec4006c881ac86c0e9",
+          "hr": "e23abb1b6cd5f569fd4abb01ef76b52457c55617b1368ab0868f98e4343655ba"
+        },
+        "lr_source": "s2_l2a_10m/2022_HARV_7__4_3.tif",
+        "hr_source": "neon_2.5m_linearized/2022_HARV_7__4_3.tif"
+      },
+      "frozen_protocol_sample": {
+        "id": "2022_HARV_7__4_3.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 2.5,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2022_HARV_7__4_3.tif",
+        "hr_source": "neon_2.5m_linearized/2022_HARV_7__4_3.tif",
+        "crop": {
+          "x": 64,
+          "y": 64,
+          "size_lr": 128,
+          "size_hr": 512
+        },
+        "reference_resampling": "none",
+        "source_hashes": {
+          "lr": "d026dca6a0be6fe0f424d780b68e8cdf76f8a746fdaf6cec4006c881ac86c0e9",
+          "hr": "e23abb1b6cd5f569fd4abb01ef76b52457c55617b1368ab0868f98e4343655ba"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32618",
+          "transform": [
+            10.0,
+            0.0,
+            729660.0,
+            0.0,
+            -10.0,
+            4709780.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            729660.0,
+            4707220.0,
+            732220.0,
+            4709780.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32618",
+          "transform": [
+            2.5,
+            0.0,
+            729660.0,
+            0.0,
+            -2.5,
+            4709780.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            729660.0,
+            4707220.0,
+            732220.0,
+            4709780.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32618",
+          "transform": [
+            10.0,
+            0.0,
+            730300.0,
+            0.0,
+            -10.0,
+            4709140.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            730300.0,
+            4707860.0,
+            731580.0,
+            4709140.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32618",
+          "transform": [
+            2.5,
+            0.0,
+            730300.0,
+            0.0,
+            -2.5,
+            4709140.0
+          ],
+          "width": 512,
+          "height": 512,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            730300.0,
+            4707860.0,
+            731580.0,
+            4709140.0
+          ]
+        }
+      },
+      "logical_paths": {
+        "input": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.input.pt",
+        "reference": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.reference.pt",
+        "valid_mask": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.valid_mask.pt",
+        "reference_mask": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.reference_mask.pt",
+        "prediction": "inference/predictions/opensr__sen2sr-lite-rgbn-x4@1/b1b47eac6b2bf52b013d__seed0.pt",
+        "samples_manifest": "data/opensr-test-pilot-v1/x4/samples.json"
+      },
+      "benchmark_hash": "7340098d082c47766ef0eeaf923fd8fc6dc67cbcb9e9c4c75c6637669d87ecf3",
+      "runtime": {
+        "python": "3.12.3",
+        "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+        "package_version": "0.1.0.dev0",
+        "torch": "2.6.0+cu126",
+        "cuda_runtime": "12.6",
+        "hardware": "NVIDIA GeForce RTX 3090",
+        "packages": {
+          "opensr-model-zoo": "0.1.0.dev0",
+          "torch": "2.6.0+cu126",
+          "torchvision": "0.21.0+cu126",
+          "numpy": "2.5.4",
+          "diffusers": "0.35.2",
+          "mamba-ssm": "2.2.5",
+          "timm": "1.0.15",
+          "onnx": "1.23.2",
+          "scikit-image": "0.25.2",
+          "rasterio": "1.5.2",
+          "safetensors": "0.8.0",
+          "huggingface-hub": "0.36.2",
+          "opensr-test": "1.3.3",
+          "satalign": "0.1.17",
+          "opencv-python": "5.0.0.93",
+          "scipy": "1.18.1"
+        },
+        "runtime_lock_sha256": "55084db60f33c8ab2cd9756d2b6c07f36dc05b0a10f77a34f9856bd70a956e4e",
+        "precision": "float32",
+        "matmul_allow_tf32": false,
+        "cudnn_allow_tf32": true,
+        "deterministic_algorithms": false,
+        "driver": [
+          "580.178.04"
+        ]
+      },
+      "artifacts": {
+        "model": {
+          "origin": "huggingface-hub",
+          "filename": "SEN2SRLite/NonReference_RGBN_x4/model.safetensor",
+          "sha256": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e",
+          "size": 2308216,
+          "format": "safetensors",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "url": null,
+          "source_sha256": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e"
+        },
+        "hard_constraint": {
+          "origin": "huggingface-hub",
+          "filename": "SEN2SRLite/NonReference_RGBN_x4/hard_constraint.safetensor",
+          "sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239",
+          "size": 1048656,
+          "format": "safetensors",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "url": null,
+          "source_sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239"
+        }
+      },
+      "recipe_sha256": "2fe30e4db1aadae05954ab71adf033d62dfd1cd90a88ce34f8ace38a00097173",
+      "effective_recipe_sha256": "a3fdd2a6463c809aaacc79de02f016ba287a07515a82a342f0bc8abeac529c74",
+      "synthetic": false,
+      "source_files": {
+        "input": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.input.pt",
+          "sha256": "4335f4303151422bf37225a7f0c1ce25548d9ab5b50ec87127c835609b2feae7",
+          "size": 1050014
+        },
+        "reference": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.reference.pt",
+          "sha256": "bb471ad1d67a00280cc35c050e51e238af85a92f19c87d4b9732b023038b165d",
+          "size": 16778674
+        },
+        "valid_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.valid_mask.pt",
+          "sha256": "9ff8e948dee1e9deefe15d80a092d43a7cbe3a78226853422f733a14964cb273",
+          "size": 66999
+        },
+        "reference_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000003_2022_HARV_7__4_3.tif.reference_mask.pt",
+          "sha256": "d69b80ed004dc9200053f9655469d62b8a68ea8fbe5e0ee123357bca72565cbb",
+          "size": 1050059
+        },
+        "prediction": {
+          "logical_path": "inference/predictions/opensr__sen2sr-lite-rgbn-x4@1/b1b47eac6b2bf52b013d__seed0.pt",
+          "sha256": "02cdff8b1c8d46a5ba553fc023d4198178767c8bf22a2a2341b5f5f5ff44733b",
+          "size": 4195712
+        }
+      },
+      "files": {
+        "figure_png": {
+          "path": "2022_HARV_7__4_3.png",
+          "sha256": "301937b3633cf4ca536b026102f1610b2bad566b263381aad4655881daccc0f5",
+          "size": 1377716
+        },
+        "figure_webp": {
+          "path": "2022_HARV_7__4_3.webp",
+          "sha256": "18cde8956f2485ef748dd6a8ebe360151d2a4aba7ecee063899f05a9a46a63bd",
+          "size": 922560
+        },
+        "panels": {
+          "input": {
+            "path": "2022_HARV_7__4_3.input.webp",
+            "sha256": "08a07fcf702c7879a799dcc250de005f64824c887adce2dd3db614037b6c7c0d",
+            "size": 42580
+          },
+          "prediction": {
+            "path": "2022_HARV_7__4_3.prediction.webp",
+            "sha256": "20951f6119bddc04e49d77067a088853c0c96dd2cc2431d48dde0b67dcef96eb",
+            "size": 305524
+          },
+          "reference": {
+            "path": "2022_HARV_7__4_3.reference.webp",
+            "sha256": "b92b0cfadf0e1f9108c9cfbefbc0087be17d29eb311536b83a4ac5b4f76ac147",
+            "size": 433464
+          }
+        },
+        "details": {
+          "input": {
+            "path": "2022_HARV_7__4_3.input.detail.webp",
+            "sha256": "a1c8e38d2f482b396117faa42e9a688ca8668bbeaec8368461cb8d03771788d6",
+            "size": 1092
+          },
+          "prediction": {
+            "path": "2022_HARV_7__4_3.prediction.detail.webp",
+            "sha256": "e17f72cf4614bb733400f4ad91941e5e565c0dd8e39a9588f799bb9e3705911a",
+            "size": 6738
+          },
+          "reference": {
+            "path": "2022_HARV_7__4_3.reference.detail.webp",
+            "sha256": "6f87f19816e27de86f9db7b131b1a155b59ea382c4893191a359d35d9b734165",
+            "size": 7948
+          }
+        }
+      },
+      "rendering": {
+        "matplotlib": "3.11.2",
+        "pillow": "12.3.0",
+        "numpy": "2.5.4",
+        "python": "3.12.3",
+        "figure_size_inches": [
+          16,
+          9
+        ],
+        "figure_dpi": 160,
+        "interpolation": "nearest",
+        "font_family": "DejaVu Sans",
+        "webp_lossless": true
+      }
+    },
+    {
+      "sample_id": "2024_KONZ_9__6_2.tif",
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "recipe_id": "opensr/sen2sr-lite-rgbn-x4@1",
+      "seed": 0,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "bands": [
+        "B04",
+        "B03",
+        "B02"
+      ],
+      "display_stretch": {
+        "method": "valid-input-percentiles",
+        "percentiles": [
+          1,
+          99
+        ],
+        "lo": [
+          0.0203000009059906,
+          0.044599998742341995,
+          0.023800000548362732
+        ],
+        "hi": [
+          0.20600000023841858,
+          0.1712000072002411,
+          0.1371999979019165
+        ]
+      },
+      "detail_crop_pixels_reference": {
+        "x0": 240,
+        "y0": 132,
+        "x1": 304,
+        "y1": 196
+      },
+      "detail_zoom": 8.0,
+      "quality_checks": {
+        "all_tensor_values_finite": true,
+        "input_and_reference_masks_complete": true
+      },
+      "source_tensors": {
+        "input": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.input.pt",
+        "reference": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.reference.pt",
+        "prediction": "inference/predictions/opensr__sen2sr-lite-rgbn-x4@1/43fad2224b74e480030c__seed0.pt"
+      },
+      "masks": {
+        "valid_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.valid_mask.pt",
+          "sha256": "c7a03f15185d30d126af593847177228320c690a3845ea421ee05fc5b497cc19",
+          "shape": [
+            1,
+            1,
+            128,
+            128
+          ]
+        },
+        "reference_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.reference_mask.pt",
+          "sha256": "682662124bf26960a7ba40ea586ff2e8e0fec49226c1b7cdaafc69241bdda9fd",
+          "shape": [
+            1,
+            1,
+            512,
+            512
+          ]
+        }
+      },
+      "sample": {
+        "crop": {
+          "x": 64,
+          "y": 64,
+          "size_lr": 128,
+          "size_hr": 512
+        },
+        "input_grid": {
+          "crs": "EPSG:32614",
+          "transform": [
+            10.0,
+            0.0,
+            707760.0,
+            0.0,
+            -10.0,
+            4332980.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            707760.0,
+            4331700.0,
+            709040.0,
+            4332980.0
+          ]
+        },
+        "reference_grid": {
+          "crs": "EPSG:32614",
+          "transform": [
+            2.5,
+            0.0,
+            707760.0,
+            0.0,
+            -2.5,
+            4332980.0
+          ],
+          "width": 512,
+          "height": 512,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            707760.0,
+            4331700.0,
+            709040.0,
+            4332980.0
+          ]
+        },
+        "source_hashes": {
+          "lr": "4ff48f95a8cb758549ff4872f6b3088ec5156f49026adac0bc5741ccef8138d8",
+          "hr": "cb1db3f6968f49c84020632c5c6a54edbbfd975ba54ab760da9f5812585429d2"
+        },
+        "lr_source": "s2_l2a_10m/2024_KONZ_9__6_2.tif",
+        "hr_source": "neon_2.5m_linearized/2024_KONZ_9__6_2.tif"
+      },
+      "frozen_protocol_sample": {
+        "id": "2024_KONZ_9__6_2.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 2.5,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2024_KONZ_9__6_2.tif",
+        "hr_source": "neon_2.5m_linearized/2024_KONZ_9__6_2.tif",
+        "crop": {
+          "x": 64,
+          "y": 64,
+          "size_lr": 128,
+          "size_hr": 512
+        },
+        "reference_resampling": "none",
+        "source_hashes": {
+          "lr": "4ff48f95a8cb758549ff4872f6b3088ec5156f49026adac0bc5741ccef8138d8",
+          "hr": "cb1db3f6968f49c84020632c5c6a54edbbfd975ba54ab760da9f5812585429d2"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32614",
+          "transform": [
+            10.0,
+            0.0,
+            707120.0,
+            0.0,
+            -10.0,
+            4333620.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            707120.0,
+            4331060.0,
+            709680.0,
+            4333620.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32614",
+          "transform": [
+            2.5,
+            0.0,
+            707120.0,
+            0.0,
+            -2.5,
+            4333620.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            707120.0,
+            4331060.0,
+            709680.0,
+            4333620.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32614",
+          "transform": [
+            10.0,
+            0.0,
+            707760.0,
+            0.0,
+            -10.0,
+            4332980.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            707760.0,
+            4331700.0,
+            709040.0,
+            4332980.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32614",
+          "transform": [
+            2.5,
+            0.0,
+            707760.0,
+            0.0,
+            -2.5,
+            4332980.0
+          ],
+          "width": 512,
+          "height": 512,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            707760.0,
+            4331700.0,
+            709040.0,
+            4332980.0
+          ]
+        }
+      },
+      "logical_paths": {
+        "input": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.input.pt",
+        "reference": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.reference.pt",
+        "valid_mask": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.valid_mask.pt",
+        "reference_mask": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.reference_mask.pt",
+        "prediction": "inference/predictions/opensr__sen2sr-lite-rgbn-x4@1/43fad2224b74e480030c__seed0.pt",
+        "samples_manifest": "data/opensr-test-pilot-v1/x4/samples.json"
+      },
+      "benchmark_hash": "7340098d082c47766ef0eeaf923fd8fc6dc67cbcb9e9c4c75c6637669d87ecf3",
+      "runtime": {
+        "python": "3.12.3",
+        "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+        "package_version": "0.1.0.dev0",
+        "torch": "2.6.0+cu126",
+        "cuda_runtime": "12.6",
+        "hardware": "NVIDIA GeForce RTX 3090",
+        "packages": {
+          "opensr-model-zoo": "0.1.0.dev0",
+          "torch": "2.6.0+cu126",
+          "torchvision": "0.21.0+cu126",
+          "numpy": "2.5.4",
+          "diffusers": "0.35.2",
+          "mamba-ssm": "2.2.5",
+          "timm": "1.0.15",
+          "onnx": "1.23.2",
+          "scikit-image": "0.25.2",
+          "rasterio": "1.5.2",
+          "safetensors": "0.8.0",
+          "huggingface-hub": "0.36.2",
+          "opensr-test": "1.3.3",
+          "satalign": "0.1.17",
+          "opencv-python": "5.0.0.93",
+          "scipy": "1.18.1"
+        },
+        "runtime_lock_sha256": "55084db60f33c8ab2cd9756d2b6c07f36dc05b0a10f77a34f9856bd70a956e4e",
+        "precision": "float32",
+        "matmul_allow_tf32": false,
+        "cudnn_allow_tf32": true,
+        "deterministic_algorithms": false,
+        "driver": [
+          "580.178.04"
+        ]
+      },
+      "artifacts": {
+        "model": {
+          "origin": "huggingface-hub",
+          "filename": "SEN2SRLite/NonReference_RGBN_x4/model.safetensor",
+          "sha256": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e",
+          "size": 2308216,
+          "format": "safetensors",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "url": null,
+          "source_sha256": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e"
+        },
+        "hard_constraint": {
+          "origin": "huggingface-hub",
+          "filename": "SEN2SRLite/NonReference_RGBN_x4/hard_constraint.safetensor",
+          "sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239",
+          "size": 1048656,
+          "format": "safetensors",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "url": null,
+          "source_sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239"
+        }
+      },
+      "recipe_sha256": "2fe30e4db1aadae05954ab71adf033d62dfd1cd90a88ce34f8ace38a00097173",
+      "effective_recipe_sha256": "a3fdd2a6463c809aaacc79de02f016ba287a07515a82a342f0bc8abeac529c74",
+      "synthetic": false,
+      "source_files": {
+        "input": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.input.pt",
+          "sha256": "9a0120d1bbe059396b5c035cb49c20f95b646bf8aa24661faf583640fd3803e4",
+          "size": 1050014
+        },
+        "reference": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.reference.pt",
+          "sha256": "03378bdafdeb88036ad5c380aa960453d9ffa92df9661e1df5e16f1ddfad0255",
+          "size": 16778674
+        },
+        "valid_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.valid_mask.pt",
+          "sha256": "c7a03f15185d30d126af593847177228320c690a3845ea421ee05fc5b497cc19",
+          "size": 66999
+        },
+        "reference_mask": {
+          "logical_path": "data/opensr-test-pilot-v1/x4/samples.json::000005_2024_KONZ_9__6_2.tif.reference_mask.pt",
+          "sha256": "682662124bf26960a7ba40ea586ff2e8e0fec49226c1b7cdaafc69241bdda9fd",
+          "size": 1050059
+        },
+        "prediction": {
+          "logical_path": "inference/predictions/opensr__sen2sr-lite-rgbn-x4@1/43fad2224b74e480030c__seed0.pt",
+          "sha256": "1113049ee5125920a6ba29c2bc46aa44a510ec430be56d18d10ab51e12d49cef",
+          "size": 4195712
+        }
+      },
+      "files": {
+        "figure_png": {
+          "path": "2024_KONZ_9__6_2.png",
+          "sha256": "b1ded3b1452cce1ae16002730c6b9c976a2035b28125d1ab486ede9091ca317a",
+          "size": 960702
+        },
+        "figure_webp": {
+          "path": "2024_KONZ_9__6_2.webp",
+          "sha256": "bba700f8ef3a039b43d5ab6d76c72ad562b4534814836d46210d943842bca00b",
+          "size": 583886
+        },
+        "panels": {
+          "input": {
+            "path": "2024_KONZ_9__6_2.input.webp",
+            "sha256": "0876291cd3b4e1445f840d9f3f1eac7f77830799aea24b339b06d7d0db5e050a",
+            "size": 41498
+          },
+          "prediction": {
+            "path": "2024_KONZ_9__6_2.prediction.webp",
+            "sha256": "e100f01d9356bbf8fb5a38e7ba2aa8d8aa4abe6d20a67f3562f0d8b1c3af8a6b",
+            "size": 263552
+          },
+          "reference": {
+            "path": "2024_KONZ_9__6_2.reference.webp",
+            "sha256": "e1cd68a0040d2ecdd63c7832597f214f441ebaa0d17f1ae25f4be6d6af02da1e",
+            "size": 183614
+          }
+        },
+        "details": {
+          "input": {
+            "path": "2024_KONZ_9__6_2.input.detail.webp",
+            "sha256": "561b34296ea72ba6b3efb766cbf6e1cc7375ce52a337b6a5e9760936cda65898",
+            "size": 1090
+          },
+          "prediction": {
+            "path": "2024_KONZ_9__6_2.prediction.detail.webp",
+            "sha256": "f34e28552e6de275f19c2f636212c8155b65fe26dd21ba07339d5a9d2a2cc5d2",
+            "size": 6100
+          },
+          "reference": {
+            "path": "2024_KONZ_9__6_2.reference.detail.webp",
+            "sha256": "db06e3628d2b2817724c1d1f7e072f176206800f91a193240826e1fb70404f8f",
+            "size": 4326
+          }
+        }
+      },
+      "rendering": {
+        "matplotlib": "3.11.2",
+        "pillow": "12.3.0",
+        "numpy": "2.5.4",
+        "python": "3.12.3",
+        "figure_size_inches": [
+          16,
+          9
+        ],
+        "figure_dpi": 160,
+        "interpolation": "nearest",
+        "font_family": "DejaVu Sans",
+        "webp_lossless": true
+      }
+    }
+  ]
+}

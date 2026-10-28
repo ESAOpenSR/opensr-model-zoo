@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "measured-sample-gallery",
+  "scope": "One clean HARV validation pair, seed 0, five recipes; each scale uses its recorded crop and protocol. All source rasters are finite and RGB-NIR masks are complete.",
+  "dataset": "isp-uv-es/SEN2NEON",
+  "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+  "records": [
+    {
+      "recipe": "evoland/wsx2-rgbn-x2@1",
+      "sample": "2022_HARV_7__4_3.tif",
+      "path": "evoland_wsx2-rgbn-x2_1"
+    },
+    {
+      "recipe": "implab/swin2-mose-sen2venus-rgbn-x2@1",
+      "sample": "2022_HARV_7__4_3.tif",
+      "path": "implab_swin2-mose-sen2venus-rgbn-x2_1"
+    },
+    {
+      "recipe": "evoland/wsx4-rgbn-x4@1",
+      "sample": "2022_HARV_7__4_3.tif",
+      "path": "evoland_wsx4-rgbn-x4_1"
+    },
+    {
+      "recipe": "opensr/sen2sr-lite-rgbn-x4@1",
+      "sample": "2022_HARV_7__4_3.tif",
+      "path": "opensr_sen2sr-lite-rgbn-x4_1"
+    },
+    {
+      "recipe": "opensr/ldsrs2-rgbn-x4@1",
+      "sample": "2022_HARV_7__4_3.tif",
+      "path": "opensr_ldsrs2-rgbn-x4_1"
+    }
+  ],
+  "selection_audit": "../../reports/image-selection.json"
+}

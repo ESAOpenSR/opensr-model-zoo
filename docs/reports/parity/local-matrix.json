@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "status": "partial-local-matrix",
+  "scope": "Opt-in parity and pretrained checks using artifacts already present on this host; this does not cover TensorFlow, ONNX Runtime, or opensr-test.",
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu126",
+    "cuda_device": "NVIDIA GeForce RTX 3090 (CUDA_VISIBLE_DEVICES=1)",
+    "execution": "CUDA checks used escalated execution; CPU checks used the project .venv"
+  },
+  "checks": [
+    {
+      "model": "ldsrs2",
+      "command": "LDSR_S2_CHECKPOINT=<cached v1 checkpoint> .venv/bin/pytest -q tests/parity/test_ldsr_native.py",
+      "result": "passed",
+      "passed": 3,
+      "skipped": 0,
+      "details": "Strict v1 state load, persisted schedule, and one-step DDIM shape/nodata check passed."
+    },
+    {
+      "model": "sr4rs",
+      "command": "SR4RS_VARIABLES_DATA=<cached TensorFlow shard> SR4RS_CONVERTED_WEIGHTS=artifacts/sr4rs/sr4rs_france2020.safetensors .venv/bin/pytest -q tests/parity/test_sr4rs_native.py",
+      "result": "passed-with-skips",
+      "passed": 6,
+      "skipped": 2,
+      "details": "Native contracts, source-reader/conversion equality, and public cached checkpoint path passed; CUDA and TensorFlow checks were skipped."
+    },
+    {
+      "model": "swin2-mose",
+      "command": "OPENSR_SWIN2_MOSE_REFERENCE_SOURCE=/tmp/swin2-mose-reference/swin2_mose_model/model.py OPENSR_SWIN2_MOSE_CHECKPOINT=<extracted model-70.pt> .venv/bin/pytest -q tests/parity/test_swin2_mose_native.py",
+      "result": "passed",
+      "passed": 2,
+      "skipped": 0,
+      "details": "Native varied-routing parity against the frozen reference passed exactly for seeds 0, 1, and 2."
+    },
+    {
+      "model": "swin2-mose",
+      "command": "CUDA_VISIBLE_DEVICES=1 OPENSR_SWIN2_MOSE_ARTIFACT_DIR=/tmp/swin-native-v11 .venv/bin/pytest -q tests/parity/test_swin2_mose_state.py",
+      "result": "passed",
+      "passed": 2,
+      "skipped": 0,
+      "details": "CPU and CUDA release artifact shape/finite-output checks passed."
+    },
+    {
+      "model": "evoland",
+      "command": "OPENSR_EVOLAND_CONVERTED_DIR_*=/tmp/evoland-* .venv/bin/pytest -q tests/parity/test_evoland.py",
+      "result": "not-run",
+      "passed": 0,
+      "skipped": 3,
+      "details": "Converted artifacts are present, but onnxruntime is not installed; no dependency was downloaded."
+    }
+  ],
+  "limitations": [
+    "LDSR frozen upstream parity requires the separate /work/code/opensr-model checkout and its research dependencies.",
+    "SR4RS TensorFlow parity remains unrun.",
+    "Evoland ONNX parity remains unrun until onnxruntime is available.",
+    "This report contains no real opensr-test end-to-end result."
+  ]
+}

@@ -1,0 +1,3145 @@
+{
+  "benchmark_hash": "97be546446f0f198b068ef7038e081431891f5012ade22ffd656fd8288b41b9c",
+  "protocol": {
+    "benchmark_version": "1",
+    "dataset": {
+      "id": "isp-uv-es/SEN2NEON",
+      "revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "split": "validation",
+      "training_overlap": "unknown",
+      "sample_ids": [
+        "2018_MLBS_3__0_2.tif",
+        "2018_MLBS_3__1_1.tif",
+        "2018_MLBS_3__1_2.tif"
+      ]
+    },
+    "recipes": [
+      {
+        "schema_version": 1,
+        "recipe_id": "opensr/bicubic-x4@1",
+        "family": "interpolation",
+        "variant": "bicubic",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "output_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 2.5,
+        "native_resolutions_m": {
+          "B04": 10.0,
+          "B03": 10.0,
+          "B02": 10.0,
+          "B08": 10.0
+        },
+        "scale": 4,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": null,
+        "min_size": null,
+        "max_size": null,
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "portable",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "maintained",
+        "owner": "opensr",
+        "source": null,
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "mode": "bicubic"
+        },
+        "inference": {
+          "align_corners": false,
+          "antialias": false
+        },
+        "supported_options": [
+          "align_corners",
+          "antialias"
+        ],
+        "artifacts": [],
+        "components": [],
+        "citations": [],
+        "validation": {},
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "not-applicable",
+        "pretrained": false,
+        "description": "Bicubic interpolation reference on RGB-NIR reflectances; no clipping."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "opensr/bilinear-x4@1",
+        "family": "interpolation",
+        "variant": "bilinear",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "output_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 2.5,
+        "native_resolutions_m": {
+          "B04": 10.0,
+          "B03": 10.0,
+          "B02": 10.0,
+          "B08": 10.0
+        },
+        "scale": 4,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": null,
+        "min_size": null,
+        "max_size": null,
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "portable",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "maintained",
+        "owner": "opensr",
+        "source": null,
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "mode": "bilinear"
+        },
+        "inference": {
+          "align_corners": false,
+          "antialias": false
+        },
+        "supported_options": [
+          "align_corners",
+          "antialias"
+        ],
+        "artifacts": [],
+        "components": [],
+        "citations": [],
+        "validation": {},
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "not-applicable",
+        "pretrained": false,
+        "description": "Bilinear interpolation reference on RGB-NIR reflectances; no clipping."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "opensr/ldsrs2-rgbn-x4-ddim100-histogram@1",
+        "family": "ldsr_s2",
+        "variant": "canonical-v1-rgbn-x4-ddim100-histogram",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "output_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 2.5,
+        "native_resolutions_m": {
+          "B04": 10.0,
+          "B03": 10.0,
+          "B02": 10.0,
+          "B08": 10.0
+        },
+        "scale": 4,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": [
+          128,
+          128
+        ],
+        "min_size": [
+          100,
+          100
+        ],
+        "max_size": [
+          128,
+          128
+        ],
+        "size_multiple": 1,
+        "padding": "reflect",
+        "runtime": "diffusion",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "experimental",
+        "owner": "opensr",
+        "source": {
+          "repository": "https://github.com/ESAOpenSR/opensr-model",
+          "revision": "9c6bb2fecad7b93f3949248c2d1c5b20f264a4db",
+          "license": "MIT",
+          "ported_components": [
+            "autoencoder",
+            "denoiser",
+            "diffusion",
+            "spectral_correction",
+            "inference"
+          ]
+        },
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "first_stage_config": {
+            "embed_dim": 4,
+            "double_z": true,
+            "z_channels": 4,
+            "resolution": 512,
+            "in_channels": 4,
+            "out_ch": 4,
+            "ch": 128,
+            "ch_mult": [
+              1,
+              2,
+              4
+            ],
+            "num_res_blocks": 2,
+            "attn_resolutions": [],
+            "dropout": 0.0
+          },
+          "cond_stage_config": {
+            "image_size": 128,
+            "in_channels": 8,
+            "model_channels": 160,
+            "out_channels": 4,
+            "num_res_blocks": 2,
+            "attention_resolutions": [
+              16,
+              8
+            ],
+            "channel_mult": [
+              1,
+              2,
+              2,
+              4
+            ],
+            "num_head_channels": 32
+          },
+          "timesteps": 1000,
+          "linear_start": 0.0015,
+          "linear_end": 0.0155,
+          "parameterization": "eps"
+        },
+        "inference": {
+          "sampler": "ddim",
+          "sampling_steps": 100,
+          "sampling_eta": 0.95,
+          "sampling_temperature": 1.0,
+          "spectral_correction": "histogram",
+          "back_projection": {
+            "scale": 4,
+            "blur_sigma": 0.0,
+            "max_iterations": 100,
+            "tolerance": 1e-06,
+            "relaxation": 1.0
+          }
+        },
+        "supported_options": [
+          "sampler",
+          "sampling_steps",
+          "sampling_eta",
+          "sampling_temperature",
+          "spectral_correction",
+          "back_projection"
+        ],
+        "artifacts": [
+          {
+            "name": "weights",
+            "repo_id": "simon-donike/RS-SR-LTDF",
+            "revision": "511900900f6b94e0315d47f21f2a9d988d9d238d",
+            "filename": "opensr-ldsrs2_v1_0_0.ckpt",
+            "sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a",
+            "size": 1130715795,
+            "format": "pytorch",
+            "license": "MIT",
+            "url": null,
+            "local_only": false
+          }
+        ],
+        "components": [],
+        "citations": [
+          "https://doi.org/10.1109/JSTARS.2025.3542220"
+        ],
+        "validation": {
+          "reference": "docs/reports/parity/ldsr-s2.json",
+          "cpu_float32_max_abs_error": 0.0,
+          "reference_test": "tests/parity/test_ldsr_upstream_reference.py"
+        },
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "MIT",
+        "pretrained": true,
+        "description": "LDSR-S2 canonical v1 weights; DDIM 100 steps and histogram correction."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "opensr/ldsrs2-rgbn-x4@1",
+        "family": "ldsr_s2",
+        "variant": "canonical-v1-rgbn-x4",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "output_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 2.5,
+        "native_resolutions_m": {
+          "B04": 10.0,
+          "B03": 10.0,
+          "B02": 10.0,
+          "B08": 10.0
+        },
+        "scale": 4,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": [
+          128,
+          128
+        ],
+        "min_size": [
+          100,
+          100
+        ],
+        "max_size": [
+          128,
+          128
+        ],
+        "size_multiple": 1,
+        "padding": "reflect",
+        "runtime": "diffusion",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "experimental",
+        "owner": "opensr",
+        "source": {
+          "repository": "https://github.com/ESAOpenSR/opensr-model",
+          "revision": "9c6bb2fecad7b93f3949248c2d1c5b20f264a4db",
+          "license": "MIT",
+          "ported_components": [
+            "autoencoder",
+            "denoiser",
+            "diffusion",
+            "spectral_correction",
+            "inference"
+          ]
+        },
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "first_stage_config": {
+            "embed_dim": 4,
+            "double_z": true,
+            "z_channels": 4,
+            "resolution": 512,
+            "in_channels": 4,
+            "out_ch": 4,
+            "ch": 128,
+            "ch_mult": [
+              1,
+              2,
+              4
+            ],
+            "num_res_blocks": 2,
+            "attn_resolutions": [],
+            "dropout": 0.0
+          },
+          "cond_stage_config": {
+            "image_size": 128,
+            "in_channels": 8,
+            "model_channels": 160,
+            "out_channels": 4,
+            "num_res_blocks": 2,
+            "attention_resolutions": [
+              16,
+              8
+            ],
+            "channel_mult": [
+              1,
+              2,
+              2,
+              4
+            ],
+            "num_head_channels": 32
+          },
+          "timesteps": 1000,
+          "linear_start": 0.0015,
+          "linear_end": 0.0155,
+          "parameterization": "eps"
+        },
+        "inference": {
+          "sampler": "dpm_solver++",
+          "sampling_steps": 3,
+          "sampling_eta": 0.0,
+          "sampling_temperature": 1.0,
+          "spectral_correction": "back_projection",
+          "back_projection": {
+            "scale": 4,
+            "blur_sigma": 0.0,
+            "max_iterations": 100,
+            "tolerance": 1e-06,
+            "relaxation": 1.0
+          }
+        },
+        "supported_options": [
+          "sampler",
+          "sampling_steps",
+          "sampling_eta",
+          "sampling_temperature",
+          "spectral_correction",
+          "back_projection"
+        ],
+        "artifacts": [
+          {
+            "name": "weights",
+            "repo_id": "simon-donike/RS-SR-LTDF",
+            "revision": "511900900f6b94e0315d47f21f2a9d988d9d238d",
+            "filename": "opensr-ldsrs2_v1_0_0.ckpt",
+            "sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a",
+            "size": 1130715795,
+            "format": "pytorch",
+            "license": "MIT",
+            "url": null,
+            "local_only": false
+          }
+        ],
+        "components": [],
+        "citations": [
+          "https://doi.org/10.1109/JSTARS.2025.3542220"
+        ],
+        "validation": {
+          "reference": "docs/reports/parity/ldsr-s2.json",
+          "cpu_float32_max_abs_error": 0.0,
+          "reference_test": "tests/parity/test_ldsr_upstream_reference.py"
+        },
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "MIT",
+        "pretrained": true,
+        "description": "LDSR-S2 canonical v1 weights; DPM-Solver++ 3 steps and back-projection."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "opensr/sen2sr-lite-rgbn-x4@1",
+        "family": "sen2sr",
+        "variant": "rgbn-x4",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "output_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 2.5,
+        "native_resolutions_m": {
+          "B04": 10.0,
+          "B03": 10.0,
+          "B02": 10.0,
+          "B08": 10.0
+        },
+        "scale": 4,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": [
+          128,
+          128
+        ],
+        "min_size": [
+          128,
+          128
+        ],
+        "max_size": [
+          128,
+          128
+        ],
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "portable",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "experimental",
+        "owner": "opensr",
+        "source": {
+          "repository": "https://github.com/ESAOpenSR/SEN2SR",
+          "revision": "3986620793736da6efcdc92771f76a63127cae66",
+          "license": "CC0-1.0",
+          "ported_components": [
+            "CNNSR",
+            "HardConstraint",
+            "nonreference.srmodel"
+          ]
+        },
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "type": "cnn",
+          "in_channels": 4,
+          "out_channels": 4,
+          "upscale": 4,
+          "parameters": {
+            "feature_channels": 24,
+            "num_blocks": 6,
+            "train_mode": false,
+            "bias": true
+          }
+        },
+        "inference": {},
+        "supported_options": [],
+        "artifacts": [
+          {
+            "name": "model",
+            "repo_id": "tacofoundation/SEN2SR",
+            "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+            "filename": "SEN2SRLite/NonReference_RGBN_x4/model.safetensor",
+            "sha256": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e",
+            "size": 2308216,
+            "format": "safetensors",
+            "license": "CC0-1.0",
+            "url": null,
+            "local_only": false
+          },
+          {
+            "name": "hard_constraint",
+            "repo_id": "tacofoundation/SEN2SR",
+            "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+            "filename": "SEN2SRLite/NonReference_RGBN_x4/hard_constraint.safetensor",
+            "sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239",
+            "size": 1048656,
+            "format": "safetensors",
+            "license": "CC0-1.0",
+            "url": null,
+            "local_only": false
+          }
+        ],
+        "components": [],
+        "citations": [
+          "https://doi.org/10.1016/j.rse.2025.115222"
+        ],
+        "validation": {
+          "reference": "tests/parity/sen2sr_lite_rgbn_parity.json",
+          "cpu_float32_max_abs_error": 0.0,
+          "reference_test": "tests/parity/test_sen2sr_upstream_reference.py"
+        },
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "CC0-1.0",
+        "pretrained": true,
+        "description": "SEN2SRLite RGB-NIR SISR with frozen Fourier hard constraint."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "opensr/sen2sr-rgbn-x4@1",
+        "family": "sen2sr",
+        "variant": "rgbn-x4",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "output_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 2.5,
+        "native_resolutions_m": {
+          "B04": 10.0,
+          "B03": 10.0,
+          "B02": 10.0,
+          "B08": 10.0
+        },
+        "scale": 4,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": [
+          128,
+          128
+        ],
+        "min_size": [
+          128,
+          128
+        ],
+        "max_size": [
+          128,
+          128
+        ],
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "mamba-cuda",
+        "devices": [
+          "cuda"
+        ],
+        "status": "experimental",
+        "owner": "opensr",
+        "source": {
+          "repository": "https://github.com/ESAOpenSR/SEN2SR",
+          "revision": "3986620793736da6efcdc92771f76a63127cae66",
+          "license": "CC0-1.0",
+          "ported_components": [
+            "MambaSR",
+            "HardConstraint",
+            "nonreference.srmodel"
+          ]
+        },
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "type": "mamba",
+          "in_channels": 4,
+          "out_channels": 4,
+          "upscale": 4,
+          "parameters": {
+            "img_size": [
+              128,
+              128
+            ],
+            "embed_dim": 96,
+            "depths": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "num_heads": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "mlp_ratio": 4,
+            "attention_type": "sigmoid_02",
+            "upsampler": "pixelshuffle",
+            "resi_connection": "1conv",
+            "operation_attention": "sum"
+          }
+        },
+        "inference": {},
+        "supported_options": [],
+        "artifacts": [
+          {
+            "name": "model",
+            "repo_id": "tacofoundation/SEN2SR",
+            "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+            "filename": "SEN2SR/NonReference_RGBN_x4/model.safetensor",
+            "sha256": "11e551b03663e873c5dcd4f02ec3fc8cdfa41ef46677540295ee4c6686ddc854",
+            "size": 55189944,
+            "format": "safetensors",
+            "license": "CC0-1.0",
+            "url": null,
+            "local_only": false
+          },
+          {
+            "name": "hard_constraint",
+            "repo_id": "tacofoundation/SEN2SR",
+            "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+            "filename": "SEN2SR/NonReference_RGBN_x4/hard_constraint.safetensor",
+            "sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239",
+            "size": 1048656,
+            "format": "safetensors",
+            "license": "CC0-1.0",
+            "url": null,
+            "local_only": false
+          }
+        ],
+        "components": [],
+        "citations": [
+          "https://doi.org/10.1016/j.rse.2025.115222"
+        ],
+        "validation": {},
+        "tested_environments": [],
+        "weight_license": "CC0-1.0",
+        "pretrained": true,
+        "description": "SEN2SR RGB-NIR SISR with frozen Fourier hard constraint."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "opensr/srgan-rgbn-x4@1",
+        "family": "srgan",
+        "variant": "RGB-NIR",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "output_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 2.5,
+        "native_resolutions_m": {
+          "B04": 10.0,
+          "B03": 10.0,
+          "B02": 10.0,
+          "B08": 10.0
+        },
+        "scale": 4,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": [
+          128,
+          128
+        ],
+        "min_size": null,
+        "max_size": null,
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "srgan",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "experimental",
+        "owner": "opensr",
+        "source": {
+          "repository": "https://github.com/ESAOpenSR/SRGAN",
+          "revision": "7bcb73b358d3990c0d70cbd66201afdd9dd2cdf3",
+          "license": "Apache-2.0",
+          "ported_components": [
+            "generator",
+            "radiometrics",
+            "inference checkpoint loading"
+          ]
+        },
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "Model": {
+            "in_bands": 4
+          },
+          "Generator": {
+            "in_bands": 4,
+            "model_type": "SRResNet",
+            "block_type": "rrdb",
+            "large_kernel_size": 9,
+            "small_kernel_size": 3,
+            "n_channels": 64,
+            "n_blocks": 24,
+            "scaling_factor": 4,
+            "growth_channels": 32,
+            "res_scale": 0.2
+          }
+        },
+        "inference": {
+          "histogram_match": true,
+          "use_ema": false
+        },
+        "supported_options": [
+          "histogram_match"
+        ],
+        "artifacts": [
+          {
+            "name": "weights",
+            "repo_id": "simon-donike/SR-GAN",
+            "revision": "7b984f30dbba26198ebf55527a1ee7126fa68d71",
+            "filename": "RGB-NIR_4band_inference.ckpt",
+            "sha256": "d55eee785ab5ff7d2d53d2c674d70461037722027020da2d2385b0fe43834281",
+            "size": 47106784,
+            "format": "pytorch",
+            "license": "undocumented-upstream",
+            "url": null,
+            "local_only": false
+          }
+        ],
+        "components": [],
+        "citations": [],
+        "validation": {
+          "reference": "docs/models/srgan-parity-evidence.json",
+          "cpu_float32_max_abs_error": 0.0,
+          "reference_test": "tests/parity/test_srgan_published.py"
+        },
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "undocumented-upstream",
+        "pretrained": true,
+        "description": "Published RGB-NIR SRGAN preset with official histogram matching; mirroring awaits weight-license documentation."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "evoland/wsx4-rgbn-x4@1",
+        "family": "evoland",
+        "variant": "wsx4_spatrad",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "output_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 2.5,
+        "native_resolutions_m": {
+          "B02": 10.0,
+          "B03": 10.0,
+          "B04": 10.0,
+          "B08": 10.0
+        },
+        "scale": 4,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": null,
+        "min_size": null,
+        "max_size": null,
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "portable",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "experimental",
+        "owner": "Evoland-Land-Monitoring-Evolution",
+        "source": {
+          "repository": "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+          "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+          "license": "Apache-2.0",
+          "ported_components": []
+        },
+        "implementation_revision": "native-onnx-graph-r1",
+        "architecture": {
+          "format": "onnx-declarative",
+          "source_file": "src/sentinel2_superresolution/models/wsx4_spatrad.onnx"
+        },
+        "inference": {
+          "normalization": "embedded in source graph",
+          "native_scale": 4
+        },
+        "supported_options": [],
+        "artifacts": [
+          {
+            "name": "model",
+            "repo_id": "Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+            "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+            "filename": "wsx4_spatrad.onnx",
+            "sha256": "d476439786bb0c6079b61875ea9cda5c62a5963115193a056e5f65bb94bc053e",
+            "size": 17996501,
+            "format": "onnx",
+            "license": "Apache-2.0",
+            "url": "https://raw.githubusercontent.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution/cc5dec8c9c6b4917b99172a02d86659278334642/src/sentinel2_superresolution/models/wsx4_spatrad.onnx",
+            "local_only": false
+          }
+        ],
+        "components": [],
+        "citations": [
+          "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution"
+        ],
+        "validation": {
+          "status": "onnxruntime_native_graph_parity",
+          "max_abs_error_cpu": 0.004
+        },
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "Apache-2.0",
+        "pretrained": true,
+        "description": "Evoland Sentinel-2 RGB-NIR native Torch graph converted from the published ONNX artifact."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "remicres/sr4rs-rgbn-x4@1",
+        "family": "sr4rs",
+        "variant": "France-2020",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "output_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 2.5,
+        "native_resolutions_m": {
+          "B04": 10.0,
+          "B03": 10.0,
+          "B02": 10.0,
+          "B08": 10.0
+        },
+        "scale": 4,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": [
+          128,
+          128
+        ],
+        "min_size": null,
+        "max_size": null,
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "sr4rs",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "experimental",
+        "owner": "opensr",
+        "source": {
+          "repository": "https://github.com/remicres/sr4rs",
+          "revision": "35ce4aaa131bed40cbbc1977c454d92b50d2d0d9",
+          "license": "MIT",
+          "ported_components": [
+            "generator",
+            "equalized convolution",
+            "blur",
+            "pixel normalization"
+          ]
+        },
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "channels": 4,
+          "dim": 64,
+          "nresblocks": 16,
+          "input_scale": 1.0,
+          "output_scale": 1.0
+        },
+        "inference": {
+          "normalization": "reflectance_to_raw_10000_then_upstream_lr_scale_1e-4",
+          "output": "4x"
+        },
+        "supported_options": [],
+        "artifacts": [
+          {
+            "name": "variables_index",
+            "repo_id": "isp-uv-es/superIX",
+            "revision": "99343836564dae33541fd61c62beeecf7af3ed9f",
+            "filename": "sr4rs/weights/cesbio_model/sr4rs_sentinel2_bands4328_france2020_savedmodel/variables/variables.index",
+            "sha256": "3748c77ada560671e239910f4429f431847055c299976c1f36e78dac965c038d",
+            "size": 21653,
+            "format": "tensorflow-checkpoint-index",
+            "license": "unknown-publisher-terms",
+            "url": null,
+            "local_only": false
+          },
+          {
+            "name": "variables_data",
+            "repo_id": "isp-uv-es/superIX",
+            "revision": "99343836564dae33541fd61c62beeecf7af3ed9f",
+            "filename": "sr4rs/weights/cesbio_model/sr4rs_sentinel2_bands4328_france2020_savedmodel/variables/variables.data-00000-of-00001",
+            "sha256": "4045311226af9e908b6c741301399a556b2705f20963e9d80213ce1a1fac81a3",
+            "size": 297612052,
+            "format": "tensorflow-checkpoint-data",
+            "license": "unknown-publisher-terms",
+            "url": null,
+            "local_only": false
+          }
+        ],
+        "components": [],
+        "citations": [
+          "https://github.com/remicres/sr4rs"
+        ],
+        "validation": {
+          "status": "validated_tensorflow_native_parity",
+          "max_abs": 1.6093254089355469e-06,
+          "mean_abs": 6.82400411733397e-08
+        },
+        "tested_environments": [
+          "linux-python312-torch260-cu126"
+        ],
+        "weight_license": "unknown-publisher-terms",
+        "pretrained": true,
+        "description": "SR4RS France-2020 RGB-NIR native generator; safely reads pinned tensor slices from the original TensorFlow checkpoint without a TensorFlow dependency."
+      }
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "metrics": {
+      "names": [
+        "psnr",
+        "ssim",
+        "sam"
+      ],
+      "border": 64,
+      "mask": "valid",
+      "score_predicted_only": true,
+      "data_range": 1.0,
+      "ssim_win_size": 7
+    },
+    "conditioning": {
+      "mode": "RGBN",
+      "bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "output_grids": {},
+    "task": "single-image-super-resolution",
+    "cohort": "isp-uv-es/SEN2NEON",
+    "warmup": 1,
+    "samples": [
+      {
+        "id": "2018_MLBS_3__0_2.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 2.5,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2018_MLBS_3__0_2.tif",
+        "hr_source": "neon_2.5m_linearized/2018_MLBS_3__0_2.tif",
+        "crop": {
+          "x": 64,
+          "y": 64,
+          "size_lr": 128,
+          "size_hr": 512
+        },
+        "reference_resampling": "none",
+        "source_hashes": {
+          "lr": "2eed48b72134759c4786907b5d851ef8172a5d9c0153066b646d4c35a43b4ba7",
+          "hr": "0e75fc7003351d5b51f0c7b174dc212ffdc2af0381f4a1becf26d7a37946297b"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            539120.0,
+            0.0,
+            -10.0,
+            4146000.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            539120.0,
+            4143440.0,
+            541680.0,
+            4146000.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            539120.0,
+            0.0,
+            -2.5,
+            4146000.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            539120.0,
+            4143440.0,
+            541680.0,
+            4146000.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            539760.0,
+            0.0,
+            -10.0,
+            4145360.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            539760.0,
+            4144080.0,
+            541040.0,
+            4145360.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            539760.0,
+            0.0,
+            -2.5,
+            4145360.0
+          ],
+          "width": 512,
+          "height": 512,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            539760.0,
+            4144080.0,
+            541040.0,
+            4145360.0
+          ]
+        }
+      },
+      {
+        "id": "2018_MLBS_3__1_1.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 2.5,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2018_MLBS_3__1_1.tif",
+        "hr_source": "neon_2.5m_linearized/2018_MLBS_3__1_1.tif",
+        "crop": {
+          "x": 64,
+          "y": 64,
+          "size_lr": 128,
+          "size_hr": 512
+        },
+        "reference_resampling": "none",
+        "source_hashes": {
+          "lr": "3c55d1fbd20c5236a7084e0bf0252035d8ba1f3c802fa7bde67186a167f66a90",
+          "hr": "95667d284f3b55c2a5fede148faaf08bf385ff59eaa2de1e98e925e5f9d532ca"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            536560.0,
+            0.0,
+            -10.0,
+            4143440.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            536560.0,
+            4140880.0,
+            539120.0,
+            4143440.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            536560.0,
+            0.0,
+            -2.5,
+            4143440.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            536560.0,
+            4140880.0,
+            539120.0,
+            4143440.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            537200.0,
+            0.0,
+            -10.0,
+            4142800.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            537200.0,
+            4141520.0,
+            538480.0,
+            4142800.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            537200.0,
+            0.0,
+            -2.5,
+            4142800.0
+          ],
+          "width": 512,
+          "height": 512,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            537200.0,
+            4141520.0,
+            538480.0,
+            4142800.0
+          ]
+        }
+      },
+      {
+        "id": "2018_MLBS_3__1_2.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 2.5,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2018_MLBS_3__1_2.tif",
+        "hr_source": "neon_2.5m_linearized/2018_MLBS_3__1_2.tif",
+        "crop": {
+          "x": 64,
+          "y": 64,
+          "size_lr": 128,
+          "size_hr": 512
+        },
+        "reference_resampling": "none",
+        "source_hashes": {
+          "lr": "7a77ec5685e44760e41c7f869608834e80a60f154b1386c2f651fdec22811b75",
+          "hr": "b66f46b4996bf74dc48d2bb55017bae734b1f8f4255c9b60220e1d5af27cc293"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            539120.0,
+            0.0,
+            -10.0,
+            4143440.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            539120.0,
+            4140880.0,
+            541680.0,
+            4143440.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            539120.0,
+            0.0,
+            -2.5,
+            4143440.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            539120.0,
+            4140880.0,
+            541680.0,
+            4143440.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            539760.0,
+            0.0,
+            -10.0,
+            4142800.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            539760.0,
+            4141520.0,
+            541040.0,
+            4142800.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            539760.0,
+            0.0,
+            -2.5,
+            4142800.0
+          ],
+          "width": 512,
+          "height": 512,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            539760.0,
+            4141520.0,
+            541040.0,
+            4142800.0
+          ]
+        }
+      }
+    ],
+    "files": [
+      {
+        "input": "d614cd287b167499dc55cb3e0fb016319f2f798d1fc5be9b3e2596da68d62bbb",
+        "reference": "9b6a28ea34158db3a1dbb7389a789ee154f6ed37ca555b867bc57d0e26b78671",
+        "valid_mask": "76740e1f271717504fe00ed709e3e7322d775db7751121dd93998ba4a1100b86",
+        "reference_mask": "33132874b5203fc412c0dbf57191eb0cc7ea9929e9dfec9d383cbd2e88daebb4"
+      },
+      {
+        "input": "05e745ed29ac04b1e53ffca8637e86c6f667774b6703d6acf68c4d8f05a98fde",
+        "reference": "b107c6ce529f8e15d1cf0719e58d9b9df1e2971cdec3892a5e89a6164f260937",
+        "valid_mask": "583eaaab7a4188195ce6bf64b00973b518b75b320257fc38cbfe4a68e0d5da5a",
+        "reference_mask": "c7a34f4cb7eb1f40bf52e062428738d02cfb985c391f599ac79b84218066ad6b"
+      },
+      {
+        "input": "a3313c7fabef9e1558113bbe456617d4b497e80230a481125be9b838de57f4d5",
+        "reference": "29ec3ff4494eb2d71cbf960463e0d4dfa1c2b19f3160921579b9f683b327a955",
+        "valid_mask": "ecb9f64e34037c88b59f1e3b0beb6b759228a79abbe90b2467ccba8ff551fb69",
+        "reference_mask": "40bbebf78d4ce563bf003b11e0bb8b825ee277924752acdad71fcf2a2fa9874d"
+      }
+    ]
+  },
+  "config": {
+    "benchmark_version": "1",
+    "dataset": {
+      "id": "isp-uv-es/SEN2NEON",
+      "revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "split": "validation",
+      "samples": "data/sen2neon-benchmark-x4/samples.json",
+      "sample_ids": [],
+      "training_overlap": "unknown"
+    },
+    "recipes": [
+      "opensr/bicubic-x4@1",
+      "opensr/bilinear-x4@1",
+      "opensr/ldsrs2-rgbn-x4-ddim100-histogram@1",
+      "opensr/ldsrs2-rgbn-x4@1",
+      "opensr/sen2sr-lite-rgbn-x4@1",
+      "opensr/sen2sr-rgbn-x4@1",
+      "opensr/srgan-rgbn-x4@1",
+      "evoland/wsx4-rgbn-x4@1",
+      "remicres/sr4rs-rgbn-x4@1"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "metrics": {
+      "names": [
+        "psnr",
+        "ssim",
+        "sam"
+      ],
+      "border": 64,
+      "mask": "valid",
+      "score_predicted_only": true,
+      "data_range": 1.0,
+      "ssim_win_size": 7
+    },
+    "preprocessing": {},
+    "conditioning": {
+      "mode": "RGBN",
+      "bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "output_grids": {},
+    "task": "single-image-super-resolution",
+    "comparison_cohort": "isp-uv-es/SEN2NEON",
+    "allow_partial": false,
+    "warmup": 1
+  },
+  "recipes": [
+    {
+      "schema_version": 1,
+      "recipe_id": "opensr/bicubic-x4@1",
+      "family": "interpolation",
+      "variant": "bicubic",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "output_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "native_resolutions_m": {
+        "B04": 10.0,
+        "B03": 10.0,
+        "B02": 10.0,
+        "B08": 10.0
+      },
+      "scale": 4,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": null,
+      "min_size": null,
+      "max_size": null,
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "portable",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "maintained",
+      "owner": "opensr",
+      "source": null,
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "mode": "bicubic"
+      },
+      "inference": {
+        "align_corners": false,
+        "antialias": false
+      },
+      "supported_options": [
+        "align_corners",
+        "antialias"
+      ],
+      "artifacts": [],
+      "components": [],
+      "citations": [],
+      "validation": {},
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "not-applicable",
+      "pretrained": false,
+      "description": "Bicubic interpolation reference on RGB-NIR reflectances; no clipping."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "opensr/bilinear-x4@1",
+      "family": "interpolation",
+      "variant": "bilinear",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "output_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "native_resolutions_m": {
+        "B04": 10.0,
+        "B03": 10.0,
+        "B02": 10.0,
+        "B08": 10.0
+      },
+      "scale": 4,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": null,
+      "min_size": null,
+      "max_size": null,
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "portable",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "maintained",
+      "owner": "opensr",
+      "source": null,
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "mode": "bilinear"
+      },
+      "inference": {
+        "align_corners": false,
+        "antialias": false
+      },
+      "supported_options": [
+        "align_corners",
+        "antialias"
+      ],
+      "artifacts": [],
+      "components": [],
+      "citations": [],
+      "validation": {},
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "not-applicable",
+      "pretrained": false,
+      "description": "Bilinear interpolation reference on RGB-NIR reflectances; no clipping."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "opensr/ldsrs2-rgbn-x4-ddim100-histogram@1",
+      "family": "ldsr_s2",
+      "variant": "canonical-v1-rgbn-x4-ddim100-histogram",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "output_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "native_resolutions_m": {
+        "B04": 10.0,
+        "B03": 10.0,
+        "B02": 10.0,
+        "B08": 10.0
+      },
+      "scale": 4,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": [
+        128,
+        128
+      ],
+      "min_size": [
+        100,
+        100
+      ],
+      "max_size": [
+        128,
+        128
+      ],
+      "size_multiple": 1,
+      "padding": "reflect",
+      "runtime": "diffusion",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "experimental",
+      "owner": "opensr",
+      "source": {
+        "repository": "https://github.com/ESAOpenSR/opensr-model",
+        "revision": "9c6bb2fecad7b93f3949248c2d1c5b20f264a4db",
+        "license": "MIT",
+        "ported_components": [
+          "autoencoder",
+          "denoiser",
+          "diffusion",
+          "spectral_correction",
+          "inference"
+        ]
+      },
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "first_stage_config": {
+          "embed_dim": 4,
+          "double_z": true,
+          "z_channels": 4,
+          "resolution": 512,
+          "in_channels": 4,
+          "out_ch": 4,
+          "ch": 128,
+          "ch_mult": [
+            1,
+            2,
+            4
+          ],
+          "num_res_blocks": 2,
+          "attn_resolutions": [],
+          "dropout": 0.0
+        },
+        "cond_stage_config": {
+          "image_size": 128,
+          "in_channels": 8,
+          "model_channels": 160,
+          "out_channels": 4,
+          "num_res_blocks": 2,
+          "attention_resolutions": [
+            16,
+            8
+          ],
+          "channel_mult": [
+            1,
+            2,
+            2,
+            4
+          ],
+          "num_head_channels": 32
+        },
+        "timesteps": 1000,
+        "linear_start": 0.0015,
+        "linear_end": 0.0155,
+        "parameterization": "eps"
+      },
+      "inference": {
+        "sampler": "ddim",
+        "sampling_steps": 100,
+        "sampling_eta": 0.95,
+        "sampling_temperature": 1.0,
+        "spectral_correction": "histogram",
+        "back_projection": {
+          "scale": 4,
+          "blur_sigma": 0.0,
+          "max_iterations": 100,
+          "tolerance": 1e-06,
+          "relaxation": 1.0
+        }
+      },
+      "supported_options": [
+        "sampler",
+        "sampling_steps",
+        "sampling_eta",
+        "sampling_temperature",
+        "spectral_correction",
+        "back_projection"
+      ],
+      "artifacts": [
+        {
+          "name": "weights",
+          "repo_id": "simon-donike/RS-SR-LTDF",
+          "revision": "511900900f6b94e0315d47f21f2a9d988d9d238d",
+          "filename": "opensr-ldsrs2_v1_0_0.ckpt",
+          "sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a",
+          "size": 1130715795,
+          "format": "pytorch",
+          "license": "MIT",
+          "url": null,
+          "local_only": false
+        }
+      ],
+      "components": [],
+      "citations": [
+        "https://doi.org/10.1109/JSTARS.2025.3542220"
+      ],
+      "validation": {
+        "reference": "docs/reports/parity/ldsr-s2.json",
+        "cpu_float32_max_abs_error": 0.0,
+        "reference_test": "tests/parity/test_ldsr_upstream_reference.py"
+      },
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "MIT",
+      "pretrained": true,
+      "description": "LDSR-S2 canonical v1 weights; DDIM 100 steps and histogram correction."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "opensr/ldsrs2-rgbn-x4@1",
+      "family": "ldsr_s2",
+      "variant": "canonical-v1-rgbn-x4",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "output_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "native_resolutions_m": {
+        "B04": 10.0,
+        "B03": 10.0,
+        "B02": 10.0,
+        "B08": 10.0
+      },
+      "scale": 4,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": [
+        128,
+        128
+      ],
+      "min_size": [
+        100,
+        100
+      ],
+      "max_size": [
+        128,
+        128
+      ],
+      "size_multiple": 1,
+      "padding": "reflect",
+      "runtime": "diffusion",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "experimental",
+      "owner": "opensr",
+      "source": {
+        "repository": "https://github.com/ESAOpenSR/opensr-model",
+        "revision": "9c6bb2fecad7b93f3949248c2d1c5b20f264a4db",
+        "license": "MIT",
+        "ported_components": [
+          "autoencoder",
+          "denoiser",
+          "diffusion",
+          "spectral_correction",
+          "inference"
+        ]
+      },
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "first_stage_config": {
+          "embed_dim": 4,
+          "double_z": true,
+          "z_channels": 4,
+          "resolution": 512,
+          "in_channels": 4,
+          "out_ch": 4,
+          "ch": 128,
+          "ch_mult": [
+            1,
+            2,
+            4
+          ],
+          "num_res_blocks": 2,
+          "attn_resolutions": [],
+          "dropout": 0.0
+        },
+        "cond_stage_config": {
+          "image_size": 128,
+          "in_channels": 8,
+          "model_channels": 160,
+          "out_channels": 4,
+          "num_res_blocks": 2,
+          "attention_resolutions": [
+            16,
+            8
+          ],
+          "channel_mult": [
+            1,
+            2,
+            2,
+            4
+          ],
+          "num_head_channels": 32
+        },
+        "timesteps": 1000,
+        "linear_start": 0.0015,
+        "linear_end": 0.0155,
+        "parameterization": "eps"
+      },
+      "inference": {
+        "sampler": "dpm_solver++",
+        "sampling_steps": 3,
+        "sampling_eta": 0.0,
+        "sampling_temperature": 1.0,
+        "spectral_correction": "back_projection",
+        "back_projection": {
+          "scale": 4,
+          "blur_sigma": 0.0,
+          "max_iterations": 100,
+          "tolerance": 1e-06,
+          "relaxation": 1.0
+        }
+      },
+      "supported_options": [
+        "sampler",
+        "sampling_steps",
+        "sampling_eta",
+        "sampling_temperature",
+        "spectral_correction",
+        "back_projection"
+      ],
+      "artifacts": [
+        {
+          "name": "weights",
+          "repo_id": "simon-donike/RS-SR-LTDF",
+          "revision": "511900900f6b94e0315d47f21f2a9d988d9d238d",
+          "filename": "opensr-ldsrs2_v1_0_0.ckpt",
+          "sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a",
+          "size": 1130715795,
+          "format": "pytorch",
+          "license": "MIT",
+          "url": null,
+          "local_only": false
+        }
+      ],
+      "components": [],
+      "citations": [
+        "https://doi.org/10.1109/JSTARS.2025.3542220"
+      ],
+      "validation": {
+        "reference": "docs/reports/parity/ldsr-s2.json",
+        "cpu_float32_max_abs_error": 0.0,
+        "reference_test": "tests/parity/test_ldsr_upstream_reference.py"
+      },
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "MIT",
+      "pretrained": true,
+      "description": "LDSR-S2 canonical v1 weights; DPM-Solver++ 3 steps and back-projection."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "opensr/sen2sr-lite-rgbn-x4@1",
+      "family": "sen2sr",
+      "variant": "rgbn-x4",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "output_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "native_resolutions_m": {
+        "B04": 10.0,
+        "B03": 10.0,
+        "B02": 10.0,
+        "B08": 10.0
+      },
+      "scale": 4,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": [
+        128,
+        128
+      ],
+      "min_size": [
+        128,
+        128
+      ],
+      "max_size": [
+        128,
+        128
+      ],
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "portable",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "experimental",
+      "owner": "opensr",
+      "source": {
+        "repository": "https://github.com/ESAOpenSR/SEN2SR",
+        "revision": "3986620793736da6efcdc92771f76a63127cae66",
+        "license": "CC0-1.0",
+        "ported_components": [
+          "CNNSR",
+          "HardConstraint",
+          "nonreference.srmodel"
+        ]
+      },
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "type": "cnn",
+        "in_channels": 4,
+        "out_channels": 4,
+        "upscale": 4,
+        "parameters": {
+          "feature_channels": 24,
+          "num_blocks": 6,
+          "train_mode": false,
+          "bias": true
+        }
+      },
+      "inference": {},
+      "supported_options": [],
+      "artifacts": [
+        {
+          "name": "model",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "filename": "SEN2SRLite/NonReference_RGBN_x4/model.safetensor",
+          "sha256": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e",
+          "size": 2308216,
+          "format": "safetensors",
+          "license": "CC0-1.0",
+          "url": null,
+          "local_only": false
+        },
+        {
+          "name": "hard_constraint",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "filename": "SEN2SRLite/NonReference_RGBN_x4/hard_constraint.safetensor",
+          "sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239",
+          "size": 1048656,
+          "format": "safetensors",
+          "license": "CC0-1.0",
+          "url": null,
+          "local_only": false
+        }
+      ],
+      "components": [],
+      "citations": [
+        "https://doi.org/10.1016/j.rse.2025.115222"
+      ],
+      "validation": {
+        "reference": "tests/parity/sen2sr_lite_rgbn_parity.json",
+        "cpu_float32_max_abs_error": 0.0,
+        "reference_test": "tests/parity/test_sen2sr_upstream_reference.py"
+      },
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "CC0-1.0",
+      "pretrained": true,
+      "description": "SEN2SRLite RGB-NIR SISR with frozen Fourier hard constraint."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "opensr/sen2sr-rgbn-x4@1",
+      "family": "sen2sr",
+      "variant": "rgbn-x4",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "output_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "native_resolutions_m": {
+        "B04": 10.0,
+        "B03": 10.0,
+        "B02": 10.0,
+        "B08": 10.0
+      },
+      "scale": 4,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": [
+        128,
+        128
+      ],
+      "min_size": [
+        128,
+        128
+      ],
+      "max_size": [
+        128,
+        128
+      ],
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "mamba-cuda",
+      "devices": [
+        "cuda"
+      ],
+      "status": "experimental",
+      "owner": "opensr",
+      "source": {
+        "repository": "https://github.com/ESAOpenSR/SEN2SR",
+        "revision": "3986620793736da6efcdc92771f76a63127cae66",
+        "license": "CC0-1.0",
+        "ported_components": [
+          "MambaSR",
+          "HardConstraint",
+          "nonreference.srmodel"
+        ]
+      },
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "type": "mamba",
+        "in_channels": 4,
+        "out_channels": 4,
+        "upscale": 4,
+        "parameters": {
+          "img_size": [
+            128,
+            128
+          ],
+          "embed_dim": 96,
+          "depths": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "num_heads": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "mlp_ratio": 4,
+          "attention_type": "sigmoid_02",
+          "upsampler": "pixelshuffle",
+          "resi_connection": "1conv",
+          "operation_attention": "sum"
+        }
+      },
+      "inference": {},
+      "supported_options": [],
+      "artifacts": [
+        {
+          "name": "model",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "filename": "SEN2SR/NonReference_RGBN_x4/model.safetensor",
+          "sha256": "11e551b03663e873c5dcd4f02ec3fc8cdfa41ef46677540295ee4c6686ddc854",
+          "size": 55189944,
+          "format": "safetensors",
+          "license": "CC0-1.0",
+          "url": null,
+          "local_only": false
+        },
+        {
+          "name": "hard_constraint",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "filename": "SEN2SR/NonReference_RGBN_x4/hard_constraint.safetensor",
+          "sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239",
+          "size": 1048656,
+          "format": "safetensors",
+          "license": "CC0-1.0",
+          "url": null,
+          "local_only": false
+        }
+      ],
+      "components": [],
+      "citations": [
+        "https://doi.org/10.1016/j.rse.2025.115222"
+      ],
+      "validation": {},
+      "tested_environments": [],
+      "weight_license": "CC0-1.0",
+      "pretrained": true,
+      "description": "SEN2SR RGB-NIR SISR with frozen Fourier hard constraint."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "opensr/srgan-rgbn-x4@1",
+      "family": "srgan",
+      "variant": "RGB-NIR",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "output_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "native_resolutions_m": {
+        "B04": 10.0,
+        "B03": 10.0,
+        "B02": 10.0,
+        "B08": 10.0
+      },
+      "scale": 4,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": [
+        128,
+        128
+      ],
+      "min_size": null,
+      "max_size": null,
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "srgan",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "experimental",
+      "owner": "opensr",
+      "source": {
+        "repository": "https://github.com/ESAOpenSR/SRGAN",
+        "revision": "7bcb73b358d3990c0d70cbd66201afdd9dd2cdf3",
+        "license": "Apache-2.0",
+        "ported_components": [
+          "generator",
+          "radiometrics",
+          "inference checkpoint loading"
+        ]
+      },
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "Model": {
+          "in_bands": 4
+        },
+        "Generator": {
+          "in_bands": 4,
+          "model_type": "SRResNet",
+          "block_type": "rrdb",
+          "large_kernel_size": 9,
+          "small_kernel_size": 3,
+          "n_channels": 64,
+          "n_blocks": 24,
+          "scaling_factor": 4,
+          "growth_channels": 32,
+          "res_scale": 0.2
+        }
+      },
+      "inference": {
+        "histogram_match": true,
+        "use_ema": false
+      },
+      "supported_options": [
+        "histogram_match"
+      ],
+      "artifacts": [
+        {
+          "name": "weights",
+          "repo_id": "simon-donike/SR-GAN",
+          "revision": "7b984f30dbba26198ebf55527a1ee7126fa68d71",
+          "filename": "RGB-NIR_4band_inference.ckpt",
+          "sha256": "d55eee785ab5ff7d2d53d2c674d70461037722027020da2d2385b0fe43834281",
+          "size": 47106784,
+          "format": "pytorch",
+          "license": "undocumented-upstream",
+          "url": null,
+          "local_only": false
+        }
+      ],
+      "components": [],
+      "citations": [],
+      "validation": {
+        "reference": "docs/models/srgan-parity-evidence.json",
+        "cpu_float32_max_abs_error": 0.0,
+        "reference_test": "tests/parity/test_srgan_published.py"
+      },
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "undocumented-upstream",
+      "pretrained": true,
+      "description": "Published RGB-NIR SRGAN preset with official histogram matching; mirroring awaits weight-license documentation."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "evoland/wsx4-rgbn-x4@1",
+      "family": "evoland",
+      "variant": "wsx4_spatrad",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "output_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "native_resolutions_m": {
+        "B02": 10.0,
+        "B03": 10.0,
+        "B04": 10.0,
+        "B08": 10.0
+      },
+      "scale": 4,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": null,
+      "min_size": null,
+      "max_size": null,
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "portable",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "experimental",
+      "owner": "Evoland-Land-Monitoring-Evolution",
+      "source": {
+        "repository": "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+        "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+        "license": "Apache-2.0",
+        "ported_components": []
+      },
+      "implementation_revision": "native-onnx-graph-r1",
+      "architecture": {
+        "format": "onnx-declarative",
+        "source_file": "src/sentinel2_superresolution/models/wsx4_spatrad.onnx"
+      },
+      "inference": {
+        "normalization": "embedded in source graph",
+        "native_scale": 4
+      },
+      "supported_options": [],
+      "artifacts": [
+        {
+          "name": "model",
+          "repo_id": "Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+          "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+          "filename": "wsx4_spatrad.onnx",
+          "sha256": "d476439786bb0c6079b61875ea9cda5c62a5963115193a056e5f65bb94bc053e",
+          "size": 17996501,
+          "format": "onnx",
+          "license": "Apache-2.0",
+          "url": "https://raw.githubusercontent.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution/cc5dec8c9c6b4917b99172a02d86659278334642/src/sentinel2_superresolution/models/wsx4_spatrad.onnx",
+          "local_only": false
+        }
+      ],
+      "components": [],
+      "citations": [
+        "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution"
+      ],
+      "validation": {
+        "status": "onnxruntime_native_graph_parity",
+        "max_abs_error_cpu": 0.004
+      },
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "Apache-2.0",
+      "pretrained": true,
+      "description": "Evoland Sentinel-2 RGB-NIR native Torch graph converted from the published ONNX artifact."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "remicres/sr4rs-rgbn-x4@1",
+      "family": "sr4rs",
+      "variant": "France-2020",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "output_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 2.5,
+      "native_resolutions_m": {
+        "B04": 10.0,
+        "B03": 10.0,
+        "B02": 10.0,
+        "B08": 10.0
+      },
+      "scale": 4,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": [
+        128,
+        128
+      ],
+      "min_size": null,
+      "max_size": null,
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "sr4rs",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "experimental",
+      "owner": "opensr",
+      "source": {
+        "repository": "https://github.com/remicres/sr4rs",
+        "revision": "35ce4aaa131bed40cbbc1977c454d92b50d2d0d9",
+        "license": "MIT",
+        "ported_components": [
+          "generator",
+          "equalized convolution",
+          "blur",
+          "pixel normalization"
+        ]
+      },
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "channels": 4,
+        "dim": 64,
+        "nresblocks": 16,
+        "input_scale": 1.0,
+        "output_scale": 1.0
+      },
+      "inference": {
+        "normalization": "reflectance_to_raw_10000_then_upstream_lr_scale_1e-4",
+        "output": "4x"
+      },
+      "supported_options": [],
+      "artifacts": [
+        {
+          "name": "variables_index",
+          "repo_id": "isp-uv-es/superIX",
+          "revision": "99343836564dae33541fd61c62beeecf7af3ed9f",
+          "filename": "sr4rs/weights/cesbio_model/sr4rs_sentinel2_bands4328_france2020_savedmodel/variables/variables.index",
+          "sha256": "3748c77ada560671e239910f4429f431847055c299976c1f36e78dac965c038d",
+          "size": 21653,
+          "format": "tensorflow-checkpoint-index",
+          "license": "unknown-publisher-terms",
+          "url": null,
+          "local_only": false
+        },
+        {
+          "name": "variables_data",
+          "repo_id": "isp-uv-es/superIX",
+          "revision": "99343836564dae33541fd61c62beeecf7af3ed9f",
+          "filename": "sr4rs/weights/cesbio_model/sr4rs_sentinel2_bands4328_france2020_savedmodel/variables/variables.data-00000-of-00001",
+          "sha256": "4045311226af9e908b6c741301399a556b2705f20963e9d80213ce1a1fac81a3",
+          "size": 297612052,
+          "format": "tensorflow-checkpoint-data",
+          "license": "unknown-publisher-terms",
+          "url": null,
+          "local_only": false
+        }
+      ],
+      "components": [],
+      "citations": [
+        "https://github.com/remicres/sr4rs"
+      ],
+      "validation": {
+        "status": "validated_tensorflow_native_parity",
+        "max_abs": 1.6093254089355469e-06,
+        "mean_abs": 6.82400411733397e-08
+      },
+      "tested_environments": [
+        "linux-python312-torch260-cu126"
+      ],
+      "weight_license": "unknown-publisher-terms",
+      "pretrained": true,
+      "description": "SR4RS France-2020 RGB-NIR native generator; safely reads pinned tensor slices from the original TensorFlow checkpoint without a TensorFlow dependency."
+    }
+  ],
+  "run_recipes": [
+    "opensr/bicubic-x4@1",
+    "opensr/bilinear-x4@1",
+    "opensr/ldsrs2-rgbn-x4-ddim100-histogram@1",
+    "opensr/ldsrs2-rgbn-x4@1",
+    "opensr/sen2sr-lite-rgbn-x4@1",
+    "opensr/sen2sr-rgbn-x4@1",
+    "opensr/srgan-rgbn-x4@1",
+    "evoland/wsx4-rgbn-x4@1",
+    "remicres/sr4rs-rgbn-x4@1"
+  ],
+  "rows": 81,
+  "complete": true,
+  "cohort_complete": true,
+  "sample_ids": [
+    "2018_MLBS_3__0_2.tif",
+    "2018_MLBS_3__1_1.tif",
+    "2018_MLBS_3__1_2.tif"
+  ],
+  "provenance": {
+    "opensr/bicubic-x4@1": {
+      "recipe_id": "opensr/bicubic-x4@1",
+      "recipe_sha256": "b669e7156f2828b74a4ad2b07184df7753884047b84fc3c8b032e07e72eb62c6",
+      "implementation_revision": "native-r1",
+      "artifacts": {},
+      "artifact_records": {},
+      "components": [],
+      "settings": {
+        "align_corners": false,
+        "antialias": false
+      },
+      "effective_recipe_sha256": "51f9bfc68b47c82ca736fc1192a36f5e0149868a2f38483b3c5860394c6381c9",
+      "seed": 2,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "opensr/bilinear-x4@1": {
+      "recipe_id": "opensr/bilinear-x4@1",
+      "recipe_sha256": "961228b426573c3af693843e7af34d14e193503c53d6fbc94f4751c3fa8f4595",
+      "implementation_revision": "native-r1",
+      "artifacts": {},
+      "artifact_records": {},
+      "components": [],
+      "settings": {
+        "align_corners": false,
+        "antialias": false
+      },
+      "effective_recipe_sha256": "cfdb3fb9176a5130598718dc748971fc3f0df4d630a5a3613612ff11a7194749",
+      "seed": 2,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "opensr/ldsrs2-rgbn-x4-ddim100-histogram@1": {
+      "recipe_id": "opensr/ldsrs2-rgbn-x4-ddim100-histogram@1",
+      "recipe_sha256": "880f6b30edcd74c96ea396dd380a7a4db0ca499c7ca740d4843428add13273fa",
+      "implementation_revision": "native-r1",
+      "artifacts": {
+        "weights": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a"
+      },
+      "artifact_records": {
+        "weights": {
+          "origin": "huggingface-hub",
+          "filename": "opensr-ldsrs2_v1_0_0.ckpt",
+          "sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a",
+          "size": 1130715795,
+          "format": "pytorch",
+          "repo_id": "simon-donike/RS-SR-LTDF",
+          "revision": "511900900f6b94e0315d47f21f2a9d988d9d238d",
+          "url": null,
+          "source_sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a"
+        }
+      },
+      "components": [],
+      "settings": {
+        "sampler": "ddim",
+        "sampling_steps": 100,
+        "sampling_eta": 0.95,
+        "sampling_temperature": 1.0,
+        "spectral_correction": "histogram",
+        "back_projection": {
+          "scale": 4,
+          "blur_sigma": 0.0,
+          "max_iterations": 100,
+          "tolerance": 1e-06,
+          "relaxation": 1.0
+        }
+      },
+      "effective_recipe_sha256": "785f82f557814f1fbdf9d20f0057a352140beb73c776159b29a46ea8840b568c",
+      "seed": 2,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "opensr/ldsrs2-rgbn-x4@1": {
+      "recipe_id": "opensr/ldsrs2-rgbn-x4@1",
+      "recipe_sha256": "d286f3ea4cecf2d6ba5825929b9b41e957bfb70435a65d7b44a7deef86231bba",
+      "implementation_revision": "native-r1",
+      "artifacts": {
+        "weights": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a"
+      },
+      "artifact_records": {
+        "weights": {
+          "origin": "huggingface-hub",
+          "filename": "opensr-ldsrs2_v1_0_0.ckpt",
+          "sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a",
+          "size": 1130715795,
+          "format": "pytorch",
+          "repo_id": "simon-donike/RS-SR-LTDF",
+          "revision": "511900900f6b94e0315d47f21f2a9d988d9d238d",
+          "url": null,
+          "source_sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a"
+        }
+      },
+      "components": [],
+      "settings": {
+        "sampler": "dpm_solver++",
+        "sampling_steps": 3,
+        "sampling_eta": 0.0,
+        "sampling_temperature": 1.0,
+        "spectral_correction": "back_projection",
+        "back_projection": {
+          "scale": 4,
+          "blur_sigma": 0.0,
+          "max_iterations": 100,
+          "tolerance": 1e-06,
+          "relaxation": 1.0
+        }
+      },
+      "effective_recipe_sha256": "8818e80f15062ddda225609fbebe0787e70f8fac5cc51ce047c938a358ebeaf3",
+      "seed": 2,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "opensr/sen2sr-lite-rgbn-x4@1": {
+      "recipe_id": "opensr/sen2sr-lite-rgbn-x4@1",
+      "recipe_sha256": "2fe30e4db1aadae05954ab71adf033d62dfd1cd90a88ce34f8ace38a00097173",
+      "implementation_revision": "native-r1",
+      "artifacts": {
+        "model": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e",
+        "hard_constraint": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239"
+      },
+      "artifact_records": {
+        "model": {
+          "origin": "huggingface-hub",
+          "filename": "SEN2SRLite/NonReference_RGBN_x4/model.safetensor",
+          "sha256": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e",
+          "size": 2308216,
+          "format": "safetensors",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "url": null,
+          "source_sha256": "479aa796d5068d0b1206118ccbca27bd3223df0214db1a9b31a1e18349ed1c7e"
+        },
+        "hard_constraint": {
+          "origin": "huggingface-hub",
+          "filename": "SEN2SRLite/NonReference_RGBN_x4/hard_constraint.safetensor",
+          "sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239",
+          "size": 1048656,
+          "format": "safetensors",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "url": null,
+          "source_sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239"
+        }
+      },
+      "components": [],
+      "settings": {},
+      "effective_recipe_sha256": "a3fdd2a6463c809aaacc79de02f016ba287a07515a82a342f0bc8abeac529c74",
+      "seed": 2,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "opensr/sen2sr-rgbn-x4@1": {
+      "recipe_id": "opensr/sen2sr-rgbn-x4@1",
+      "recipe_sha256": "dfeb51f2edd0e20019c9fd43936beb692a798c5da46abd4d04b6ab49e1600977",
+      "implementation_revision": "native-r1",
+      "artifacts": {
+        "model": "11e551b03663e873c5dcd4f02ec3fc8cdfa41ef46677540295ee4c6686ddc854",
+        "hard_constraint": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239"
+      },
+      "artifact_records": {
+        "model": {
+          "origin": "huggingface-hub",
+          "filename": "SEN2SR/NonReference_RGBN_x4/model.safetensor",
+          "sha256": "11e551b03663e873c5dcd4f02ec3fc8cdfa41ef46677540295ee4c6686ddc854",
+          "size": 55189944,
+          "format": "safetensors",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "url": null,
+          "source_sha256": "11e551b03663e873c5dcd4f02ec3fc8cdfa41ef46677540295ee4c6686ddc854"
+        },
+        "hard_constraint": {
+          "origin": "huggingface-hub",
+          "filename": "SEN2SR/NonReference_RGBN_x4/hard_constraint.safetensor",
+          "sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239",
+          "size": 1048656,
+          "format": "safetensors",
+          "repo_id": "tacofoundation/SEN2SR",
+          "revision": "469e9b3a049f9320ba66b3a39b9655dbd31480b3",
+          "url": null,
+          "source_sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239"
+        }
+      },
+      "components": [],
+      "settings": {},
+      "effective_recipe_sha256": "306499c4dccbd8d6f58a67ab8caed6888ab85dfa0f7effc46434d8cc647391c4",
+      "seed": 2,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "opensr/srgan-rgbn-x4@1": {
+      "recipe_id": "opensr/srgan-rgbn-x4@1",
+      "recipe_sha256": "5dc3f8590a3f9c14363df9ae4ebd77fa2c7b2e8511d15483aad6872f5f2a8c85",
+      "implementation_revision": "native-r1",
+      "artifacts": {
+        "weights": "d55eee785ab5ff7d2d53d2c674d70461037722027020da2d2385b0fe43834281"
+      },
+      "artifact_records": {
+        "weights": {
+          "origin": "huggingface-hub",
+          "filename": "RGB-NIR_4band_inference.ckpt",
+          "sha256": "d55eee785ab5ff7d2d53d2c674d70461037722027020da2d2385b0fe43834281",
+          "size": 47106784,
+          "format": "pytorch",
+          "repo_id": "simon-donike/SR-GAN",
+          "revision": "7b984f30dbba26198ebf55527a1ee7126fa68d71",
+          "url": null,
+          "source_sha256": "d55eee785ab5ff7d2d53d2c674d70461037722027020da2d2385b0fe43834281"
+        }
+      },
+      "components": [],
+      "settings": {
+        "histogram_match": true,
+        "use_ema": false
+      },
+      "effective_recipe_sha256": "7629e4fea1e504af87884cafe86585d237e6b267002ff6c7e54d85814753e385",
+      "seed": 2,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "evoland/wsx4-rgbn-x4@1": {
+      "recipe_id": "evoland/wsx4-rgbn-x4@1",
+      "recipe_sha256": "cc31721df87c81cbbf546f781fbd814b8cc01e20cd73af02882088b68be8dc55",
+      "implementation_revision": "native-onnx-graph-r1",
+      "artifacts": {
+        "model": "d476439786bb0c6079b61875ea9cda5c62a5963115193a056e5f65bb94bc053e"
+      },
+      "artifact_records": {
+        "model": {
+          "origin": "pinned-url",
+          "filename": "wsx4_spatrad.onnx",
+          "sha256": "d476439786bb0c6079b61875ea9cda5c62a5963115193a056e5f65bb94bc053e",
+          "size": 17996501,
+          "format": "onnx",
+          "repo_id": "Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+          "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+          "url": "https://raw.githubusercontent.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution/cc5dec8c9c6b4917b99172a02d86659278334642/src/sentinel2_superresolution/models/wsx4_spatrad.onnx",
+          "source_sha256": "d476439786bb0c6079b61875ea9cda5c62a5963115193a056e5f65bb94bc053e"
+        }
+      },
+      "components": [],
+      "settings": {
+        "normalization": "embedded in source graph",
+        "native_scale": 4
+      },
+      "effective_recipe_sha256": "e16f36042cb80b0c0b4ab8cd91566eab3ef1f047788ac402526de743265a4a90",
+      "seed": 2,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ]
+    },
+    "remicres/sr4rs-rgbn-x4@1": {
+      "recipe_id": "remicres/sr4rs-rgbn-x4@1",
+      "recipe_sha256": "ce486649e20e27f1b67960714e1d5c15c1c76510e639c16ce78ef82ff666c4c8",
+      "implementation_revision": "native-r1",
+      "artifacts": {
+        "variables_index": "3748c77ada560671e239910f4429f431847055c299976c1f36e78dac965c038d",
+        "variables_data": "4045311226af9e908b6c741301399a556b2705f20963e9d80213ce1a1fac81a3"
+      },
+      "artifact_records": {
+        "variables_index": {
+          "origin": "huggingface-hub",
+          "filename": "sr4rs/weights/cesbio_model/sr4rs_sentinel2_bands4328_france2020_savedmodel/variables/variables.index",
+          "sha256": "3748c77ada560671e239910f4429f431847055c299976c1f36e78dac965c038d",
+          "size": 21653,
+          "format": "tensorflow-checkpoint-index",
+          "repo_id": "isp-uv-es/superIX",
+          "revision": "99343836564dae33541fd61c62beeecf7af3ed9f",
+          "url": null,
+          "source_sha256": "3748c77ada560671e239910f4429f431847055c299976c1f36e78dac965c038d"
+        },
+        "variables_data": {
+          "origin": "huggingface-hub",
+          "filename": "sr4rs/weights/cesbio_model/sr4rs_sentinel2_bands4328_france2020_savedmodel/variables/variables.data-00000-of-00001",
+          "sha256": "4045311226af9e908b6c741301399a556b2705f20963e9d80213ce1a1fac81a3",
+          "size": 297612052,
+          "format": "tensorflow-checkpoint-data",
+          "repo_id": "isp-uv-es/superIX",
+          "revision": "99343836564dae33541fd61c62beeecf7af3ed9f",
+          "url": null,
+          "source_sha256": "4045311226af9e908b6c741301399a556b2705f20963e9d80213ce1a1fac81a3"
+        }
+      },
+      "components": [],
+      "settings": {
+        "normalization": "reflectance_to_raw_10000_then_upstream_lr_scale_1e-4",
+        "output": "4x"
+      },
+      "effective_recipe_sha256": "0a02f9a97f88fcc4fda1ce0ddc4466e20d744afe117d8fa84904975c1a4516e6",
+      "seed": 2,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    }
+  },
+  "runtime": {
+    "device": "cuda",
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+    "package_version": "0.1.0.dev0",
+    "torch": "2.6.0+cu126",
+    "cuda_runtime": "12.6",
+    "hardware": "NVIDIA GeForce RTX 3090",
+    "packages": {
+      "opensr-model-zoo": "0.1.0.dev0",
+      "torch": "2.6.0+cu126",
+      "torchvision": "0.21.0+cu126",
+      "numpy": "2.5.4",
+      "diffusers": "0.35.2",
+      "mamba-ssm": "2.2.5",
+      "timm": "1.0.15",
+      "onnx": "1.23.2",
+      "scikit-image": "0.25.2",
+      "rasterio": "1.5.2",
+      "safetensors": "0.8.0",
+      "huggingface-hub": "0.36.2",
+      "opensr-test": "1.3.3",
+      "satalign": "0.1.17",
+      "opencv-python": "5.0.0.93",
+      "scipy": "1.18.1"
+    },
+    "runtime_lock_sha256": "55084db60f33c8ab2cd9756d2b6c07f36dc05b0a10f77a34f9856bd70a956e4e",
+    "precision": "float32",
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false,
+    "driver": [
+      "580.178.04"
+    ]
+  }
+}

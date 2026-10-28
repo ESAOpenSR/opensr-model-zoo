@@ -1,0 +1,2294 @@
+{
+  "benchmark_hash": "3eb1d4e8281f3a8d767c1d2ebdab4121e23fb5267ea04de506ab454a8e6f608e",
+  "protocol": {
+    "benchmark_version": "1",
+    "dataset": {
+      "id": "isp-uv-es/SEN2NEON",
+      "revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "split": "validation",
+      "training_overlap": "unknown",
+      "sample_ids": [
+        "2019_JORN_3__9_6.tif",
+        "2019_SOAP_4__1_4.tif",
+        "2021_OSBS_6__3_1.tif",
+        "2022_HARV_7__4_3.tif",
+        "2022_MLBS_5__3_2.tif",
+        "2024_KONZ_9__6_2.tif"
+      ]
+    },
+    "recipes": [
+      {
+        "schema_version": 1,
+        "recipe_id": "opensr/bicubic-x2@1",
+        "family": "interpolation",
+        "variant": "bicubic",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "output_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 5.0,
+        "native_resolutions_m": {
+          "B04": 10.0,
+          "B03": 10.0,
+          "B02": 10.0,
+          "B08": 10.0
+        },
+        "scale": 2,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": null,
+        "min_size": null,
+        "max_size": null,
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "portable",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "maintained",
+        "owner": "opensr",
+        "source": null,
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "mode": "bicubic"
+        },
+        "inference": {
+          "align_corners": false,
+          "antialias": false
+        },
+        "supported_options": [
+          "align_corners",
+          "antialias"
+        ],
+        "artifacts": [],
+        "components": [],
+        "citations": [],
+        "validation": {},
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "not-applicable",
+        "pretrained": false,
+        "description": "Bicubic interpolation reference on RGB-NIR reflectances; no clipping."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "opensr/bilinear-x2@1",
+        "family": "interpolation",
+        "variant": "bilinear",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "output_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 5.0,
+        "native_resolutions_m": {
+          "B04": 10.0,
+          "B03": 10.0,
+          "B02": 10.0,
+          "B08": 10.0
+        },
+        "scale": 2,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": null,
+        "min_size": null,
+        "max_size": null,
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "portable",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "maintained",
+        "owner": "opensr",
+        "source": null,
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "mode": "bilinear"
+        },
+        "inference": {
+          "align_corners": false,
+          "antialias": false
+        },
+        "supported_options": [
+          "align_corners",
+          "antialias"
+        ],
+        "artifacts": [],
+        "components": [],
+        "citations": [],
+        "validation": {},
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "not-applicable",
+        "pretrained": false,
+        "description": "Bilinear interpolation reference on RGB-NIR reflectances; no clipping."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "evoland/s2v2x2-rgbn-x2@1",
+        "family": "evoland",
+        "variant": "s2v2x2_spatrad",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "output_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 5.0,
+        "native_resolutions_m": {
+          "B02": 10.0,
+          "B03": 10.0,
+          "B04": 10.0,
+          "B08": 10.0
+        },
+        "scale": 2,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": null,
+        "min_size": null,
+        "max_size": null,
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "portable",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "experimental",
+        "owner": "Evoland-Land-Monitoring-Evolution",
+        "source": {
+          "repository": "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+          "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+          "license": "Apache-2.0",
+          "ported_components": []
+        },
+        "implementation_revision": "native-onnx-graph-r1",
+        "architecture": {
+          "format": "onnx-declarative",
+          "source_file": "src/sentinel2_superresolution/models/s2v2x2_spatrad.onnx"
+        },
+        "inference": {
+          "normalization": "embedded in source graph",
+          "native_scale": 2
+        },
+        "supported_options": [],
+        "artifacts": [
+          {
+            "name": "model",
+            "repo_id": "Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+            "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+            "filename": "s2v2x2_spatrad.onnx",
+            "sha256": "a49c14d2a0a2dd65d740568987a2ba75620c5050904f214bbde2b840a189876a",
+            "size": 17847293,
+            "format": "onnx",
+            "license": "Apache-2.0",
+            "url": "https://raw.githubusercontent.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution/cc5dec8c9c6b4917b99172a02d86659278334642/src/sentinel2_superresolution/models/s2v2x2_spatrad.onnx",
+            "local_only": false
+          }
+        ],
+        "components": [],
+        "citations": [
+          "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution"
+        ],
+        "validation": {
+          "status": "onnxruntime_native_graph_parity",
+          "max_abs_error_cpu": 0.004
+        },
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "Apache-2.0",
+        "pretrained": true,
+        "description": "Evoland Sentinel-2 RGB-NIR native Torch graph converted from the published ONNX artifact."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "evoland/wsx2-rgbn-x2@1",
+        "family": "evoland",
+        "variant": "wsx2_spatrad",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "output_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 5.0,
+        "native_resolutions_m": {
+          "B02": 10.0,
+          "B03": 10.0,
+          "B04": 10.0,
+          "B08": 10.0
+        },
+        "scale": 2,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": null,
+        "min_size": null,
+        "max_size": null,
+        "size_multiple": 1,
+        "padding": "none",
+        "runtime": "portable",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "experimental",
+        "owner": "Evoland-Land-Monitoring-Evolution",
+        "source": {
+          "repository": "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+          "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+          "license": "Apache-2.0",
+          "ported_components": []
+        },
+        "implementation_revision": "native-onnx-graph-r1",
+        "architecture": {
+          "format": "onnx-declarative",
+          "source_file": "src/sentinel2_superresolution/models/wsx2_spatrad.onnx"
+        },
+        "inference": {
+          "normalization": "embedded in source graph",
+          "native_scale": 2
+        },
+        "supported_options": [],
+        "artifacts": [
+          {
+            "name": "model",
+            "repo_id": "Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+            "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+            "filename": "wsx2_spatrad.onnx",
+            "sha256": "18d8c30c8b107e793cf74e4e3d3f13e2b179cc53389e1837c137fb813a8595ad",
+            "size": 17847293,
+            "format": "onnx",
+            "license": "Apache-2.0",
+            "url": "https://raw.githubusercontent.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution/cc5dec8c9c6b4917b99172a02d86659278334642/src/sentinel2_superresolution/models/wsx2_spatrad.onnx",
+            "local_only": false
+          }
+        ],
+        "components": [],
+        "citations": [
+          "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution"
+        ],
+        "validation": {
+          "status": "onnxruntime_native_graph_parity",
+          "max_abs_error_cpu": 0.004
+        },
+        "tested_environments": [
+          "linux-python312-torch260-cpu"
+        ],
+        "weight_license": "Apache-2.0",
+        "pretrained": true,
+        "description": "Evoland Sentinel-2 RGB-NIR native Torch graph converted from the published ONNX artifact."
+      },
+      {
+        "schema_version": 1,
+        "recipe_id": "implab/swin2-mose-sen2venus-rgbn-x2@1",
+        "family": "swin2-mose",
+        "variant": "sen2venus-v1.1",
+        "task": "single-image-super-resolution",
+        "sensor": "Sentinel-2",
+        "processing_level": "L2A",
+        "input_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "output_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "predicted_bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B08"
+        ],
+        "passthrough_bands": [],
+        "input_resolution_m": 10.0,
+        "output_resolution_m": 5.0,
+        "native_resolutions_m": {
+          "B02": 10.0,
+          "B03": 10.0,
+          "B04": 10.0,
+          "B08": 10.0
+        },
+        "scale": 2,
+        "input_units": "reflectance",
+        "output_units": "reflectance",
+        "patch_size": [
+          64,
+          64
+        ],
+        "min_size": [
+          64,
+          64
+        ],
+        "max_size": [
+          64,
+          64
+        ],
+        "size_multiple": 16,
+        "padding": "reflect",
+        "runtime": "portable",
+        "devices": [
+          "cpu",
+          "cuda"
+        ],
+        "status": "experimental",
+        "owner": "IMPLabUniPr",
+        "source": {
+          "repository": "https://github.com/IMPLabUniPr/swin2-mose",
+          "revision": "095d314b90d007d44104796d4b591401b6617a80",
+          "license": "GPL-2.0-only",
+          "ported_components": [
+            "Swin2SR backbone",
+            "top-2 MoE router",
+            "smart merger",
+            "Sen2Venus inference recipe"
+          ]
+        },
+        "implementation_revision": "native-r1",
+        "architecture": {
+          "type": "Swin2-MoSE",
+          "channels": 4,
+          "features": 90,
+          "depths": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "heads": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "window_size": 16,
+          "experts": 8,
+          "selected_experts": 2,
+          "upsampler": "pixelshuffledirect"
+        },
+        "inference": {
+          "input_scaling": "reflectance_to_raw_10000",
+          "normalization": "published_sen2venus_channel_mean_std",
+          "output_denormalization": "published_sen2venus_hr_mean_std_to_reflectance"
+        },
+        "supported_options": [],
+        "artifacts": [
+          {
+            "name": "archive",
+            "repo_id": "IMPLabUniPr/swin2-mose",
+            "revision": "095d314b90d007d44104796d4b591401b6617a80",
+            "filename": "sen2venus_exp4_2x_v5_1.zip",
+            "sha256": "4bfcae792956cd8d51a38f2ff02de5565675197e282c436032e404ac306a62f3",
+            "size": 49702711,
+            "format": "zip",
+            "license": "GPL-2.0-only",
+            "url": "https://github.com/IMPLabUniPr/swin2-mose/releases/download/v1.1/sen2venus_exp4_2x_v5_1.zip",
+            "local_only": false
+          }
+        ],
+        "components": [],
+        "citations": [
+          "https://doi.org/10.1049/ipr2.13303"
+        ],
+        "validation": {
+          "source_release": "v1.1",
+          "cpu_float32_max_abs_error": 0.0,
+          "routing_inputs": 3,
+          "reference_test": "tests/parity/test_swin2_mose_native.py",
+          "cuda_smoke": {
+            "torch": "2.6.0+cu126",
+            "device": "NVIDIA GeForce RTX 3090",
+            "output_shape": [
+              1,
+              4,
+              128,
+              128
+            ],
+            "finite": true
+          },
+          "fresh_download_gpu_inference": true,
+          "offline_reload": true
+        },
+        "tested_environments": [
+          "linux-python312-torch260-cu126"
+        ],
+        "weight_license": "GPL-2.0-only",
+        "pretrained": true,
+        "description": "Swin2-MoSE Sen2Venus RGB-NIR x2 SISR with native Torch inference and the frozen upstream v1.1 checkpoint."
+      }
+    ],
+    "seeds": [
+      0
+    ],
+    "metrics": {
+      "names": [
+        "psnr",
+        "ssim",
+        "sam"
+      ],
+      "border": 16,
+      "mask": "valid",
+      "score_predicted_only": true,
+      "data_range": 1.0,
+      "ssim_win_size": 7
+    },
+    "conditioning": {
+      "mode": "RGBN",
+      "bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "output_grids": {},
+    "task": "single-image-super-resolution",
+    "cohort": "isp-uv-es/SEN2NEON",
+    "warmup": 1,
+    "samples": [
+      {
+        "id": "2019_JORN_3__9_6.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 5.0,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2019_JORN_3__9_6.tif",
+        "hr_source": "neon_2.5m_linearized/2019_JORN_3__9_6.tif",
+        "crop": {
+          "x": 96,
+          "y": 96,
+          "size_lr": 64,
+          "size_hr": 128
+        },
+        "reference_resampling": "area-2x-all-valid",
+        "source_hashes": {
+          "lr": "853ccbc5a8e494951ef7281a0842923f5d21ab885b4950376cf9ef7b840cf3df",
+          "hr": "695a4e7579cd149b0a4967a28e9797b149dc1258b33aee0fced719b53a041c73"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32613",
+          "transform": [
+            10.0,
+            0.0,
+            329340.0,
+            0.0,
+            -10.0,
+            3603960.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            329340.0,
+            3601400.0,
+            331900.0,
+            3603960.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32613",
+          "transform": [
+            2.5,
+            0.0,
+            329340.0,
+            0.0,
+            -2.5,
+            3603960.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            329340.0,
+            3601400.0,
+            331900.0,
+            3603960.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32613",
+          "transform": [
+            10.0,
+            0.0,
+            330300.0,
+            0.0,
+            -10.0,
+            3603000.0
+          ],
+          "width": 64,
+          "height": 64,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            330300.0,
+            3602360.0,
+            330940.0,
+            3603000.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32613",
+          "transform": [
+            5.0,
+            0.0,
+            330300.0,
+            0.0,
+            -5.0,
+            3603000.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 5.0,
+          "pixel_size_y": 5.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            330300.0,
+            3602360.0,
+            330940.0,
+            3603000.0
+          ]
+        }
+      },
+      {
+        "id": "2019_SOAP_4__1_4.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 5.0,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2019_SOAP_4__1_4.tif",
+        "hr_source": "neon_2.5m_linearized/2019_SOAP_4__1_4.tif",
+        "crop": {
+          "x": 96,
+          "y": 96,
+          "size_lr": 64,
+          "size_hr": 128
+        },
+        "reference_resampling": "area-2x-all-valid",
+        "source_hashes": {
+          "lr": "ded69030ead13b7faad496d547ed0a3efbe23bdb7e93378bc1ad7f5506d37edf",
+          "hr": "c34ece1458d6ea8eb3d572e3365a5bf0118094cebb571dad1e96e9766879acaa"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32611",
+          "transform": [
+            10.0,
+            0.0,
+            302260.0,
+            0.0,
+            -10.0,
+            4107440.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            302260.0,
+            4104880.0,
+            304820.0,
+            4107440.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32611",
+          "transform": [
+            2.5,
+            0.0,
+            302260.0,
+            0.0,
+            -2.5,
+            4107440.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            302260.0,
+            4104880.0,
+            304820.0,
+            4107440.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32611",
+          "transform": [
+            10.0,
+            0.0,
+            303220.0,
+            0.0,
+            -10.0,
+            4106480.0
+          ],
+          "width": 64,
+          "height": 64,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            303220.0,
+            4105840.0,
+            303860.0,
+            4106480.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32611",
+          "transform": [
+            5.0,
+            0.0,
+            303220.0,
+            0.0,
+            -5.0,
+            4106480.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 5.0,
+          "pixel_size_y": 5.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            303220.0,
+            4105840.0,
+            303860.0,
+            4106480.0
+          ]
+        }
+      },
+      {
+        "id": "2021_OSBS_6__3_1.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 5.0,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2021_OSBS_6__3_1.tif",
+        "hr_source": "neon_2.5m_linearized/2021_OSBS_6__3_1.tif",
+        "crop": {
+          "x": 96,
+          "y": 96,
+          "size_lr": 64,
+          "size_hr": 128
+        },
+        "reference_resampling": "area-2x-all-valid",
+        "source_hashes": {
+          "lr": "222842dbf33e391eec289fed8b199578a207ef142b64b7f027d7376cbd8caeb6",
+          "hr": "a76540b7c896eec6acdefd9d171a69dc138f3cbcb8083f9f006671002de50994"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            396580.0,
+            0.0,
+            -10.0,
+            3286320.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            396580.0,
+            3283760.0,
+            399140.0,
+            3286320.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            396580.0,
+            0.0,
+            -2.5,
+            3286320.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            396580.0,
+            3283760.0,
+            399140.0,
+            3286320.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            397540.0,
+            0.0,
+            -10.0,
+            3285360.0
+          ],
+          "width": 64,
+          "height": 64,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            397540.0,
+            3284720.0,
+            398180.0,
+            3285360.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            5.0,
+            0.0,
+            397540.0,
+            0.0,
+            -5.0,
+            3285360.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 5.0,
+          "pixel_size_y": 5.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            397540.0,
+            3284720.0,
+            398180.0,
+            3285360.0
+          ]
+        }
+      },
+      {
+        "id": "2022_HARV_7__4_3.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 5.0,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2022_HARV_7__4_3.tif",
+        "hr_source": "neon_2.5m_linearized/2022_HARV_7__4_3.tif",
+        "crop": {
+          "x": 96,
+          "y": 96,
+          "size_lr": 64,
+          "size_hr": 128
+        },
+        "reference_resampling": "area-2x-all-valid",
+        "source_hashes": {
+          "lr": "d026dca6a0be6fe0f424d780b68e8cdf76f8a746fdaf6cec4006c881ac86c0e9",
+          "hr": "e23abb1b6cd5f569fd4abb01ef76b52457c55617b1368ab0868f98e4343655ba"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32618",
+          "transform": [
+            10.0,
+            0.0,
+            729660.0,
+            0.0,
+            -10.0,
+            4709780.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            729660.0,
+            4707220.0,
+            732220.0,
+            4709780.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32618",
+          "transform": [
+            2.5,
+            0.0,
+            729660.0,
+            0.0,
+            -2.5,
+            4709780.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            729660.0,
+            4707220.0,
+            732220.0,
+            4709780.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32618",
+          "transform": [
+            10.0,
+            0.0,
+            730620.0,
+            0.0,
+            -10.0,
+            4708820.0
+          ],
+          "width": 64,
+          "height": 64,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            730620.0,
+            4708180.0,
+            731260.0,
+            4708820.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32618",
+          "transform": [
+            5.0,
+            0.0,
+            730620.0,
+            0.0,
+            -5.0,
+            4708820.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 5.0,
+          "pixel_size_y": 5.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            730620.0,
+            4708180.0,
+            731260.0,
+            4708820.0
+          ]
+        }
+      },
+      {
+        "id": "2022_MLBS_5__3_2.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 5.0,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2022_MLBS_5__3_2.tif",
+        "hr_source": "neon_2.5m_linearized/2022_MLBS_5__3_2.tif",
+        "crop": {
+          "x": 96,
+          "y": 96,
+          "size_lr": 64,
+          "size_hr": 128
+        },
+        "reference_resampling": "area-2x-all-valid",
+        "source_hashes": {
+          "lr": "70addaf5982dd9af9258ed301c537e58fd0dfbe2a652f170feefff9aa1043b55",
+          "hr": "cd5f646411d92a7dbc44f60982aab76c32ef90f717603ab9f4d108a032a40400"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            539120.0,
+            0.0,
+            -10.0,
+            4137300.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            539120.0,
+            4134740.0,
+            541680.0,
+            4137300.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            2.5,
+            0.0,
+            539120.0,
+            0.0,
+            -2.5,
+            4137300.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            539120.0,
+            4134740.0,
+            541680.0,
+            4137300.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            10.0,
+            0.0,
+            540080.0,
+            0.0,
+            -10.0,
+            4136340.0
+          ],
+          "width": 64,
+          "height": 64,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            540080.0,
+            4135700.0,
+            540720.0,
+            4136340.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32617",
+          "transform": [
+            5.0,
+            0.0,
+            540080.0,
+            0.0,
+            -5.0,
+            4136340.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 5.0,
+          "pixel_size_y": 5.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            540080.0,
+            4135700.0,
+            540720.0,
+            4136340.0
+          ]
+        }
+      },
+      {
+        "id": "2024_KONZ_9__6_2.tif",
+        "input_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "reference_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "resolution_m": 10,
+        "reference_resolution_m": 5.0,
+        "units": "reflectance",
+        "processing_level": "L2A",
+        "task": "single-image-super-resolution",
+        "lr_source": "s2_l2a_10m/2024_KONZ_9__6_2.tif",
+        "hr_source": "neon_2.5m_linearized/2024_KONZ_9__6_2.tif",
+        "crop": {
+          "x": 96,
+          "y": 96,
+          "size_lr": 64,
+          "size_hr": 128
+        },
+        "reference_resampling": "area-2x-all-valid",
+        "source_hashes": {
+          "lr": "4ff48f95a8cb758549ff4872f6b3088ec5156f49026adac0bc5741ccef8138d8",
+          "hr": "cb1db3f6968f49c84020632c5c6a54edbbfd975ba54ab760da9f5812585429d2"
+        },
+        "source_bands": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12"
+        ],
+        "source_input_geospatial": {
+          "crs": "EPSG:32614",
+          "transform": [
+            10.0,
+            0.0,
+            707120.0,
+            0.0,
+            -10.0,
+            4333620.0
+          ],
+          "width": 256,
+          "height": 256,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            707120.0,
+            4331060.0,
+            709680.0,
+            4333620.0
+          ]
+        },
+        "source_reference_geospatial": {
+          "crs": "EPSG:32614",
+          "transform": [
+            2.5,
+            0.0,
+            707120.0,
+            0.0,
+            -2.5,
+            4333620.0
+          ],
+          "width": 1024,
+          "height": 1024,
+          "pixel_size": 2.5,
+          "pixel_size_y": 2.5,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            707120.0,
+            4331060.0,
+            709680.0,
+            4333620.0
+          ]
+        },
+        "input_geospatial": {
+          "crs": "EPSG:32614",
+          "transform": [
+            10.0,
+            0.0,
+            708080.0,
+            0.0,
+            -10.0,
+            4332660.0
+          ],
+          "width": 64,
+          "height": 64,
+          "pixel_size": 10.0,
+          "pixel_size_y": 10.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            708080.0,
+            4332020.0,
+            708720.0,
+            4332660.0
+          ]
+        },
+        "reference_geospatial": {
+          "crs": "EPSG:32614",
+          "transform": [
+            5.0,
+            0.0,
+            708080.0,
+            0.0,
+            -5.0,
+            4332660.0
+          ],
+          "width": 128,
+          "height": 128,
+          "pixel_size": 5.0,
+          "pixel_size_y": 5.0,
+          "rotation": [
+            0.0,
+            0.0
+          ],
+          "bounds": [
+            708080.0,
+            4332020.0,
+            708720.0,
+            4332660.0
+          ]
+        }
+      }
+    ],
+    "files": [
+      {
+        "input": "add73d0ae6bd8d1c0f4768c69171458c1600a485c9c1be84b705c3c7cf616762",
+        "reference": "b6ce5e8513a1e204e21256e91748f87bc050088b3a438f78a621b94e06b68644",
+        "valid_mask": "ae5c3bea101b897fdd4ca18bbdc0d675c23d556687bb7623006a1f9c2f49c8dd",
+        "reference_mask": "426dbf38591a5ab4cacd92825adacd6014be47cfdfda633d095d418931994e36"
+      },
+      {
+        "input": "5b0e8295be3c87f11de504d44f3eb3cfe1b80990fbacca8fde12c292660ac00f",
+        "reference": "a285935776c8a15d1f0549a63d2c97489c51a1d15dfc8af475bab7a61337270e",
+        "valid_mask": "49267e1894f23818318c489edca127ccb36b590d6df64a9ad60149f123b50a1a",
+        "reference_mask": "077b602d49e47e94c968e33f34521df50526f87b4e1e8e1e1d72931bfc5b88f8"
+      },
+      {
+        "input": "4a2d80699134bf22edd8b9bce8630de77f070879210116c6f08386937511f162",
+        "reference": "e3908752d5ad8a1b8211b00ae058eb660c11d76b42fc68dfc460333d98522ab7",
+        "valid_mask": "3ab7930dc3a83f601b3a5a3390de00ee61d3a8bd3b8b48349dcf7a2199c438b2",
+        "reference_mask": "5f6dc1f029d993596429d474e0e9adbea7382ec948701134277589329e4b22e9"
+      },
+      {
+        "input": "71dd336675f77e3a57421a1cfae9972a10bc1a40ecaa8e6a88fef7902ffb1223",
+        "reference": "f54b8f174bc02a5d8a6f27366283b571ab021878a0720f6d2a332a65b39b9479",
+        "valid_mask": "dfefa4dac85aeb2ceae4ce98b50c07bfffb9e42d97b4e790a5f8c7265b55b76c",
+        "reference_mask": "84f64ecfc45d26c7c2fa88fc3cb9e5fe86d8458aaf6193f1e58226b7514959a1"
+      },
+      {
+        "input": "b573405ae0dbdd4717d0e3aa84c9a83a2a228b2ca5f031f7514402f4f236a5dd",
+        "reference": "34cfad9de71e77213d81527e273a581e6332af979dd67a5fa03094b3ee832423",
+        "valid_mask": "e1945077cb92140a99204edac90869193cb91b7967974110fe390ec1e63fc581",
+        "reference_mask": "d7479f66814eb7477f5fa59f2feb59207462bb0ab9d0c7f187bdf9af6d2b5289"
+      },
+      {
+        "input": "09abfe440cf8c1df00e5649c91aa5591859a268c1d1a4ef03d2ba0e81d5ed2d8",
+        "reference": "93160e8769356bf1accd15c40cd6effd0e52c54323ce7e2ca9258941bca69aac",
+        "valid_mask": "851ebb2cbf746163ded5718a25c0fdacfea7054f2931548cf6a6bc0673383ec1",
+        "reference_mask": "8a3b5527c0a22a58d52380cb804a8b21e91f27da3b127add629a4cdd5b50dd26"
+      }
+    ]
+  },
+  "config": {
+    "benchmark_version": "1",
+    "dataset": {
+      "id": "isp-uv-es/SEN2NEON",
+      "revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "split": "validation",
+      "samples": "data/opensr-test-pilot-v1/x2/samples.json",
+      "sample_ids": [],
+      "training_overlap": "unknown"
+    },
+    "recipes": [
+      "opensr/bicubic-x2@1",
+      "opensr/bilinear-x2@1",
+      "evoland/s2v2x2-rgbn-x2@1",
+      "evoland/wsx2-rgbn-x2@1",
+      "implab/swin2-mose-sen2venus-rgbn-x2@1"
+    ],
+    "seeds": [
+      0
+    ],
+    "metrics": {
+      "names": [
+        "psnr",
+        "ssim",
+        "sam"
+      ],
+      "border": 16,
+      "mask": "valid",
+      "score_predicted_only": true,
+      "data_range": 1.0,
+      "ssim_win_size": 7
+    },
+    "preprocessing": {},
+    "conditioning": {
+      "mode": "RGBN",
+      "bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "output_grids": {},
+    "task": "single-image-super-resolution",
+    "comparison_cohort": "isp-uv-es/SEN2NEON",
+    "allow_partial": false,
+    "warmup": 1
+  },
+  "recipes": [
+    {
+      "schema_version": 1,
+      "recipe_id": "opensr/bicubic-x2@1",
+      "family": "interpolation",
+      "variant": "bicubic",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "output_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 5.0,
+      "native_resolutions_m": {
+        "B04": 10.0,
+        "B03": 10.0,
+        "B02": 10.0,
+        "B08": 10.0
+      },
+      "scale": 2,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": null,
+      "min_size": null,
+      "max_size": null,
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "portable",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "maintained",
+      "owner": "opensr",
+      "source": null,
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "mode": "bicubic"
+      },
+      "inference": {
+        "align_corners": false,
+        "antialias": false
+      },
+      "supported_options": [
+        "align_corners",
+        "antialias"
+      ],
+      "artifacts": [],
+      "components": [],
+      "citations": [],
+      "validation": {},
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "not-applicable",
+      "pretrained": false,
+      "description": "Bicubic interpolation reference on RGB-NIR reflectances; no clipping."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "opensr/bilinear-x2@1",
+      "family": "interpolation",
+      "variant": "bilinear",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "output_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 5.0,
+      "native_resolutions_m": {
+        "B04": 10.0,
+        "B03": 10.0,
+        "B02": 10.0,
+        "B08": 10.0
+      },
+      "scale": 2,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": null,
+      "min_size": null,
+      "max_size": null,
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "portable",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "maintained",
+      "owner": "opensr",
+      "source": null,
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "mode": "bilinear"
+      },
+      "inference": {
+        "align_corners": false,
+        "antialias": false
+      },
+      "supported_options": [
+        "align_corners",
+        "antialias"
+      ],
+      "artifacts": [],
+      "components": [],
+      "citations": [],
+      "validation": {},
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "not-applicable",
+      "pretrained": false,
+      "description": "Bilinear interpolation reference on RGB-NIR reflectances; no clipping."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "evoland/s2v2x2-rgbn-x2@1",
+      "family": "evoland",
+      "variant": "s2v2x2_spatrad",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "output_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 5.0,
+      "native_resolutions_m": {
+        "B02": 10.0,
+        "B03": 10.0,
+        "B04": 10.0,
+        "B08": 10.0
+      },
+      "scale": 2,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": null,
+      "min_size": null,
+      "max_size": null,
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "portable",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "experimental",
+      "owner": "Evoland-Land-Monitoring-Evolution",
+      "source": {
+        "repository": "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+        "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+        "license": "Apache-2.0",
+        "ported_components": []
+      },
+      "implementation_revision": "native-onnx-graph-r1",
+      "architecture": {
+        "format": "onnx-declarative",
+        "source_file": "src/sentinel2_superresolution/models/s2v2x2_spatrad.onnx"
+      },
+      "inference": {
+        "normalization": "embedded in source graph",
+        "native_scale": 2
+      },
+      "supported_options": [],
+      "artifacts": [
+        {
+          "name": "model",
+          "repo_id": "Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+          "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+          "filename": "s2v2x2_spatrad.onnx",
+          "sha256": "a49c14d2a0a2dd65d740568987a2ba75620c5050904f214bbde2b840a189876a",
+          "size": 17847293,
+          "format": "onnx",
+          "license": "Apache-2.0",
+          "url": "https://raw.githubusercontent.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution/cc5dec8c9c6b4917b99172a02d86659278334642/src/sentinel2_superresolution/models/s2v2x2_spatrad.onnx",
+          "local_only": false
+        }
+      ],
+      "components": [],
+      "citations": [
+        "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution"
+      ],
+      "validation": {
+        "status": "onnxruntime_native_graph_parity",
+        "max_abs_error_cpu": 0.004
+      },
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "Apache-2.0",
+      "pretrained": true,
+      "description": "Evoland Sentinel-2 RGB-NIR native Torch graph converted from the published ONNX artifact."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "evoland/wsx2-rgbn-x2@1",
+      "family": "evoland",
+      "variant": "wsx2_spatrad",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "output_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 5.0,
+      "native_resolutions_m": {
+        "B02": 10.0,
+        "B03": 10.0,
+        "B04": 10.0,
+        "B08": 10.0
+      },
+      "scale": 2,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": null,
+      "min_size": null,
+      "max_size": null,
+      "size_multiple": 1,
+      "padding": "none",
+      "runtime": "portable",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "experimental",
+      "owner": "Evoland-Land-Monitoring-Evolution",
+      "source": {
+        "repository": "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+        "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+        "license": "Apache-2.0",
+        "ported_components": []
+      },
+      "implementation_revision": "native-onnx-graph-r1",
+      "architecture": {
+        "format": "onnx-declarative",
+        "source_file": "src/sentinel2_superresolution/models/wsx2_spatrad.onnx"
+      },
+      "inference": {
+        "normalization": "embedded in source graph",
+        "native_scale": 2
+      },
+      "supported_options": [],
+      "artifacts": [
+        {
+          "name": "model",
+          "repo_id": "Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+          "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+          "filename": "wsx2_spatrad.onnx",
+          "sha256": "18d8c30c8b107e793cf74e4e3d3f13e2b179cc53389e1837c137fb813a8595ad",
+          "size": 17847293,
+          "format": "onnx",
+          "license": "Apache-2.0",
+          "url": "https://raw.githubusercontent.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution/cc5dec8c9c6b4917b99172a02d86659278334642/src/sentinel2_superresolution/models/wsx2_spatrad.onnx",
+          "local_only": false
+        }
+      ],
+      "components": [],
+      "citations": [
+        "https://github.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution"
+      ],
+      "validation": {
+        "status": "onnxruntime_native_graph_parity",
+        "max_abs_error_cpu": 0.004
+      },
+      "tested_environments": [
+        "linux-python312-torch260-cpu"
+      ],
+      "weight_license": "Apache-2.0",
+      "pretrained": true,
+      "description": "Evoland Sentinel-2 RGB-NIR native Torch graph converted from the published ONNX artifact."
+    },
+    {
+      "schema_version": 1,
+      "recipe_id": "implab/swin2-mose-sen2venus-rgbn-x2@1",
+      "family": "swin2-mose",
+      "variant": "sen2venus-v1.1",
+      "task": "single-image-super-resolution",
+      "sensor": "Sentinel-2",
+      "processing_level": "L2A",
+      "input_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "output_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "predicted_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "passthrough_bands": [],
+      "input_resolution_m": 10.0,
+      "output_resolution_m": 5.0,
+      "native_resolutions_m": {
+        "B02": 10.0,
+        "B03": 10.0,
+        "B04": 10.0,
+        "B08": 10.0
+      },
+      "scale": 2,
+      "input_units": "reflectance",
+      "output_units": "reflectance",
+      "patch_size": [
+        64,
+        64
+      ],
+      "min_size": [
+        64,
+        64
+      ],
+      "max_size": [
+        64,
+        64
+      ],
+      "size_multiple": 16,
+      "padding": "reflect",
+      "runtime": "portable",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "status": "experimental",
+      "owner": "IMPLabUniPr",
+      "source": {
+        "repository": "https://github.com/IMPLabUniPr/swin2-mose",
+        "revision": "095d314b90d007d44104796d4b591401b6617a80",
+        "license": "GPL-2.0-only",
+        "ported_components": [
+          "Swin2SR backbone",
+          "top-2 MoE router",
+          "smart merger",
+          "Sen2Venus inference recipe"
+        ]
+      },
+      "implementation_revision": "native-r1",
+      "architecture": {
+        "type": "Swin2-MoSE",
+        "channels": 4,
+        "features": 90,
+        "depths": [
+          6,
+          6,
+          6,
+          6
+        ],
+        "heads": [
+          6,
+          6,
+          6,
+          6
+        ],
+        "window_size": 16,
+        "experts": 8,
+        "selected_experts": 2,
+        "upsampler": "pixelshuffledirect"
+      },
+      "inference": {
+        "input_scaling": "reflectance_to_raw_10000",
+        "normalization": "published_sen2venus_channel_mean_std",
+        "output_denormalization": "published_sen2venus_hr_mean_std_to_reflectance"
+      },
+      "supported_options": [],
+      "artifacts": [
+        {
+          "name": "archive",
+          "repo_id": "IMPLabUniPr/swin2-mose",
+          "revision": "095d314b90d007d44104796d4b591401b6617a80",
+          "filename": "sen2venus_exp4_2x_v5_1.zip",
+          "sha256": "4bfcae792956cd8d51a38f2ff02de5565675197e282c436032e404ac306a62f3",
+          "size": 49702711,
+          "format": "zip",
+          "license": "GPL-2.0-only",
+          "url": "https://github.com/IMPLabUniPr/swin2-mose/releases/download/v1.1/sen2venus_exp4_2x_v5_1.zip",
+          "local_only": false
+        }
+      ],
+      "components": [],
+      "citations": [
+        "https://doi.org/10.1049/ipr2.13303"
+      ],
+      "validation": {
+        "source_release": "v1.1",
+        "cpu_float32_max_abs_error": 0.0,
+        "routing_inputs": 3,
+        "reference_test": "tests/parity/test_swin2_mose_native.py",
+        "cuda_smoke": {
+          "torch": "2.6.0+cu126",
+          "device": "NVIDIA GeForce RTX 3090",
+          "output_shape": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "finite": true
+        },
+        "fresh_download_gpu_inference": true,
+        "offline_reload": true
+      },
+      "tested_environments": [
+        "linux-python312-torch260-cu126"
+      ],
+      "weight_license": "GPL-2.0-only",
+      "pretrained": true,
+      "description": "Swin2-MoSE Sen2Venus RGB-NIR x2 SISR with native Torch inference and the frozen upstream v1.1 checkpoint."
+    }
+  ],
+  "run_recipes": [
+    "opensr/bicubic-x2@1",
+    "opensr/bilinear-x2@1",
+    "evoland/s2v2x2-rgbn-x2@1",
+    "evoland/wsx2-rgbn-x2@1",
+    "implab/swin2-mose-sen2venus-rgbn-x2@1"
+  ],
+  "rows": 30,
+  "complete": true,
+  "cohort_complete": true,
+  "sample_ids": [
+    "2019_JORN_3__9_6.tif",
+    "2019_SOAP_4__1_4.tif",
+    "2021_OSBS_6__3_1.tif",
+    "2022_HARV_7__4_3.tif",
+    "2022_MLBS_5__3_2.tif",
+    "2024_KONZ_9__6_2.tif"
+  ],
+  "provenance": {
+    "opensr/bicubic-x2@1": {
+      "recipe_id": "opensr/bicubic-x2@1",
+      "recipe_sha256": "1a3bbb6d3703db8d3fd925a6cbabc9f5fd7894ceaf19cc7591ced0859de7036f",
+      "implementation_revision": "native-r1",
+      "artifacts": {},
+      "artifact_records": {},
+      "components": [],
+      "settings": {
+        "align_corners": false,
+        "antialias": false
+      },
+      "effective_recipe_sha256": "03682fe5da454327f7b784d3dfe90861b6c81c646bcd71e15bc546c2f339e610",
+      "seed": 0,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "opensr/bilinear-x2@1": {
+      "recipe_id": "opensr/bilinear-x2@1",
+      "recipe_sha256": "d754c060fdf92a0d4a06be0e65769bf49b3cf662b9063277f24d35e31f35498e",
+      "implementation_revision": "native-r1",
+      "artifacts": {},
+      "artifact_records": {},
+      "components": [],
+      "settings": {
+        "align_corners": false,
+        "antialias": false
+      },
+      "effective_recipe_sha256": "24f06705626e72c16212113f70ae1777dec971f285d93bff38e4d6375bd64527",
+      "seed": 0,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B04",
+        "B03",
+        "B02",
+        "B08"
+      ]
+    },
+    "evoland/s2v2x2-rgbn-x2@1": {
+      "recipe_id": "evoland/s2v2x2-rgbn-x2@1",
+      "recipe_sha256": "9b3918befb6b7674e662025f3477d31276898cb08c9d42da96a45c90ce748faa",
+      "implementation_revision": "native-onnx-graph-r1",
+      "artifacts": {
+        "model": "a49c14d2a0a2dd65d740568987a2ba75620c5050904f214bbde2b840a189876a"
+      },
+      "artifact_records": {
+        "model": {
+          "origin": "pinned-url",
+          "filename": "s2v2x2_spatrad.onnx",
+          "sha256": "a49c14d2a0a2dd65d740568987a2ba75620c5050904f214bbde2b840a189876a",
+          "size": 17847293,
+          "format": "onnx",
+          "repo_id": "Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+          "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+          "url": "https://raw.githubusercontent.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution/cc5dec8c9c6b4917b99172a02d86659278334642/src/sentinel2_superresolution/models/s2v2x2_spatrad.onnx",
+          "source_sha256": "a49c14d2a0a2dd65d740568987a2ba75620c5050904f214bbde2b840a189876a"
+        }
+      },
+      "components": [],
+      "settings": {
+        "normalization": "embedded in source graph",
+        "native_scale": 2
+      },
+      "effective_recipe_sha256": "5282979fddc108643e3893b51f5dfbd6fe2c14be664a4f78fb258fbc02fdac29",
+      "seed": 0,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ]
+    },
+    "evoland/wsx2-rgbn-x2@1": {
+      "recipe_id": "evoland/wsx2-rgbn-x2@1",
+      "recipe_sha256": "d17d3b151bb0043b3723feb8668bf096a02777cc2981240c783d1bacc801a87b",
+      "implementation_revision": "native-onnx-graph-r1",
+      "artifacts": {
+        "model": "18d8c30c8b107e793cf74e4e3d3f13e2b179cc53389e1837c137fb813a8595ad"
+      },
+      "artifact_records": {
+        "model": {
+          "origin": "pinned-url",
+          "filename": "wsx2_spatrad.onnx",
+          "sha256": "18d8c30c8b107e793cf74e4e3d3f13e2b179cc53389e1837c137fb813a8595ad",
+          "size": 17847293,
+          "format": "onnx",
+          "repo_id": "Evoland-Land-Monitoring-Evolution/sentinel2_superresolution",
+          "revision": "cc5dec8c9c6b4917b99172a02d86659278334642",
+          "url": "https://raw.githubusercontent.com/Evoland-Land-Monitoring-Evolution/sentinel2_superresolution/cc5dec8c9c6b4917b99172a02d86659278334642/src/sentinel2_superresolution/models/wsx2_spatrad.onnx",
+          "source_sha256": "18d8c30c8b107e793cf74e4e3d3f13e2b179cc53389e1837c137fb813a8595ad"
+        }
+      },
+      "components": [],
+      "settings": {
+        "normalization": "embedded in source graph",
+        "native_scale": 2
+      },
+      "effective_recipe_sha256": "0abc8fad8db827e30f8b3e033c72c2f50f44b2ac782ff85fd7115c79acbb38e7",
+      "seed": 0,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ]
+    },
+    "implab/swin2-mose-sen2venus-rgbn-x2@1": {
+      "recipe_id": "implab/swin2-mose-sen2venus-rgbn-x2@1",
+      "recipe_sha256": "4c0dd1c3d42dcc7601f39851855ebbb037d268fa0ac2f092db63c2d7fc002324",
+      "implementation_revision": "native-r1",
+      "artifacts": {
+        "archive": "4bfcae792956cd8d51a38f2ff02de5565675197e282c436032e404ac306a62f3"
+      },
+      "artifact_records": {
+        "archive": {
+          "origin": "pinned-url",
+          "filename": "sen2venus_exp4_2x_v5_1.zip",
+          "sha256": "4bfcae792956cd8d51a38f2ff02de5565675197e282c436032e404ac306a62f3",
+          "size": 49702711,
+          "format": "zip",
+          "repo_id": "IMPLabUniPr/swin2-mose",
+          "revision": "095d314b90d007d44104796d4b591401b6617a80",
+          "url": "https://github.com/IMPLabUniPr/swin2-mose/releases/download/v1.1/sen2venus_exp4_2x_v5_1.zip",
+          "source_sha256": "4bfcae792956cd8d51a38f2ff02de5565675197e282c436032e404ac306a62f3"
+        }
+      },
+      "components": [],
+      "settings": {
+        "input_scaling": "reflectance_to_raw_10000",
+        "normalization": "published_sen2venus_channel_mean_std",
+        "output_denormalization": "published_sen2venus_hr_mean_std_to_reflectance"
+      },
+      "effective_recipe_sha256": "d2734e1625b6ee52bcd7ebd04387fc3ebbe7b1779bcb9dc7e3d8bdc04ba606be",
+      "seed": 0,
+      "precision": "torch.float32",
+      "device": "cuda:0",
+      "torch": "2.6.0+cu126",
+      "package_version": "0.1.0.dev0",
+      "input_bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ]
+    }
+  },
+  "runtime": {
+    "device": "cuda",
+    "seeds": [
+      0
+    ]
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+    "package_version": "0.1.0.dev0",
+    "torch": "2.6.0+cu126",
+    "cuda_runtime": "12.6",
+    "hardware": "NVIDIA GeForce RTX 3090",
+    "packages": {
+      "opensr-model-zoo": "0.1.0.dev0",
+      "torch": "2.6.0+cu126",
+      "torchvision": "0.21.0+cu126",
+      "numpy": "2.5.4",
+      "diffusers": "0.35.2",
+      "mamba-ssm": "2.2.5",
+      "timm": "1.0.15",
+      "onnx": "1.23.2",
+      "scikit-image": "0.25.2",
+      "rasterio": "1.5.2",
+      "safetensors": "0.8.0",
+      "huggingface-hub": "0.36.2",
+      "opensr-test": "1.3.3",
+      "satalign": "0.1.17",
+      "opencv-python": "5.0.0.93",
+      "scipy": "1.18.1"
+    },
+    "runtime_lock_sha256": "55084db60f33c8ab2cd9756d2b6c07f36dc05b0a10f77a34f9856bd70a956e4e",
+    "precision": "float32",
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false,
+    "driver": [
+      "580.178.04"
+    ]
+  },
+  "evaluation": "opensr-test",
+  "opensr_test_config": {
+    "device": "cpu",
+    "agg_method": "pixel",
+    "patch_size": null,
+    "border_mask": 16,
+    "rgb_bands": [
+      0,
+      1,
+      2
+    ],
+    "harm_apply_spectral": true,
+    "harm_apply_spatial": true,
+    "clip_model_path": null,
+    "spatial_method": "pcc",
+    "spatial_threshold_distance": 5,
+    "spatial_max_num_keypoints": 500,
+    "reflectance_distance": "l1",
+    "spectral_distance": "sad",
+    "synthesis_distance": "l1",
+    "correctness_distance": "nd",
+    "correctness_norm": "softmin",
+    "im_score": 0.05,
+    "om_score": 0.05,
+    "ha_score": 0.05,
+    "correctness_temperature": 0.25
+  },
+  "opensr_test_version": "1.3.3",
+  "opensr_test_protocol_hash": "3356db76ad74339cbae673aab92497584c03ae207b8d179e5545396107877eb8",
+  "opensr_test_protocol": {
+    "schema_version": 1,
+    "benchmark_hash": "3eb1d4e8281f3a8d767c1d2ebdab4121e23fb5267ea04de506ab454a8e6f608e",
+    "opensr_test_version": "1.3.3",
+    "opensr_test_config": {
+      "device": "cpu",
+      "agg_method": "pixel",
+      "patch_size": null,
+      "border_mask": 16,
+      "rgb_bands": [
+        0,
+        1,
+        2
+      ],
+      "harm_apply_spectral": true,
+      "harm_apply_spatial": true,
+      "clip_model_path": null,
+      "spatial_method": "pcc",
+      "spatial_threshold_distance": 5,
+      "spatial_max_num_keypoints": 500,
+      "reflectance_distance": "l1",
+      "spectral_distance": "sad",
+      "synthesis_distance": "l1",
+      "correctness_distance": "nd",
+      "correctness_norm": "softmin",
+      "im_score": 0.05,
+      "om_score": 0.05,
+      "ha_score": 0.05,
+      "correctness_temperature": 0.25
+    },
+    "mask_policy": "all-valid-finite-only",
+    "evaluation_band_order": [
+      "B04",
+      "B03",
+      "B02",
+      "B08"
+    ],
+    "evaluator_sha256": "6afc557d709161464de0823c2f959f4cffb218048ac584c1f4730af8c04b01ae"
+  },
+  "mask_policy": "all-valid-finite-only",
+  "inference_dir": "inference",
+  "created_at_utc": "2026-10-27T18:40:35.264131+00:00",
+  "evaluation_status": "passed-with-warnings",
+  "diagnostics": [
+    {
+      "recipe_id": "evoland/s2v2x2-rgbn-x2@1",
+      "sample_id": "2019_SOAP_4__1_4.tif",
+      "seed": 0,
+      "category": "UserWarning",
+      "message": "Estimated translation is too large"
+    },
+    {
+      "recipe_id": "evoland/s2v2x2-rgbn-x2@1",
+      "sample_id": "2019_SOAP_4__1_4.tif",
+      "seed": 0,
+      "category": "UserWarning",
+      "message": "Estimated translation is too large"
+    }
+  ],
+  "elapsed_seconds": 2.889259675052017
+}

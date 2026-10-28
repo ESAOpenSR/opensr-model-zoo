@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-28",
+  "scope": "Public tooling verification; detailed closed evaluation evidence remains private",
+  "status": "passed",
+  "task": {
+    "input_shape": [
+      1,
+      4,
+      128,
+      128
+    ],
+    "output_shape": [
+      1,
+      4,
+      512,
+      512
+    ],
+    "target_resolution_m": 2.5
+  },
+  "publication": {
+    "status": "mockup",
+    "measured_indices_published": false,
+    "scoring_calibration": "pending"
+  },
+  "limitations": [
+    "Synthetic adapter contracts do not establish upstream numerical parity",
+    "Bounded observed adapter checks do not certify the full recipe/runtime matrix",
+    "Optional checks that skip are not counted as passes"
+  ],
+  "public_suite": {
+    "tests": 111,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 19,
+    "passed": 92
+  },
+  "private_contract_suite": {
+    "tests": 12,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 12
+  },
+  "lint": "passed",
+  "format": "passed",
+  "locked_dependency_check": "passed",
+  "strict_docs": "passed",
+  "javascript_syntax": "passed",
+  "packaging": {
+    "public_wheel_independent": true,
+    "private_wheel_portable": true,
+    "private_payload_excluded_from_public_archives": true,
+    "docs_build_without_private_project": true,
+    "offline_inference_outside_checkout": true
+  },
+  "browser": {
+    "390": {
+      "rows": 14,
+      "filter": true,
+      "no_document_overflow": true,
+      "overall_column_first": true
+    },
+    "1440": {
+      "rows": 14,
+      "filter": true,
+      "no_document_overflow": true,
+      "overall_column_first": true
+    },
+    "javascript_disabled_fallback": true
+  },
+  "observed_adapter_checks": "Bounded local checks passed; full results and source identities stay private",
+  "warnings": [
+    "Six existing registration dependency deprecations in public tests",
+    "Four unavailable-CUDA/NVML warnings in public tests",
+    "MkDocs Material emitted its upstream lifecycle notice"
+  ],
+  "commands": [
+    "uv run --no-sync ruff check src tests examples",
+    "uv run --no-sync ruff format --check src tests examples",
+    "uv run --no-sync pytest -q",
+    "uv run --no-sync mkdocs build --strict"
+  ]
+}

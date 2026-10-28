@@ -1,0 +1,82 @@
+site_name: OpenSR Model Zoo
+site_description: Python API, model recipes, checkpoint provenance, and evaluation protocols for Sentinel-2 single-image super-resolution.
+site_url: https://models.opensr.eu/
+theme:
+  name: material
+  language: en
+  font: false
+  logo: assets/opensr_logo.png
+  favicon: assets/opensr-globe.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.footer
+    - navigation.tracking
+    - navigation.top
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle: {icon: material/weather-sunny, name: Switch to dark mode}
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle: {icon: material/weather-night, name: Switch to light mode}
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ESAOpenSR/opensr-model-zoo
+extra_css:
+  - assets/site.css
+extra_javascript:
+  - assets/site.js
+nav:
+  - Home: index.md
+  - Setup and usage:
+      - Installation: installation.md
+      - Quickstart: quickstart.md
+      - Python API: usage.md
+  - Image gallery: examples.md
+  - Models:
+      - Catalog: models/catalog.md
+      - Model cards: models/README.md
+      - Checkpoints and offline use: checkpoints.md
+      - Additional SISR ports: models/additional-models.md
+      - SRGAN parity: models/srgan-parity.md
+      - Weight licenses: models/weight-licenses.md
+  - Evaluation:
+      - Protocol: benchmarks.md
+      - Benchmark results: performance.md
+      - Held-out benchmark: closed-benchmark.md
+      - SEN2NEON data: benchmarks-sen2neon.md
+      - OpenSR-Test validation: validation.md
+      - Reproducibility: reproducibility.md
+      - Validation reports: reports/README.md
+      - OpenSR-Test pilot: reports/opensr-test/README.md
+  - Contributing:
+      - Overview: contributing/index.md
+      - Model onboarding: contributing/model-onboarding.md
+      - Native integrations: contributing/native-integration.md
+      - Release gates: contributing/release.md
+      - Hugging Face artifacts: huggingface.md
+      - Documentation assets: assets/README.md
+      - Documentation hosting: hosting.md
+  - Reference:
+      - Command-line reference: commands.md
+      - Runtime: runtime.md
+      - Release status: release-status.md
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+plugins:
+  - search

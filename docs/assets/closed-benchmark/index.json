@@ -1,0 +1,176 @@
+{
+  "benchmark_version": "closed-rgbn-4x-v1",
+  "records": [
+    {
+      "adaptation": "Upsampled to 2.5 m",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 2,
+      "recipe": "evoland/s2v2x2-rgbn-x2@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Upsampled to 2.5 m",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 2,
+      "recipe": "evoland/wsx2-rgbn-x2@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Direct",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 4,
+      "recipe": "evoland/wsx4-rgbn-x4@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Stitched; Upsampled to 2.5 m",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 2,
+      "recipe": "implab/swin2-mose-sen2venus-rgbn-x2@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Upsampled to 2.5 m",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 2,
+      "recipe": "opensr/bicubic-x2@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Direct",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 4,
+      "recipe": "opensr/bicubic-x4@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Upsampled to 2.5 m",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 2,
+      "recipe": "opensr/bilinear-x2@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Direct",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 4,
+      "recipe": "opensr/bilinear-x4@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Direct",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 4,
+      "recipe": "opensr/ldsrs2-rgbn-x4-ddim100-histogram@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Direct",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 4,
+      "recipe": "opensr/ldsrs2-rgbn-x4@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Direct",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 4,
+      "recipe": "opensr/sen2sr-lite-rgbn-x4@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Direct",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 4,
+      "recipe": "opensr/sen2sr-rgbn-x4@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Direct",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 4,
+      "recipe": "opensr/srgan-rgbn-x4@1",
+      "status": "pending-calibration"
+    },
+    {
+      "adaptation": "Direct",
+      "indices": {
+        "Consistency": null,
+        "Detail quality": null,
+        "Fidelity": null,
+        "Overall": null
+      },
+      "native_scale": 4,
+      "recipe": "remicres/sr4rs-rgbn-x4@1",
+      "status": "pending-calibration"
+    }
+  ],
+  "schema_version": 1,
+  "scoring_version": null,
+  "status": "mockup"
+}

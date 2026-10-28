@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "executed_at_utc": "2026-10-28T13:11:40.319803+00:00",
+  "scope": "Documentation onboarding, measured SEN2NEON image presentation, responsive browser interactions, gallery export tooling, and local package validation.",
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "opensr-model-zoo": "0.1.0.dev0",
+      "torch": "2.6.0+cu126",
+      "numpy": "2.5.4",
+      "matplotlib": "3.11.2",
+      "pillow": "12.3.0",
+      "mkdocs": "1.6.1",
+      "mkdocs-material": "9.8.0",
+      "pytest": "8.4.2",
+      "ruff": "0.17.3"
+    },
+    "cuda_available": false,
+    "cuda_device": null
+  },
+  "checks": [
+    {
+      "command": ".venv/bin/ruff check src tests examples",
+      "passed": true
+    },
+    {
+      "command": ".venv/bin/ruff format --check src tests examples",
+      "passed": true
+    },
+    {
+      "command": ".venv/bin/mkdocs build --strict",
+      "passed": true,
+      "warning": "Installed Material for MkDocs emits its end-of-life notice for 5 May 2027; the strict build completes."
+    },
+    {
+      "command": "node --check docs/assets/site.js",
+      "passed": true
+    },
+    {
+      "command": ".venv/bin/python -m build --wheel --no-isolation",
+      "passed": true
+    },
+    {
+      "command": "git diff --check",
+      "passed": true
+    }
+  ],
+  "suite": {
+    "command": ".venv/bin/pytest -q -rs --junitxml=scratch/docs-refresh/tests.xml",
+    "executed_at": "2026-10-28T14:09:58.759242+01:00",
+    "passed": 68,
+    "skipped": 18,
+    "failures": 0,
+    "errors": 0,
+    "duration_seconds": 10.856,
+    "warnings": {
+      "count": 6,
+      "category": "DeprecationWarning",
+      "source": "skimage.registration._phase_cross_correlation",
+      "message": "numpy.fix is deprecated; emitted by synthetic OpenSR-Test integration checks."
+    },
+    "note": "Default suite in the prepared local environment, including available cached SR4RS CUDA smoke inference. Optional upstream/artifact checks remain skipped; this is not full runtime certification."
+  },
+  "skipped_checks": [
+    {
+      "test": "tests.parity.test_evoland.test_evoland_native_matches_onnxruntime[wsx4]",
+      "reason": "set OPENSR_EVOLAND_CONVERTED_DIR and OPENSR_EVOLAND_ONNX"
+    },
+    {
+      "test": "tests.parity.test_evoland.test_evoland_native_matches_onnxruntime[wsx2]",
+      "reason": "set OPENSR_EVOLAND_CONVERTED_DIR and OPENSR_EVOLAND_ONNX"
+    },
+    {
+      "test": "tests.parity.test_evoland.test_evoland_native_matches_onnxruntime[s2v2x2]",
+      "reason": "set OPENSR_EVOLAND_CONVERTED_DIR and OPENSR_EVOLAND_ONNX"
+    },
+    {
+      "test": "tests.parity.test_ldsr_native.test_v1_checkpoint_loads_and_restores_persisted_schedule",
+      "reason": "set LDSR_S2_CHECKPOINT to run artifact parity"
+    },
+    {
+      "test": "tests.parity.test_ldsr_native.test_v1_ddim_shape_and_nodata_correction",
+      "reason": "set LDSR_S2_CHECKPOINT to run artifact parity"
+    },
+    {
+      "test": "tests.parity.test_ldsr_upstream_reference.test_native_matches_frozen_upstream[settings0]",
+      "reason": "set OPENSR_REFERENCE_ROOT and LDSR_S2_CHECKPOINT for frozen-reference parity"
+    },
+    {
+      "test": "tests.parity.test_ldsr_upstream_reference.test_native_matches_frozen_upstream[settings1]",
+      "reason": "set OPENSR_REFERENCE_ROOT and LDSR_S2_CHECKPOINT for frozen-reference parity"
+    },
+    {
+      "test": "tests.parity.test_sen2sr_cnn.test_lite_rgbn_pretrained_end_to_end",
+      "reason": "set OPENSR_PRETRAINED_ARTIFACT_DIR for pretrained release checks"
+    },
+    {
+      "test": "tests.parity.test_sen2sr_mamba_state.test_mamba_rgbn_pretrained_state_loads_strictly",
+      "reason": "set OPENSR_MAMBA_STATE_DIR for the CUDA Mamba structural check"
+    },
+    {
+      "test": "tests.parity.test_sen2sr_upstream_reference.test_lite_rgbn_matches_frozen_upstream_composition",
+      "reason": "set OPENSR_SEN2SR_REFERENCE_ROOT and OPENSR_PRETRAINED_ARTIFACT_DIR"
+    },
+    {
+      "test": "tests.parity.test_sen2sr_upstream_reference.test_mamba_rgbn_matches_frozen_upstream_composition",
+      "reason": "set OPENSR_SEN2SR_REFERENCE_ROOT and OPENSR_PRETRAINED_ARTIFACT_DIR"
+    },
+    {
+      "test": "tests.parity.test_sr4rs_native.test_sr4rs_pure_python_source_reader_matches_converted_weights",
+      "reason": "set SR4RS_VARIABLES_DATA and SR4RS_CONVERTED_WEIGHTS for source conversion parity"
+    },
+    {
+      "test": "tests.parity.test_sr4rs_native.test_sr4rs_frozen_tensorflow_parity",
+      "reason": "set SR4RS_REFERENCE_ROOT and SR4RS_CONVERTED_WEIGHTS for TensorFlow parity"
+    },
+    {
+      "test": "tests.parity.test_srgan_published.test_published_rgbnir_generator_parity[8-8]",
+      "reason": "published checkpoint parity requires OPENSR_SRGAN_RGBN_CKPT/CONFIG"
+    },
+    {
+      "test": "tests.parity.test_srgan_published.test_published_rgbnir_generator_parity[9-11]",
+      "reason": "published checkpoint parity requires OPENSR_SRGAN_RGBN_CKPT/CONFIG"
+    },
+    {
+      "test": "tests.parity.test_swin2_mose_native.test_native_swin2_mose_matches_frozen_reference_for_varied_routing",
+      "reason": "set OPENSR_SWIN2_MOSE_REFERENCE_SOURCE and OPENSR_SWIN2_MOSE_CHECKPOINT"
+    },
+    {
+      "test": "tests.parity.test_swin2_mose_state.test_swin2_mose_release_checkpoint_strict_loads_and_runs",
+      "reason": "set OPENSR_SWIN2_MOSE_ARTIFACT_DIR to converted v1.1 artifacts"
+    },
+    {
+      "test": "tests.parity.test_swin2_mose_state.test_swin2_mose_release_checkpoint_runs_on_cuda",
+      "reason": "set OPENSR_SWIN2_MOSE_ARTIFACT_DIR to converted v1.1 artifacts"
+    }
+  ],
+  "wheel": {
+    "check": "wheel import and gallery CLI outside checkout",
+    "working_directory": "/tmp",
+    "wheel": "opensr_model_zoo-0.1.0.dev0-py3-none-any.whl",
+    "wheel_sha256": "4834ab2bb483e0d7245bb87ddd88bc40b548f4250743599ac219c712ad67071f",
+    "catalog_recipes": 15,
+    "passed": true
+  },
+  "browser": {
+    "name": "Chromium",
+    "version": "153.0.8010.12",
+    "executed_at_utc": "2026-10-28T13:07:36.176Z",
+    "origin": "Local static build served from site/ on 127.0.0.1",
+    "viewports": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "name": "tablet",
+        "width": 900,
+        "height": 1000
+      },
+      {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "small-mobile",
+        "width": 320,
+        "height": 740
+      }
+    ],
+    "page_views_checked": 28,
+    "pages": [
+      "/",
+      "/contributing/",
+      "/examples/",
+      "/installation/",
+      "/performance/",
+      "/quickstart/",
+      "/usage/"
+    ],
+    "page_horizontal_overflow": false,
+    "missing_images": 0,
+    "javascript_errors": [],
+    "interaction_checks": [
+      "desktop /: keyboard endpoints/arrows and pointer drag",
+      "desktop /examples/: keyboard endpoints/arrows and pointer drag",
+      "desktop: all three figure tabs",
+      "desktop: benchmark filter and empty state",
+      "tablet /: keyboard endpoints/arrows and pointer drag",
+      "tablet /examples/: keyboard endpoints/arrows and pointer drag",
+      "tablet: all three figure tabs",
+      "tablet: benchmark filter and empty state",
+      "mobile /: keyboard endpoints/arrows and touch split",
+      "mobile: mobile navigation",
+      "mobile /examples/: keyboard endpoints/arrows and touch split",
+      "mobile: all three figure tabs",
+      "mobile: benchmark filter and empty state",
+      "small-mobile /: keyboard endpoints/arrows and touch split",
+      "small-mobile: mobile navigation",
+      "small-mobile /examples/: keyboard endpoints/arrows and touch split",
+      "small-mobile: all three figure tabs",
+      "small-mobile: benchmark filter and empty state",
+      "default: figure caption colours {\"colour\":\"rgb(226, 234, 242)\",\"background\":\"rgb(19, 47, 73)\"}",
+      "slate: figure caption colours {\"colour\":\"rgb(226, 234, 242)\",\"background\":\"rgb(19, 47, 73)\"}",
+      "JavaScript disabled /: side-by-side images and hidden slider controls",
+      "JavaScript disabled /examples/: side-by-side images and hidden slider controls"
+    ],
+    "local_resources_checked": 41,
+    "checks_source": "One-off local Playwright assertions; results summarised here. No browser dependency is added to the package or CI.",
+    "limits": "Chromium only. Keyboard, pointer, touch split placement, mobile navigation, figure tabs, benchmark filtering, JavaScript-disabled fallback, and light/dark presentation checked. This is not a full accessibility audit or hosted-site verification.",
+    "final_text_views": [
+      {
+        "width": 320,
+        "route": "/quickstart/",
+        "no_horizontal_page_overflow": true
+      },
+      {
+        "width": 320,
+        "route": "/usage/",
+        "no_horizontal_page_overflow": true
+      },
+      {
+        "width": 320,
+        "route": "/examples/",
+        "no_horizontal_page_overflow": true
+      },
+      {
+        "width": 1440,
+        "route": "/quickstart/",
+        "no_horizontal_page_overflow": true
+      },
+      {
+        "width": 1440,
+        "route": "/usage/",
+        "no_horizontal_page_overflow": true
+      },
+      {
+        "width": 1440,
+        "route": "/examples/",
+        "no_horizontal_page_overflow": true
+      }
+    ]
+  },
+  "gallery": {
+    "manifest": "docs/assets/gallery/index.json",
+    "source_run": "benchmark-results/opensr-named-pilot/x4/inference",
+    "source_manifest_sha256": "c1397250533bfb7be1c07ed257cd38eabecc92bff4ff4ed38c5b17d6368521d3",
+    "source_benchmark_hash": "7340098d082c47766ef0eeaf923fd8fc6dc67cbcb9e9c4c75c6637669d87ecf3",
+    "recipe_id": "opensr/sen2sr-lite-rgbn-x4@1",
+    "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+    "samples": [
+      "2021_OSBS_6__3_1.tif",
+      "2022_HARV_7__4_3.tif",
+      "2024_KONZ_9__6_2.tif"
+    ],
+    "seed": 0,
+    "asset_hashes_and_sizes_verified": 15,
+    "rendering": {
+      "matplotlib": "3.11.2",
+      "pillow": "12.3.0",
+      "numpy": "2.5.4",
+      "python": "3.12.3",
+      "figure_size_inches": [
+        16,
+        9
+      ],
+      "figure_dpi": 160,
+      "interpolation": "nearest",
+      "font_family": "DejaVu Sans",
+      "webp_lossless": true
+    },
+    "reproduction_command": "uv run --no-sync opensr-zoo maintain docs gallery --run benchmark-results/opensr-named-pilot/x4/inference --output build/sen2neon-gallery",
+    "note": "Selected visual examples reuse saved predictions. No new observed-data inference, quality scores, or ranking was created by the documentation refresh."
+  },
+  "source_sha256": {
+    "mkdocs.yml": "99748a64aebbf209adb4b80c5249e7dfb7a63b38c6c65ad0ff6f53532112cb9e",
+    "docs/assets/site.css": "81a228be0a540b0d112d08fdd7e1f022b84acda5af24538043db2ee8048ec1c0",
+    "docs/assets/site.js": "4c811c29ae70ec2eddd42c01e269fbd9005421b371a593eaa67d5290664cc887",
+    "docs/index.md": "a7ad14576dd38e6f7f927a2f1c2096a63850afab7d6c00fc6ae50663c6601094",
+    "docs/installation.md": "bed20dd98352005c71dfa32dffb05dc207fd608abbc7ea6e932f051ad0723b75",
+    "docs/quickstart.md": "7bc6f6651031e742e0d8bcac4854cf09b6e975d1a800c596aeff0c1c3ba51cb2",
+    "docs/usage.md": "03d7ae6306feae9458d688852f5fdddc9575a17babd877d1badb2fc88b1c1400",
+    "docs/examples.md": "c8e21d94b59ce536634487047a950822bf75099c38034601f20fc1d8174b68d2",
+    "docs/contributing/index.md": "e9f4b8c30d3d5e42057efd416ff95827ded8fa5f3b8804ee5c0e9e8b1fcc50a6",
+    "src/opensr_model_zoo/benchmark/gallery.py": "5beb91262d913a54d6e9c35b9cb4e82215ad4020126a7ee3b5435e24b8dff537",
+    "src/opensr_model_zoo/maintenance/cli.py": "f73d9f3a26d044797fc180c77165d3cbef0d99592383b9d3a9d18b80d14d13b6"
+  },
+  "limitations": [
+    "No documentation deployment or DNS/HTTPS verification performed.",
+    "Historical numerical and image reports retained unchanged.",
+    "Skipped upstream checks are not passes."
+  ],
+  "snippet_checks": {
+    "passed": true,
+    "scope": [
+      "README CPU example",
+      "Quickstart CPU example",
+      "Usage discovery/input/prediction examples",
+      "Runtime recipe inspection"
+    ],
+    "seed": 0,
+    "learned_checkpoint_downloads": false
+  }
+}

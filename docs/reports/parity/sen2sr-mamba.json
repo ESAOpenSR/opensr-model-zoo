@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "model": "opensr/sen2sr-rgbn-x4@1",
+  "status": "passed",
+  "summary": "Checkpoint and native state mapping pass structural validation; full upstream numerical parity passes on CUDA for two deterministic 128x128 RGB-NIR inputs through the complete Mamba plus Fourier hard-constraint wrapper.",
+  "source": {
+    "repository": "https://github.com/ESAOpenSR/SEN2SR",
+    "revision": "3986620793736da6efcdc92771f76a63127cae66",
+    "upstream_mamba_sha256": "4bb1328deee7f4c829acd6e7a221fb041180955727e9890034aa2e41e02e9045",
+    "native_mamba_sha256": "d5009d5dcac94c44ae0b5befe8d50b7e8f87a683b0178ee2dbd581801eafd08b"
+  },
+  "artifacts": {
+    "model": {
+      "path": "artifacts/cache/models--tacofoundation--SEN2SR/snapshots/469e9b3a049f9320ba66b3a39b9655dbd31480b3/SEN2SR/NonReference_RGBN_x4/model.safetensor",
+      "sha256": "11e551b03663e873c5dcd4f02ec3fc8cdfa41ef46677540295ee4c6686ddc854",
+      "bytes": 55189944
+    },
+    "hard_constraint": {
+      "path": "artifacts/cache/models--tacofoundation--SEN2SR/snapshots/469e9b3a049f9320ba66b3a39b9655dbd31480b3/SEN2SR/NonReference_RGBN_x4/hard_constraint.safetensor",
+      "sha256": "fbad981519066387c413ead1d6af7ef3e0d2947c34147ba90163fc79ae539239",
+      "bytes": 1048656
+    }
+  },
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu126",
+    "cuda_compiled": "12.6",
+    "cuda_available": true,
+    "cuda_visible_devices": "1 (isolated to one RTX 3090)",
+    "gpu_visible_to_nvidia_smi": "2x NVIDIA GeForce RTX 3090, driver 580.178.04",
+    "safetensors": "0.8.0",
+    "timm": "1.0.15",
+    "einops": "0.8.2",
+    "mamba_ssm": "2.2.5"
+  },
+  "checks": [
+    {
+      "name": "strict_state_load",
+      "command": "OPENSR_MAMBA_STATE_DIR=<artifact>/SEN2SR/NonReference_RGBN_x4 pytest -q tests/parity/test_sen2sr_mamba_state.py",
+      "result": "passed",
+      "details": "1228 tensors; 13759444 parameters; selective scan stubbed and never executed"
+    },
+    {
+      "name": "upstream_wrapper_parity",
+      "command": "OPENSR_SEN2SR_REFERENCE_ROOT=/work/code/SEN2SR OPENSR_PRETRAINED_ARTIFACT_DIR=<weights> pytest -q tests/parity/test_sen2sr_upstream_reference.py -m 'upstream and pretrained'",
+      "result": "passed",
+      "details": "CNN/Lite composition passed; Mamba CUDA composition passed for seeds 5 and 37 with max_abs=0 and mean_abs=0 on both inputs"
+    }
+  ],
+  "parity_test": {
+    "path": "tests/parity/test_sen2sr_upstream_reference.py",
+    "inputs": [
+      {
+        "seed": 5,
+        "shape": [
+          1,
+          4,
+          128,
+          128
+        ],
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      },
+      {
+        "seed": 37,
+        "shape": [
+          1,
+          4,
+          128,
+          128
+        ],
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    ],
+    "comparison": "full upstream and native Mamba model plus hard Fourier constraint",
+    "tolerance": {
+      "rtol": 0.0002,
+      "atol": 2e-05
+    }
+  },
+  "next_action": "Keep this parity test in the CUDA release gate; native model construction must select the checkpoint's classical pixelshuffle upsampler."
+}

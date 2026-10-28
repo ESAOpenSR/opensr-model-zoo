@@ -1,0 +1,40 @@
+{
+  "recipe_id": "opensr/ldsrs2-rgbn-x4@1",
+  "upstream_repository": "https://github.com/ESAOpenSR/opensr-model",
+  "upstream_commit": "9c6bb2fecad7b93f3949248c2d1c5b20f264a4db",
+  "checkpoint": {
+    "repository": "simon-donike/RS-SR-LTDF",
+    "filename": "opensr-ldsrs2_v1_0_0.ckpt",
+    "revision": "511900900f6b94e0315d47f21f2a9d988d9d238d",
+    "sha256": "e2621e3912eb7c14867c3d20c9029607ba941be8e166dc09621860fcac27dc3a"
+  },
+  "input": {
+    "shape": [
+      1,
+      4,
+      100,
+      101
+    ],
+    "sha256": "03f94d28a7c34c23f9e5636b31b4781b0a311b5a1cf7f55da77bcf658e3f026a",
+    "construction": "torch.arange(40400,dtype=float32).reshape(1,4,100,101)/40400"
+  },
+  "seed": 884422,
+  "runtime": {
+    "python": "3.12",
+    "torch": "2.6.0",
+    "device": "cpu",
+    "reference_environment": "/work/code/opensr-model/.venv"
+  },
+  "profiles": {
+    "dpm_solver++3/back_projection": {
+      "status": "verified",
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0
+    },
+    "legacy_ddim100/histogram": {
+      "status": "verified",
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0
+    }
+  }
+}

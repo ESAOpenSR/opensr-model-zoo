@@ -1,0 +1,611 @@
+{
+  "schema_version": 1,
+  "executed_at_utc": "2026-10-28T13:38:51.776708+00:00",
+  "scope": "Nine locally cached source pairs from the pinned SEN2NEON revision; no full-dataset claim.",
+  "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+  "policy": {
+    "finite_bands": "all source bands",
+    "validity_bands": [
+      "B04",
+      "B03",
+      "B02",
+      "B08"
+    ],
+    "extent": "full source rasters"
+  },
+  "inspected": 9,
+  "accepted": 8,
+  "rejected": 1,
+  "batches": [
+    {
+      "schema_version": 1,
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "scope": "Pairs listed in the supplied local metadata; no full-dataset claim",
+      "policy": {
+        "finite_bands": "all source bands",
+        "validity_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "extent": "full source rasters"
+      },
+      "metadata_sha256": "b646e55885c82f7d1f117a3ce8368180dc04162c78831e413a50643f2b8808ad",
+      "inspected": 3,
+      "accepted": 2,
+      "rejected": 1,
+      "records": [
+        {
+          "sample_id": "2018_MLBS_3__0_2.tif",
+          "accepted": false,
+          "reasons": [
+            "reference: incomplete RGB-NIR coverage"
+          ],
+          "input": {
+            "path": "2018_MLBS_3__0_2.tif",
+            "sha256": "2eed48b72134759c4786907b5d851ef8172a5d9c0153066b646d4c35a43b4ba7",
+            "size": 453235,
+            "shape": [
+              12,
+              256,
+              256
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          },
+          "reference": {
+            "path": "2018_MLBS_3__0_2.tif",
+            "sha256": "0e75fc7003351d5b51f0c7b174dc212ffdc2af0381f4a1becf26d7a37946297b",
+            "size": 5488546,
+            "shape": [
+              12,
+              1024,
+              1024
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 493774
+          }
+        },
+        {
+          "sample_id": "2018_MLBS_3__1_1.tif",
+          "accepted": true,
+          "reasons": [],
+          "input": {
+            "path": "2018_MLBS_3__1_1.tif",
+            "sha256": "3c55d1fbd20c5236a7084e0bf0252035d8ba1f3c802fa7bde67186a167f66a90",
+            "size": 464947,
+            "shape": [
+              12,
+              256,
+              256
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          },
+          "reference": {
+            "path": "2018_MLBS_3__1_1.tif",
+            "sha256": "95667d284f3b55c2a5fede148faaf08bf385ff59eaa2de1e98e925e5f9d532ca",
+            "size": 13432538,
+            "shape": [
+              12,
+              1024,
+              1024
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          }
+        },
+        {
+          "sample_id": "2018_MLBS_3__1_2.tif",
+          "accepted": true,
+          "reasons": [],
+          "input": {
+            "path": "2018_MLBS_3__1_2.tif",
+            "sha256": "7a77ec5685e44760e41c7f869608834e80a60f154b1386c2f651fdec22811b75",
+            "size": 472517,
+            "shape": [
+              12,
+              256,
+              256
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          },
+          "reference": {
+            "path": "2018_MLBS_3__1_2.tif",
+            "sha256": "b66f46b4996bf74dc48d2bb55017bae734b1f8f4255c9b60220e1d5af27cc293",
+            "size": 13967662,
+            "shape": [
+              12,
+              1024,
+              1024
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dataset_id": "isp-uv-es/SEN2NEON",
+      "dataset_revision": "9f076b4f652aa0253127d382dcb6e611250b2e67",
+      "scope": "Pairs listed in the supplied local metadata; no full-dataset claim",
+      "policy": {
+        "finite_bands": "all source bands",
+        "validity_bands": [
+          "B04",
+          "B03",
+          "B02",
+          "B08"
+        ],
+        "extent": "full source rasters"
+      },
+      "metadata_sha256": "a84e751ba2a9b8d4591c274a958012d544673b486192de29e7afe35c5221fa04",
+      "inspected": 6,
+      "accepted": 6,
+      "rejected": 0,
+      "records": [
+        {
+          "sample_id": "2019_JORN_3__9_6.tif",
+          "accepted": true,
+          "reasons": [],
+          "input": {
+            "path": "2019_JORN_3__9_6.tif",
+            "sha256": "853ccbc5a8e494951ef7281a0842923f5d21ab885b4950376cf9ef7b840cf3df",
+            "size": 481063,
+            "shape": [
+              12,
+              256,
+              256
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          },
+          "reference": {
+            "path": "2019_JORN_3__9_6.tif",
+            "sha256": "695a4e7579cd149b0a4967a28e9797b149dc1258b33aee0fced719b53a041c73",
+            "size": 14036798,
+            "shape": [
+              12,
+              1024,
+              1024
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          }
+        },
+        {
+          "sample_id": "2019_SOAP_4__1_4.tif",
+          "accepted": true,
+          "reasons": [],
+          "input": {
+            "path": "2019_SOAP_4__1_4.tif",
+            "sha256": "ded69030ead13b7faad496d547ed0a3efbe23bdb7e93378bc1ad7f5506d37edf",
+            "size": 573881,
+            "shape": [
+              12,
+              256,
+              256
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          },
+          "reference": {
+            "path": "2019_SOAP_4__1_4.tif",
+            "sha256": "c34ece1458d6ea8eb3d572e3365a5bf0118094cebb571dad1e96e9766879acaa",
+            "size": 15766929,
+            "shape": [
+              12,
+              1024,
+              1024
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          }
+        },
+        {
+          "sample_id": "2021_OSBS_6__3_1.tif",
+          "accepted": true,
+          "reasons": [],
+          "input": {
+            "path": "2021_OSBS_6__3_1.tif",
+            "sha256": "222842dbf33e391eec289fed8b199578a207ef142b64b7f027d7376cbd8caeb6",
+            "size": 512611,
+            "shape": [
+              12,
+              256,
+              256
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          },
+          "reference": {
+            "path": "2021_OSBS_6__3_1.tif",
+            "sha256": "a76540b7c896eec6acdefd9d171a69dc138f3cbcb8083f9f006671002de50994",
+            "size": 14814885,
+            "shape": [
+              12,
+              1024,
+              1024
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          }
+        },
+        {
+          "sample_id": "2022_HARV_7__4_3.tif",
+          "accepted": true,
+          "reasons": [],
+          "input": {
+            "path": "2022_HARV_7__4_3.tif",
+            "sha256": "d026dca6a0be6fe0f424d780b68e8cdf76f8a746fdaf6cec4006c881ac86c0e9",
+            "size": 524271,
+            "shape": [
+              12,
+              256,
+              256
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          },
+          "reference": {
+            "path": "2022_HARV_7__4_3.tif",
+            "sha256": "e23abb1b6cd5f569fd4abb01ef76b52457c55617b1368ab0868f98e4343655ba",
+            "size": 17733716,
+            "shape": [
+              12,
+              1024,
+              1024
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          }
+        },
+        {
+          "sample_id": "2022_MLBS_5__3_2.tif",
+          "accepted": true,
+          "reasons": [],
+          "input": {
+            "path": "2022_MLBS_5__3_2.tif",
+            "sha256": "70addaf5982dd9af9258ed301c537e58fd0dfbe2a652f170feefff9aa1043b55",
+            "size": 506204,
+            "shape": [
+              12,
+              256,
+              256
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          },
+          "reference": {
+            "path": "2022_MLBS_5__3_2.tif",
+            "sha256": "cd5f646411d92a7dbc44f60982aab76c32ef90f717603ab9f4d108a032a40400",
+            "size": 11409545,
+            "shape": [
+              12,
+              1024,
+              1024
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          }
+        },
+        {
+          "sample_id": "2024_KONZ_9__6_2.tif",
+          "accepted": true,
+          "reasons": [],
+          "input": {
+            "path": "2024_KONZ_9__6_2.tif",
+            "sha256": "4ff48f95a8cb758549ff4872f6b3088ec5156f49026adac0bc5741ccef8138d8",
+            "size": 525379,
+            "shape": [
+              12,
+              256,
+              256
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          },
+          "reference": {
+            "path": "2024_KONZ_9__6_2.tif",
+            "sha256": "cb1db3f6968f49c84020632c5c6a54edbbfd975ba54ab760da9f5812585429d2",
+            "size": 15726054,
+            "shape": [
+              12,
+              1024,
+              1024
+            ],
+            "nan_count_all_bands": 0,
+            "infinity_count_all_bands": 0,
+            "invalid_rgbn_pixels": 0
+          }
+        }
+      ]
+    }
+  ],
+  "finding": "The former MLBS example is finite but has extensive masked NoData encoded as zeros in its reference. It is rejected for incomplete RGB-NIR coverage.",
+  "replacements": {
+    "sample": "2022_HARV_7__4_3.tif",
+    "models": 5,
+    "index": "docs/assets/examples/index.json",
+    "new_inference": false,
+    "all_five_exports_pass_finite_and_mask_checks": true
+  },
+  "gallery": {
+    "retained_samples": [
+      "2021_OSBS_6__3_1.tif",
+      "2022_HARV_7__4_3.tif",
+      "2024_KONZ_9__6_2.tif"
+    ],
+    "detail_pixels": [
+      64,
+      64
+    ],
+    "detail_extent_m": [
+      160,
+      160
+    ],
+    "zoom_relative_to_full_crop": 8,
+    "previous_detail_pixels": [
+      256,
+      256
+    ],
+    "linear_magnification_increase": 4,
+    "manifest": "docs/assets/gallery/index.json",
+    "asset_records_verified": 24,
+    "full_scene_panels_unchanged": true
+  },
+  "favicon": {
+    "file": "docs/assets/opensr-globe.png",
+    "source": "docs/assets/opensr_logo.png",
+    "source_sha256": "3ed1cda9cbb8c891dcbc2d0ae3031e9fdc6aeb6f5ffb336ae40bbf76c6e37999",
+    "crop_xyxy": [
+      8,
+      8,
+      108,
+      108
+    ],
+    "sha256": "3a0b8dd2b1cb0af1d1a967f24c4f3ddf51b0ee69ec47c9cfa2bf7801bdedaf6b",
+    "removed": "docs/assets/opensr-mark.svg"
+  },
+  "environment": {
+    "opensr-model-zoo": "0.1.0.dev0",
+    "numpy": "2.5.4",
+    "rasterio": "1.5.2",
+    "matplotlib": "3.11.2",
+    "pillow": "12.3.0",
+    "torch": "2.6.0+cu126"
+  },
+  "commands": [
+    ".venv/bin/opensr-zoo sen2neon filter --root data/sen2neon-hf --output data/sen2neon-clean-examples",
+    ".venv/bin/opensr-zoo sen2neon filter --root data/sen2neon-validation-batch --output data/sen2neon-clean-pilot",
+    ".venv/bin/opensr-zoo maintain docs gallery --run benchmark-results/opensr-named-pilot/x4/inference --output build/sen2neon-detail-gallery --detail-size 64"
+  ],
+  "historical_evidence": "Earlier image trees archived locally in artifacts/validation-history/docs-before-image-selection; numerical benchmark reports retained unchanged.",
+  "suite": {
+    "command": ".venv/bin/pytest -q -rs --junitxml=scratch/docs-refresh/image-selection-tests.xml",
+    "executed_at": "2026-10-28T14:38:51.929734+01:00",
+    "passed": 70,
+    "skipped": 18,
+    "failures": 0,
+    "errors": 0,
+    "warnings": 6,
+    "warning_note": "Existing skimage registration numpy.fix deprecation warnings; no warning suppression."
+  },
+  "skipped_checks": [
+    {
+      "test": "tests.parity.test_evoland.test_evoland_native_matches_onnxruntime[wsx4]",
+      "reason": "set OPENSR_EVOLAND_CONVERTED_DIR and OPENSR_EVOLAND_ONNX"
+    },
+    {
+      "test": "tests.parity.test_evoland.test_evoland_native_matches_onnxruntime[wsx2]",
+      "reason": "set OPENSR_EVOLAND_CONVERTED_DIR and OPENSR_EVOLAND_ONNX"
+    },
+    {
+      "test": "tests.parity.test_evoland.test_evoland_native_matches_onnxruntime[s2v2x2]",
+      "reason": "set OPENSR_EVOLAND_CONVERTED_DIR and OPENSR_EVOLAND_ONNX"
+    },
+    {
+      "test": "tests.parity.test_ldsr_native.test_v1_checkpoint_loads_and_restores_persisted_schedule",
+      "reason": "set LDSR_S2_CHECKPOINT to run artifact parity"
+    },
+    {
+      "test": "tests.parity.test_ldsr_native.test_v1_ddim_shape_and_nodata_correction",
+      "reason": "set LDSR_S2_CHECKPOINT to run artifact parity"
+    },
+    {
+      "test": "tests.parity.test_ldsr_upstream_reference.test_native_matches_frozen_upstream[settings0]",
+      "reason": "set OPENSR_REFERENCE_ROOT and LDSR_S2_CHECKPOINT for frozen-reference parity"
+    },
+    {
+      "test": "tests.parity.test_ldsr_upstream_reference.test_native_matches_frozen_upstream[settings1]",
+      "reason": "set OPENSR_REFERENCE_ROOT and LDSR_S2_CHECKPOINT for frozen-reference parity"
+    },
+    {
+      "test": "tests.parity.test_sen2sr_cnn.test_lite_rgbn_pretrained_end_to_end",
+      "reason": "set OPENSR_PRETRAINED_ARTIFACT_DIR for pretrained release checks"
+    },
+    {
+      "test": "tests.parity.test_sen2sr_mamba_state.test_mamba_rgbn_pretrained_state_loads_strictly",
+      "reason": "set OPENSR_MAMBA_STATE_DIR for the CUDA Mamba structural check"
+    },
+    {
+      "test": "tests.parity.test_sen2sr_upstream_reference.test_lite_rgbn_matches_frozen_upstream_composition",
+      "reason": "set OPENSR_SEN2SR_REFERENCE_ROOT and OPENSR_PRETRAINED_ARTIFACT_DIR"
+    },
+    {
+      "test": "tests.parity.test_sen2sr_upstream_reference.test_mamba_rgbn_matches_frozen_upstream_composition",
+      "reason": "set OPENSR_SEN2SR_REFERENCE_ROOT and OPENSR_PRETRAINED_ARTIFACT_DIR"
+    },
+    {
+      "test": "tests.parity.test_sr4rs_native.test_sr4rs_pure_python_source_reader_matches_converted_weights",
+      "reason": "set SR4RS_VARIABLES_DATA and SR4RS_CONVERTED_WEIGHTS for source conversion parity"
+    },
+    {
+      "test": "tests.parity.test_sr4rs_native.test_sr4rs_frozen_tensorflow_parity",
+      "reason": "set SR4RS_REFERENCE_ROOT and SR4RS_CONVERTED_WEIGHTS for TensorFlow parity"
+    },
+    {
+      "test": "tests.parity.test_srgan_published.test_published_rgbnir_generator_parity[8-8]",
+      "reason": "published checkpoint parity requires OPENSR_SRGAN_RGBN_CKPT/CONFIG"
+    },
+    {
+      "test": "tests.parity.test_srgan_published.test_published_rgbnir_generator_parity[9-11]",
+      "reason": "published checkpoint parity requires OPENSR_SRGAN_RGBN_CKPT/CONFIG"
+    },
+    {
+      "test": "tests.parity.test_swin2_mose_native.test_native_swin2_mose_matches_frozen_reference_for_varied_routing",
+      "reason": "set OPENSR_SWIN2_MOSE_REFERENCE_SOURCE and OPENSR_SWIN2_MOSE_CHECKPOINT"
+    },
+    {
+      "test": "tests.parity.test_swin2_mose_state.test_swin2_mose_release_checkpoint_strict_loads_and_runs",
+      "reason": "set OPENSR_SWIN2_MOSE_ARTIFACT_DIR to converted v1.1 artifacts"
+    },
+    {
+      "test": "tests.parity.test_swin2_mose_state.test_swin2_mose_release_checkpoint_runs_on_cuda",
+      "reason": "set OPENSR_SWIN2_MOSE_ARTIFACT_DIR to converted v1.1 artifacts"
+    }
+  ],
+  "wheel": {
+    "passed": true,
+    "working_directory": "/tmp",
+    "wheel": "opensr_model_zoo-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "e0a9092780a63e92513f68c2c9ac276fbe6afbdcfdbc6f8604c3c8871726855b",
+    "checks": [
+      "wheel imports isolated from source checkout",
+      "sen2neon filter --help",
+      "maintain docs gallery --help"
+    ]
+  },
+  "checks": {
+    "ruff": true,
+    "ruff_format": true,
+    "mkdocs_strict": true,
+    "note": "Material emits its existing end-of-life notice; strict build passes. The first figure export used a temporary Matplotlib cache because the default home cache was unwritable."
+  },
+  "browser": {
+    "browser": "153.0.8010.12",
+    "checks": [
+      {
+        "width": 320,
+        "scene": 0,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 320,
+        "scene": 1,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 320,
+        "scene": 2,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 390,
+        "scene": 0,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 390,
+        "scene": 1,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 390,
+        "scene": 2,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 900,
+        "scene": 0,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 900,
+        "scene": 1,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 900,
+        "scene": 2,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 1440,
+        "scene": 0,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 1440,
+        "scene": 1,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      },
+      {
+        "width": 1440,
+        "scene": 2,
+        "keyboard": true,
+        "pointer_or_touch": true,
+        "detail_pixels": 64,
+        "page_overflow": false
+      }
+    ],
+    "errors": [],
+    "javascript_disabled_fallback": true,
+    "equal_detail_and_reference_display_sizes": true,
+    "scope": "Local Chromium at 320, 390, 900, and 1440 CSS pixels; no hosted deployment or full accessibility audit."
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "package_version": "0.1.0.dev0",
+  "status": "development",
+  "cuda": {
+    "tested": true,
+    "certified": false,
+    "hardware": "2x NVIDIA RTX 3090",
+    "driver": "580.178.04",
+    "torch": "2.6.0+cu126",
+    "runtime_lock": "uv.lock",
+    "notes": "Local Python/uv GPU inference validated; runtime-specific reference checks remain separate."
+  },
+  "mamba": {
+    "tested": true,
+    "certified": false,
+    "hardware": "2x NVIDIA RTX 3090",
+    "driver": "580.178.04",
+    "torch": "2.6.0+cu126",
+    "runtime_lock": "uv.lock",
+    "notes": "Local Python/uv GPU inference validated; runtime-specific reference checks remain separate."
+  },
+  "artifacts": {
+    "project_huggingface_mirror_published": false,
+    "current_source": "upstream immutable repository revisions in catalog"
+  },
+  "distribution": {
+    "environment": "uv.lock",
+    "pypi_published": false
+  },
+  "runtime": {
+    "distribution": "gpu-inclusive-only",
+    "platform": "linux-x86_64",
+    "python": "3.12",
+    "lock": "uv.lock"
+  },
+  "validation": {
+    "optional_suite_skipped": 19,
+    "pretrained_recipes_cuda_offline": 11,
+    "installed_wheel_cuda_tested": true,
+    "converted_ldsr_bundle_exact": true,
+    "benchmark_draw_rows": 126,
+    "benchmark_independent_tiles": 3,
+    "docs_strict_build": true,
+    "browser_checked": true,
+    "test_suite_passed": 92,
+    "test_suite_report": "docs/reports/closed-benchmark-tooling.json",
+    "sen2sr_upstream_parity": {
+      "lite": true,
+      "mamba_cuda": true,
+      "mamba_exact_inputs": 2,
+      "report": "docs/reports/parity/sen2sr-mamba.json"
+    },
+    "opensr_test": {
+      "version": "1.3.3",
+      "model_sample_evaluations": 84,
+      "independent_tiles": 6,
+      "sites": 6,
+      "seeds": [
+        0
+      ],
+      "all_metrics_finite": true,
+      "registration_warning_cases": 1,
+      "report": "docs/reports/opensr-test/pilot-v1",
+      "representative_full_dataset": false
+    },
+    "installed_wheel_opensr_test_passed": 3,
+    "test_suite_environment": "Prepared Linux runtime; CPU sandbox validation with unavailable CUDA/NVML; optional artifact/reference checks remain separate",
+    "test_suite_executed_at_utc": "2026-10-28T15:41:08.034592+00:00",
+    "browser_report": "docs/reports/documentation-refresh.json"
+  },
+  "automation": {
+    "periodic": false,
+    "model_validation": "explicit local Python/uv commands",
+    "ci": "lightweight lint, syntax, metadata, and documentation build/deployment"
+  },
+  "updated_at": "2026-10-28",
+  "documentation": {
+    "framework": "MkDocs Material",
+    "canonical_url": "https://models.opensr.eu/",
+    "hosting": "GitHub Pages",
+    "workflow": ".github/workflows/docs.yml",
+    "deployment_workflow_configured": true,
+    "trigger": "docs/configuration changes pushed to main, or manual run on main",
+    "github_pages_activation": "pending owner setup",
+    "custom_domain_setting": "pending owner setup",
+    "strato_dns": "pending owner setup: models CNAME -> esaopensr.github.io",
+    "first_hosted_deployment_verified": false,
+    "https_verified": false,
+    "setup_guide": "docs/hosting.md",
+    "getting_started": [
+      "docs/installation.md",
+      "docs/quickstart.md",
+      "docs/usage.md"
+    ],
+    "contributor_guide": "docs/contributing/index.md",
+    "measured_gallery": "docs/assets/gallery/index.json",
+    "local_browser_review": "Chromium at 1440, 900, 390, and 320 CSS pixels; keyboard/pointer/touch, figure tabs, filtering, mobile navigation, JavaScript-disabled fallback, and light/dark presentation; full accessibility audit pending",
+    "validation_report": "docs/reports/documentation-refresh.json",
+    "image_selection_report": "docs/reports/image-selection.json",
+    "favicon": "docs/assets/opensr-globe.png",
+    "detail_zoom": 8,
+    "detail_window_m": 160
+  },
+  "closed_benchmark": {
+    "implemented": true,
+    "private_project_required_for_evaluation": true,
+    "public_package_independent_of_private_project": true,
+    "input_shape": [
+      1,
+      4,
+      128,
+      128
+    ],
+    "output_shape": [
+      1,
+      4,
+      512,
+      512
+    ],
+    "target_resolution_m": 2.5,
+    "native_scale_adaptation": "explicitly labeled",
+    "public_export": "index-only mock-up",
+    "scoring_calibration": "pending",
+    "measured_indices_published": false,
+    "bounded_adapter_evidence": "private",
+    "tooling_report": "docs/reports/closed-benchmark-tooling.json"
+  }
+}
